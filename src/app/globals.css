@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f5f8;
+  --foreground: #1a2233;
+
+  --panel: #ffffff;
+  --card: #ffffff;
+  --card-hover: #f7f8fb;
+  --border: #e3e6ec;
+  --border-soft: #edeff3;
+
+  --text-dim: #66708a;
+  --text-faint: #9aa1b3;
+
+  /* Status palette — mapped from the reference mockup's timeline colors
+     (white / blue / green / peach) onto our present-state classification.
+     See README "Design decisions" for the mapping rationale. */
+  --soc-fill: #ffffff;
+  --soc-border: #c7cbd6;
+  --soc-text: #3a4256;
+
+  --pending-fill: #fdf3da;
+  --pending-border: #e8b93f;
+  --pending-text: #8a6a10;
+
+  --signal-fill: #e3edfd;
+  --signal-border: #6f9bef;
+  --signal-text: #2552a8;
+
+  --gap-fill: #fbe9da;
+  --gap-border: #e6a766;
+  --gap-text: #9a5b15;
+
+  --unclear-fill: #f0f1f4;
+  --unclear-border: #b7bdc9;
+  --unclear-text: #5c6478;
+
+  --track-a: #2bb673;
+  --track-b: #3aa0e0;
+  --track-c: #8b6fe0;
+  --track-driver-neg: #e08a3a;
+  --track-uncommon: #d9609b;
+  --track-pipeline: #c9a227;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-panel: var(--panel);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-text-dim: var(--text-dim);
+  --color-text-faint: var(--text-faint);
+
+  --color-soc-fill: var(--soc-fill);
+  --color-soc-border: var(--soc-border);
+  --color-soc-text: var(--soc-text);
+  --color-pending-fill: var(--pending-fill);
+  --color-pending-border: var(--pending-border);
+  --color-pending-text: var(--pending-text);
+  --color-signal-fill: var(--signal-fill);
+  --color-signal-border: var(--signal-border);
+  --color-signal-text: var(--signal-text);
+  --color-gap-fill: var(--gap-fill);
+  --color-gap-border: var(--gap-border);
+  --color-gap-text: var(--gap-text);
+  --color-unclear-fill: var(--unclear-fill);
+  --color-unclear-border: var(--unclear-border);
+  --color-unclear-text: var(--unclear-text);
+
+  --color-track-a: var(--track-a);
+  --color-track-b: var(--track-b);
+  --color-track-c: var(--track-c);
+  --color-track-driver-neg: var(--track-driver-neg);
+  --color-track-uncommon: var(--track-uncommon);
+  --color-track-pipeline: var(--track-pipeline);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
