@@ -26,12 +26,6 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCE_XLSX = ROOT / "data" / "Current_Treatment_mapping_NCCN_ASCO__for_NSCLC.xlsx"
 OUTPUT_JSON = ROOT / "data" / "guideline_mapping.json"
 
-# ---------------------------------------------------------------------------
-# Sheet -> column role mapping. Each guideline sheet has a biomarker-ish
-# column and one or more "drug list" columns that each correspond to a
-# guideline line. Drug list cells are semicolon-separated free text.
-# ---------------------------------------------------------------------------
-
 GUIDELINE_SHEETS = {
     "Track C- biomarkerdriver oncoge": {
         "track": "Track C - Biomarker Driver Positive",
@@ -46,7 +40,7 @@ GUIDELINE_SHEETS = {
     },
     "Track C- Driver negetive": {
         "track": "Track C - Driver Negative (PD-L1)",
-        "biomarker_col": None,  # composite: PD-L1 expression + histology
+        "biomarker_col": None,
         "composite_cols": ["PD-L1 Expression (TPS)", "Tumor Histology"],
         "incidence_col": None,
         "line_cols": {
@@ -103,16 +97,34 @@ PIPELINE_COLS = {
     "safety": "Important Safety / Monitoring Notes",
 }
 
+METASTATIC_SHEET = "Metastatic "
+METASTATIC_COLS = {
+    "drug": "Drug / Regimen",
+    "drug_class": "Drug Class / Type",
+    "mechanism": "Mechanism / Target",
+    "histology": "Histology / NSCLC Type",
+    "setting": "Setting Focus",
+    "route": "Route / Formulation",
+    "safety": "Key Notes / Monitoring",
+}
+
 DRUG_SPLIT_RE = re.compile(r"\s*;\s*")
-PAREN_NOTE_RE = re.compile(r"\s*\([^)]*\)\s*$")  # trailing "(...)" note, kept separately if needed
+PAREN_NOTE_RE = re.compile(r"\s*\([^)]*\)\s*$")
+
+# Suffixes stripped before fuzzy lookup against the Metastatic enrichment map
+DRUG_SUFFIX_RE = re.compile(
+    r"\s+(monotherapy|maintenance|therapy|treatment|option|options|regimen|"
+    r"if not given in 1l|if not given in 2l|category \d+)\s*$",
+    re.IGNORECASE,
+)
 
 
-def sheet_to_rows(ws):
-    """Read a worksheet into a list of dicts keyed by header row 1."""
+def sheet_to_rows(ws, header_row_index=0):
+    """Read a worksheet into a list of dicts keyed by the header row."""
     rows = list(ws.iter_rows(values_only=True))
-    headers = [str(h).strip() if h else "" for h in rows[0]]
+    headers = [str(h).strip() if h else "" for h in rows[header_row_index]]
     out = []
-    for row in rows[1:]:
+    for row in rows[header_row_index + 1:]:
         if not any(row):
             continue
         record = {}
@@ -125,14 +137,30 @@ def sheet_to_rows(ws):
 
 
 def normalize_drug_name(name: str) -> str:
-    """Lowercase, strip trailing parenthetical notes/suffixes for fuzzy matching."""
+    """Lowercase, strip trailing parenthetical notes/suffixes for dedup keying."""
     name = PAREN_NOTE_RE.sub("", name)
-    name = re.sub(r"[-\u2013].*$", "", name)  # drop " - vmjw" style suffix fragments cautiously
+    name = re.sub(r"[-\u2013].*$", "", name)
+    return name.strip().lower()
+
+
+def normalize_for_enrichment(name: str) -> str:
+    """
+    Broader normalization for Metastatic-sheet fuzzy lookup:
+    - strip parentheticals
+    - strip clinical suffixes (monotherapy, maintenance, etc.)
+    - normalise separators: '/' and ' or ' -> ' + ' so combos align
+    - collapse whitespace
+    """
+    name = PAREN_NOTE_RE.sub("", name)
+    name = DRUG_SUFFIX_RE.sub("", name)
+    # Normalise combo separators
+    name = re.sub(r"\s*/\s*", " + ", name)          # carboplatin/osimertinib -> carboplatin + osimertinib
+    name = re.sub(r"\s+or\s+\S+.*$", "", name, flags=re.IGNORECASE)  # "Sotorasib or Adagrasib..." -> "Sotorasib"
+    name = re.sub(r"\s+", " ", name)
     return name.strip().lower()
 
 
 def split_drugs(cell_value):
-    """Split a semicolon-separated drug-list cell into individual drug name strings."""
     if not cell_value or not isinstance(cell_value, str):
         return []
     parts = [p.strip() for p in DRUG_SPLIT_RE.split(cell_value) if p.strip()]
@@ -150,42 +178,22 @@ def tokenize(name: str):
 
 
 def best_biomarker_match(pipeline_name: str, biomarkers: dict):
-    """
-    Token-overlap fuzzy match: e.g. 'EGFR exon 19 deletion/L858R' should match
-    'EGFR Classic (ex19del,L858R)' over 'EGFR Exon 20 Insertions' because shared
-    tokens (egfr, l858r) outweigh the exon-20-only candidate.
-
-    Returns the best-scoring existing guideline biomarker, or None if nothing
-    clears the minimum-overlap bar (in which case the row falls into the
-    'Pipeline (unmatched)' bucket for manual review — see project brief Sec. 4).
-    """
     target_tokens = tokenize(pipeline_name)
     if not target_tokens:
         return None
-
     best, best_score = None, 0
     for b in biomarkers.values():
         if b["track"].startswith("Pipeline"):
-            continue  # only match against real guideline biomarkers
+            continue
         candidate_tokens = tokenize(b["name"])
         overlap = target_tokens & candidate_tokens
         score = len(overlap)
         if score > best_score:
             best, best_score = b, score
-
-    # Require at least one substantive shared token (e.g. a gene symbol or
-    # specific variant code) — a bare 'nsclc'/'mutation' overlap doesn't count
-    # since those are stripped by STOPWORDS already.
     return best if best_score >= 1 else None
 
 
 def classify_status_text(text: str) -> str:
-    """
-    Three-way classification of a Missing-drugs status cell:
-      current_soc      -> text clearly starts with 'Yes'
-      pipeline_pending  -> text clearly starts with 'No'
-      ambiguous         -> anything hedged ('Not clearly listed...', 'Not focus...', etc.)
-    """
     if not text or not isinstance(text, str):
         return "ambiguous"
     t = text.strip().lower()
@@ -196,12 +204,66 @@ def classify_status_text(text: str) -> str:
     return "ambiguous"
 
 
+def build_metastatic_enrichment(wb) -> dict:
+    """
+    Pass 0: read the Metastatic sheet (headers on row 4, data from row 5).
+    Returns two lookup dicts:
+      exact_map  : normalize_drug_name(name) -> enrichment fields
+      fuzzy_map  : normalize_for_enrichment(name) -> enrichment fields
+    Caller tries exact_map first, then fuzzy_map.
+    """
+    ws = wb[METASTATIC_SHEET]
+    rows = sheet_to_rows(ws, header_row_index=3)
+    exact_map = {}
+    fuzzy_map = {}
+
+    for row in rows:
+        name = row.get(METASTATIC_COLS["drug"])
+        if not name:
+            continue
+        fields = {
+            "drug_class": row.get(METASTATIC_COLS["drug_class"]),
+            "mechanism": row.get(METASTATIC_COLS["mechanism"]),
+            "histology": row.get(METASTATIC_COLS["histology"]),
+            "setting": row.get(METASTATIC_COLS["setting"]),
+            "route": row.get(METASTATIC_COLS["route"]),
+            "safety_notes": row.get(METASTATIC_COLS["safety"]),
+        }
+
+        def _store(d, key):
+            if key not in d:
+                d[key] = fields.copy()
+            else:
+                # backfill only
+                for f, v in fields.items():
+                    if not d[key][f] and v:
+                        d[key][f] = v
+
+        _store(exact_map, normalize_drug_name(name))
+        _store(fuzzy_map, normalize_for_enrichment(name))
+
+    return exact_map, fuzzy_map
+
+
+def lookup_enrichment(name: str, exact_map: dict, fuzzy_map: dict) -> dict:
+    """Try exact norm first, then fuzzy norm, return empty dict if no hit."""
+    return (
+        exact_map.get(normalize_drug_name(name))
+        or fuzzy_map.get(normalize_for_enrichment(name))
+        or {}
+    )
+
+
 def main():
     wb = openpyxl.load_workbook(SOURCE_XLSX, data_only=True)
 
-    biomarkers = {}      # key -> biomarker record
-    guideline_slots = []  # list of slot records
-    drugs = {}            # normalized_name -> drug record (merged across sheets)
+    # --- Pass 0: build enrichment maps from Metastatic sheet ---
+    exact_map, fuzzy_map = build_metastatic_enrichment(wb)
+    print(f"Pass 0: {len(exact_map)} exact / {len(fuzzy_map)} fuzzy keys from Metastatic sheet")
+
+    biomarkers = {}
+    guideline_slots = []
+    drugs = {}
 
     def get_or_create_biomarker(name, track, incidence=None):
         key = f"{track}::{name}"
@@ -212,21 +274,28 @@ def main():
                 "track": track,
                 "incidence_pct": incidence,
                 "notes": None,
-                "notable_trials": [],  # NLP-extracted, from guideline note fields
+                "notable_trials": [],
             }
         return biomarkers[key]
 
     def get_or_create_drug(name, **defaults):
         norm = normalize_drug_name(name)
+        enriched = lookup_enrichment(name, exact_map, fuzzy_map)
         if norm not in drugs:
             drugs[norm] = {
                 "id": norm,
                 "display_name": name,
-                "drug_class": defaults.get("drug_class"),
-                "mechanism": defaults.get("mechanism"),
+                "drug_class": defaults.get("drug_class") or enriched.get("drug_class"),
+                "mechanism": defaults.get("mechanism") or enriched.get("mechanism"),
                 "source": defaults.get("source", "guideline"),
-                "occurrences": [],  # list of {biomarker_id, track, line, status, raw_text}
+                "occurrences": [],
             }
+        else:
+            existing = drugs[norm]
+            if not existing["drug_class"]:
+                existing["drug_class"] = defaults.get("drug_class") or enriched.get("drug_class")
+            if not existing["mechanism"]:
+                existing["mechanism"] = defaults.get("mechanism") or enriched.get("mechanism")
         return drugs[norm]
 
     # --- Pass 1: guideline sheets -> current_soc drugs per biomarker/line ---
@@ -268,15 +337,24 @@ def main():
                 })
                 for dn in drug_names:
                     drug = get_or_create_drug(dn, source="guideline")
+                    enriched = lookup_enrichment(dn, exact_map, fuzzy_map)
                     drug["occurrences"].append({
                         "biomarker_id": biomarker["id"],
                         "track": track,
                         "line": line_label,
                         "status": "current_soc",
                         "raw_text": dn,
+                        "histology": enriched.get("histology"),
+                        "setting": enriched.get("setting"),
+                        "route": enriched.get("route"),
+                        "safety_notes": enriched.get("safety_notes"),
+                        "evidence_trials": nlp.extract_trial_mentions(
+                            enriched.get("safety_notes") or "",
+                            enriched.get("setting") or "",
+                        ),
                     })
 
-    # --- Pass 2: Missing drugs sheet -> pipeline candidates, cross-referenced ---
+    # --- Pass 2: Missing drugs sheet -> pipeline candidates ---
     ws = wb[PIPELINE_SHEET]
     rows = sheet_to_rows(ws)
     for row in rows:
@@ -297,8 +375,6 @@ def main():
         for col_key, line_label in [("line_1l", "1L Preferred"), ("line_2l", "2L+ Subsequent")]:
             raw_text = row.get(PIPELINE_COLS[col_key])
             status = classify_status_text(raw_text)
-            # If this drug already has a current_soc occurrence at this
-            # biomarker/line from Pass 1, don't downgrade it.
             already_soc = any(
                 o["biomarker_id"] == biomarker["id"] and o["line"] == line_label and o["status"] == "current_soc"
                 for o in drug["occurrences"]
@@ -323,12 +399,6 @@ def main():
                 "safety_notes": safety_notes,
                 "evidence_trials": evidence_trials,
             }
-            # Sub-classify the catch-all "ambiguous" bucket closer to the
-            # reference mockup's 4-state model (current / 3yr / 5yr / gap):
-            # white_space_gap (explicit no-guideline-entry language),
-            # pipeline_signal (hedged but a named trial or "pending"/
-            # "maturing" language shows forward motion), or unclear
-            # (no signal either way — genuinely needs manual review).
             if status == "ambiguous":
                 occurrence["status_detail"] = nlp.classify_signal(raw_text, safety_notes, setting)
             drug["occurrences"].append(occurrence)
@@ -341,6 +411,8 @@ def main():
     for b in biomarkers.values():
         all_evidence_trials.update(b.get("notable_trials") or [])
 
+    enriched_drug_count = sum(1 for d in drugs.values() if d["drug_class"] or d["mechanism"])
+
     output = {
         "biomarkers": list(biomarkers.values()),
         "guideline_slots": guideline_slots,
@@ -349,6 +421,7 @@ def main():
             "source_file": SOURCE_XLSX.name,
             "biomarker_count": len(biomarkers),
             "drug_count": len(drugs),
+            "drugs_with_class_or_mechanism": enriched_drug_count,
             "current_soc_occurrences": sum(
                 1 for d in drugs.values() for o in d["occurrences"] if o["status"] == "current_soc"
             ),

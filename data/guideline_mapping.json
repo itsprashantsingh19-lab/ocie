@@ -1056,8 +1056,8 @@
     {
       "id": "osimertinib monotherapy",
       "display_name": "Osimertinib monotherapy",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI",
+      "mechanism": "EGFR mutation inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1065,15 +1065,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Osimertinib monotherapy"
+          "raw_text": "Osimertinib monotherapy",
+          "histology": "Mostly non-squamous NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Monitor resistance; at progression test for MET amplification, EGFR T790M, HER2 amplification, and new gene fusions.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "carboplatin/osimertinib/pemetrexed",
       "display_name": "Carboplatin/Osimertinib/Pemetrexed",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI + platinum/pemetrexed chemotherapy",
+      "mechanism": "EGFR inhibition + cytotoxic chemotherapy",
       "source": "guideline",
       "occurrences": [
         {
@@ -1081,15 +1086,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Carboplatin/Osimertinib/Pemetrexed"
+          "raw_text": "Carboplatin/Osimertinib/Pemetrexed",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous EGFR-mutated NSCLC",
+          "route": "Oral osimertinib + IV chemotherapy",
+          "safety_notes": "Pemetrexed is for non-squamous histology; CT monitoring after initial cycles per systemic therapy monitoring.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "cisplatin/osimertinib/pemetrexed",
       "display_name": "Cisplatin/Osimertinib/Pemetrexed",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI + platinum/pemetrexed chemotherapy",
+      "mechanism": "EGFR inhibition + cytotoxic chemotherapy",
       "source": "guideline",
       "occurrences": [
         {
@@ -1097,15 +1107,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Cisplatin/Osimertinib/Pemetrexed"
+          "raw_text": "Cisplatin/Osimertinib/Pemetrexed",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous EGFR-mutated NSCLC",
+          "route": "Oral osimertinib + IV chemotherapy",
+          "safety_notes": "Use cisplatin if patient fit; pemetrexed only non-squamous.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "lazertinib + amivantamab",
       "display_name": "Lazertinib + Amivantamab-vmjw",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI + EGFR/MET bispecific antibody",
+      "mechanism": "EGFR pathway inhibition + EGFR/MET antibody targeting",
       "source": "guideline",
       "occurrences": [
         {
@@ -1113,22 +1128,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Lazertinib + Amivantamab-vmjw"
+          "raw_text": "Lazertinib + Amivantamab-vmjw",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral lazertinib + IV amivantamab",
+          "safety_notes": "Prophylactic anticoagulation, dermatologic prophylaxis, and IRR premedication recommended.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Classic (ex19del,L858R)",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Lazertinib + Amivantamab-vmjw (if not given in 1L)"
+          "raw_text": "Lazertinib + Amivantamab-vmjw (if not given in 1L)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral lazertinib + IV amivantamab",
+          "safety_notes": "Prophylactic anticoagulation, dermatologic prophylaxis, and IRR premedication recommended.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "lazertinib monotherapy",
       "display_name": "Lazertinib monotherapy",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI",
+      "mechanism": "EGFR pathway inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1136,15 +1161,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Lazertinib monotherapy"
+          "raw_text": "Lazertinib monotherapy",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Combination with amivantamab has additional prophylaxis needs.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "erlotinib",
       "display_name": "Erlotinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI",
+      "mechanism": "EGFR pathway inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1152,22 +1182,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Erlotinib"
+          "raw_text": "Erlotinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Use only when appropriate EGFR sensitivity is confirmed.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Atypical (S768I, L861Q, G719X)",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Erlotinib"
+          "raw_text": "Erlotinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Use only when appropriate EGFR sensitivity is confirmed.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "gefitinib",
       "display_name": "Gefitinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI",
+      "mechanism": "EGFR pathway inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1175,22 +1215,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Gefitinib"
+          "raw_text": "Gefitinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Use only when appropriate EGFR sensitivity is confirmed.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Atypical (S768I, L861Q, G719X)",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Gefitinib"
+          "raw_text": "Gefitinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Use only when appropriate EGFR sensitivity is confirmed.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "afatinib",
       "display_name": "Afatinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR/ERBB family TKI",
+      "mechanism": "EGFR/ERBB pathway inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1198,22 +1248,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Afatinib"
+          "raw_text": "Afatinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Check individual variant sensitivity.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Atypical (S768I, L861Q, G719X)",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Afatinib"
+          "raw_text": "Afatinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Check individual variant sensitivity.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "dacomitinib",
       "display_name": "Dacomitinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI",
+      "mechanism": "EGFR pathway inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1221,22 +1281,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Dacomitinib"
+          "raw_text": "Dacomitinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Use only when appropriate EGFR sensitivity is confirmed.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Atypical (S768I, L861Q, G719X)",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Dacomitinib"
+          "raw_text": "Dacomitinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Use only when appropriate EGFR sensitivity is confirmed.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "datopotamab deruxtecan",
       "display_name": "Datopotamab deruxtecan-dink (nonsquamous)",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "TROP2-directed ADC",
+      "mechanism": "TROP2 antibody + topoisomerase I inhibitor payload",
       "source": "guideline",
       "occurrences": [
         {
@@ -1244,21 +1314,36 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Datopotamab deruxtecan-dink (nonsquamous)"
+          "raw_text": "Datopotamab deruxtecan-dink (nonsquamous)",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous NSCLC after EGFR-targeted therapy",
+          "route": "IV ADC",
+          "safety_notes": "Inform patients about eye exams due to ocular AE risk.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Atypical (S768I, L861Q, G719X)",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Datopotamab deruxtecan-dink (nonsquamous)"
+          "raw_text": "Datopotamab deruxtecan-dink (nonsquamous)",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous NSCLC after EGFR-targeted therapy",
+          "route": "IV ADC",
+          "safety_notes": "Inform patients about eye exams due to ocular AE risk.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Exon 20 Insertions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Datopotamab deruxtecan-dink (nonsquamous)"
+          "raw_text": "Datopotamab deruxtecan-dink (nonsquamous)",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous NSCLC after EGFR-targeted therapy",
+          "route": "IV ADC",
+          "safety_notes": "Inform patients about eye exams due to ocular AE risk.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Classic (ex19del,L858R)",
@@ -1277,8 +1362,8 @@
     {
       "id": "platinum",
       "display_name": "Platinum-doublet chemotherapy regimens",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "Platinum-based chemotherapy",
+      "mechanism": "Cytotoxic DNA damage with partner chemotherapy",
       "source": "guideline",
       "occurrences": [
         {
@@ -1286,120 +1371,200 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy regimens"
+          "raw_text": "Platinum-doublet chemotherapy regimens",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Atypical (S768I, L861Q, G719X)",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-based doublet chemotherapy combinations"
+          "raw_text": "Platinum-based doublet chemotherapy combinations",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Exon 20 Insertions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Platinum-based doublet chemotherapy alone"
+          "raw_text": "Platinum-based doublet chemotherapy alone",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ALK Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy options"
+          "raw_text": "Platinum-doublet chemotherapy options",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ROS1 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy"
+          "raw_text": "Platinum-doublet chemotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::BRAF V600E",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy (if TKI given in 1L)"
+          "raw_text": "Platinum-doublet chemotherapy (if TKI given in 1L)",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::KRAS G12C",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy +/- Pembrolizumab (if PD-L1 expression matches standard guidelines)"
+          "raw_text": "Platinum-doublet chemotherapy +/- Pembrolizumab (if PD-L1 expression matches standard guidelines)",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::NTRK 1/2/3 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Platinum-based chemotherapy combinations"
+          "raw_text": "Platinum-based chemotherapy combinations",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::NTRK 1/2/3 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy"
+          "raw_text": "Platinum-doublet chemotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::MET Exon 14 Skipping",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy +/- Immunotherapy"
+          "raw_text": "Platinum-doublet chemotherapy +/- Immunotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::MET Exon 14 Skipping",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy"
+          "raw_text": "Platinum-doublet chemotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::RET Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy"
+          "raw_text": "Platinum-doublet chemotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::RET Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy"
+          "raw_text": "Platinum-doublet chemotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ERBB2 (HER2) Mutations",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy"
+          "raw_text": "Platinum-doublet chemotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::NRG1 Gene Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Platinum-based doublet chemotherapy"
+          "raw_text": "Platinum-based doublet chemotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::NRG1 Gene Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Platinum-doublet chemotherapy"
+          "raw_text": "Platinum-doublet chemotherapy",
+          "histology": "NSCLC; partner selected by histology",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Partner drug depends on histology; hold immunotherapy if urgent start before molecular results.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "osimertinib",
       "display_name": "Osimertinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR TKI",
+      "mechanism": "EGFR mutation inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1407,15 +1572,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Osimertinib"
+          "raw_text": "Osimertinib",
+          "histology": "Mostly non-squamous NSCLC",
+          "setting": "Advanced/metastatic EGFR-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Monitor resistance; at progression test for MET amplification, EGFR T790M, HER2 amplification, and new gene fusions.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "amivantamab",
       "display_name": "Amivantamab-vmjw + Carboplatin + Pemetrexed",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "EGFR/MET bispecific antibody + platinum/pemetrexed chemotherapy",
+      "mechanism": "EGFR/MET targeting + cytotoxic chemotherapy",
       "source": "guideline",
       "occurrences": [
         {
@@ -1423,22 +1593,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Amivantamab-vmjw + Carboplatin + Pemetrexed"
+          "raw_text": "Amivantamab-vmjw + Carboplatin + Pemetrexed",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic EGFR exon 20 insertion-positive NSCLC",
+          "route": "IV antibody + IV chemotherapy",
+          "safety_notes": "Pemetrexed non-squamous; monitor IRR and skin toxicity with amivantamab.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::EGFR Exon 20 Insertions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Amivantamab-vmjw monotherapy (if not given in 1L)"
+          "raw_text": "Amivantamab-vmjw monotherapy (if not given in 1L)",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic EGFR exon 20 insertion-positive NSCLC",
+          "route": "IV antibody + IV chemotherapy",
+          "safety_notes": "Pemetrexed non-squamous; monitor IRR and skin toxicity with amivantamab.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "alectinib",
       "display_name": "Alectinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "ALK TKI",
+      "mechanism": "ALK fusion kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1446,15 +1626,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Alectinib"
+          "raw_text": "Alectinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "brigatinib",
       "display_name": "Brigatinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "ALK TKI",
+      "mechanism": "ALK fusion kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1462,15 +1647,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Brigatinib"
+          "raw_text": "Brigatinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "lorlatinib",
       "display_name": "Lorlatinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "ALK TKI",
+      "mechanism": "ALK fusion kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1478,29 +1668,44 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Lorlatinib"
+          "raw_text": "Lorlatinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ALK Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Lorlatinib (if not given in 1L)"
+          "raw_text": "Lorlatinib (if not given in 1L)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ROS1 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Lorlatinib"
+          "raw_text": "Lorlatinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "crizotinib",
       "display_name": "Crizotinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "ALK TKI",
+      "mechanism": "ALK fusion kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1508,22 +1713,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Crizotinib"
+          "raw_text": "Crizotinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ROS1 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Crizotinib"
+          "raw_text": "Crizotinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "ceritinib",
       "display_name": "Ceritinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "ALK TKI",
+      "mechanism": "ALK fusion kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1531,22 +1746,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Ceritinib"
+          "raw_text": "Ceritinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ROS1 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Ceritinib"
+          "raw_text": "Ceritinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ALK-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS preferred when DNA testing is negative; immunotherapy has minimal benefit in ALK-positive disease.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "pemetrexed maintenance",
       "display_name": "Pemetrexed maintenance",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "Antifolate chemotherapy",
+      "mechanism": "Folate-dependent enzyme inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1554,22 +1779,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Pemetrexed maintenance"
+          "raw_text": "Pemetrexed maintenance",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Do not use in squamous NSCLC.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::BRAF V600E",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Pemetrexed maintenance"
+          "raw_text": "Pemetrexed maintenance",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Do not use in squamous NSCLC.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "entrectinib",
       "display_name": "Entrectinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "ROS1 TKI",
+      "mechanism": "ROS1 fusion kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1577,22 +1812,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Entrectinib"
+          "raw_text": "Entrectinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ROS1-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain-penetrant option; useful for CNS disease. Beware flare phenomenon when stopping TKI.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::NTRK 1/2/3 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Entrectinib"
+          "raw_text": "Entrectinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ROS1-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain-penetrant option; useful for CNS disease. Beware flare phenomenon when stopping TKI.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "repotrectinib",
       "display_name": "Repotrectinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "ROS1 TKI",
+      "mechanism": "ROS1 fusion kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1600,22 +1845,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Repotrectinib"
+          "raw_text": "Repotrectinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ROS1-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain/CNS progression option; can address resistant mutations such as ROS1 G2032R. Beware flare phenomenon when stopping TKI.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ROS1 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Repotrectinib (if not given in 1L)"
+          "raw_text": "Repotrectinib (if not given in 1L)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ROS1-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain/CNS progression option; can address resistant mutations such as ROS1 G2032R. Beware flare phenomenon when stopping TKI.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "taletrectinib",
       "display_name": "Taletrectinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "ROS1 TKI",
+      "mechanism": "ROS1 fusion kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1623,22 +1878,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Taletrectinib"
+          "raw_text": "Taletrectinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ROS1-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain/CNS progression option; can address resistant mutations such as ROS1 G2032R. Beware flare phenomenon when stopping TKI.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ROS1 Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Taletrectinib (if not given in 1L)"
+          "raw_text": "Taletrectinib (if not given in 1L)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic ROS1-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain/CNS progression option; can address resistant mutations such as ROS1 G2032R. Beware flare phenomenon when stopping TKI.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "dabrafenib + trametinib",
       "display_name": "Dabrafenib + Trametinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "BRAF inhibitor + MEK inhibitor",
+      "mechanism": "BRAF V600E and downstream MEK inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1646,15 +1911,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Dabrafenib + Trametinib"
+          "raw_text": "Dabrafenib + Trametinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic BRAF V600E-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Separate V600E from non-V600E BRAF mutations.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "encorafenib + binimetinib",
       "display_name": "Encorafenib + Binimetinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "BRAF inhibitor + MEK inhibitor",
+      "mechanism": "BRAF V600E and downstream MEK inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1662,7 +1932,12 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Encorafenib + Binimetinib"
+          "raw_text": "Encorafenib + Binimetinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic BRAF V600E-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Separate V600E from non-V600E BRAF mutations.",
+          "evidence_trials": []
         }
       ]
     },
@@ -1678,22 +1953,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Single-agent platinum-doublet chemotherapy"
+          "raw_text": "Single-agent platinum-doublet chemotherapy",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::< 1% (Negative Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "single-agent gemcitabine"
+          "raw_text": "single-agent gemcitabine",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "docetaxel +/",
       "display_name": "Docetaxel +/- Ramucirumab",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "Taxane chemotherapy +/- VEGFR2 antibody",
+      "mechanism": "Microtubule inhibition +/- VEGFR2 angiogenesis blockade",
       "source": "guideline",
       "occurrences": [
         {
@@ -1701,57 +1986,92 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel +/- Ramucirumab"
+          "raw_text": "Docetaxel +/- Ramucirumab",
+          "histology": "Non-squamous or squamous NSCLC",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Common subsequent-line option after prior systemic therapy.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::KRAS G12C",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel +/- Ramucirumab"
+          "raw_text": "Docetaxel +/- Ramucirumab",
+          "histology": "Non-squamous or squamous NSCLC",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Common subsequent-line option after prior systemic therapy.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::MET Exon 14 Skipping",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel +/- Ramucirumab"
+          "raw_text": "Docetaxel +/- Ramucirumab",
+          "histology": "Non-squamous or squamous NSCLC",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Common subsequent-line option after prior systemic therapy.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel +/- Ramucirumab"
+          "raw_text": "Docetaxel +/- Ramucirumab",
+          "histology": "Non-squamous or squamous NSCLC",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Common subsequent-line option after prior systemic therapy.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel +/- Ramucirumab"
+          "raw_text": "Docetaxel +/- Ramucirumab",
+          "histology": "Non-squamous or squamous NSCLC",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Common subsequent-line option after prior systemic therapy.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::< 1% (Negative Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel +/- Ramucirumab"
+          "raw_text": "Docetaxel +/- Ramucirumab",
+          "histology": "Non-squamous or squamous NSCLC",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Common subsequent-line option after prior systemic therapy.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::< 1% (Negative Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel +/- Ramucirumab"
+          "raw_text": "Docetaxel +/- Ramucirumab",
+          "histology": "Non-squamous or squamous NSCLC",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Common subsequent-line option after prior systemic therapy.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "sotorasib",
       "display_name": "Sotorasib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "KRAS G12C inhibitor",
+      "mechanism": "KRAS G12C inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1759,15 +2079,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Sotorasib"
+          "raw_text": "Sotorasib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic KRAS G12C-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Often deployed after chemo-immunotherapy; confirm KRAS G12C by DNA NGS.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "adagrasib",
       "display_name": "Adagrasib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "KRAS G12C inhibitor",
+      "mechanism": "KRAS G12C inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1775,15 +2100,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Adagrasib"
+          "raw_text": "Adagrasib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic KRAS G12C-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Often deployed after chemo-immunotherapy; confirm KRAS G12C by DNA NGS.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "sotorasib or adagrasib",
       "display_name": "Sotorasib or Adagrasib (if not given in 1L)",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "KRAS G12C inhibitor",
+      "mechanism": "KRAS G12C inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1791,15 +2121,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Sotorasib or Adagrasib (if not given in 1L)"
+          "raw_text": "Sotorasib or Adagrasib (if not given in 1L)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic KRAS G12C-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Often deployed after chemo-immunotherapy; confirm KRAS G12C by DNA NGS.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "larotrectinib",
       "display_name": "Larotrectinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "TRK inhibitor",
+      "mechanism": "NTRK fusion inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1807,15 +2142,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Larotrectinib"
+          "raw_text": "Larotrectinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic NTRK fusion-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "RNA-based NGS recommended if DNA panel is negative and suspicion remains.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "alternate ntrk inhibitor",
       "display_name": "Alternate NTRK inhibitor",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "TRK inhibitor",
+      "mechanism": "NTRK fusion inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1823,7 +2163,12 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Alternate NTRK inhibitor"
+          "raw_text": "Alternate NTRK inhibitor",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic NTRK fusion-positive NSCLC",
+          "route": null,
+          "safety_notes": "Use after resistance/intolerance to prior NTRK inhibitor.",
+          "evidence_trials": []
         }
       ]
     },
@@ -1839,29 +2184,44 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel"
+          "raw_text": "Docetaxel",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::RET Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel"
+          "raw_text": "Docetaxel",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::NRG1 Gene Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Docetaxel"
+          "raw_text": "Docetaxel",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "capmatinib",
       "display_name": "Capmatinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "MET TKI",
+      "mechanism": "MET exon 14 skipping inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1869,15 +2229,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Capmatinib"
+          "raw_text": "Capmatinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic METex14 NSCLC",
+          "route": "Oral",
+          "safety_notes": "Requires NGS coverage across MET exon 14 splice sites.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "tepotinib",
       "display_name": "Tepotinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "MET TKI",
+      "mechanism": "MET exon 14 skipping inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1885,15 +2250,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Tepotinib"
+          "raw_text": "Tepotinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic METex14 NSCLC",
+          "route": "Oral",
+          "safety_notes": "Requires NGS coverage across MET exon 14 splice sites.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "capmatinib or tepotinib",
       "display_name": "Capmatinib or Tepotinib (if not given in 1L)",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "MET TKI",
+      "mechanism": "MET exon 14 skipping inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1901,15 +2271,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Capmatinib or Tepotinib (if not given in 1L)"
+          "raw_text": "Capmatinib or Tepotinib (if not given in 1L)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic METex14 NSCLC",
+          "route": "Oral",
+          "safety_notes": "Requires NGS coverage across MET exon 14 splice sites.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "selpercatinib",
       "display_name": "Selpercatinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "RET TKI",
+      "mechanism": "RET fusion inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1917,15 +2292,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Selpercatinib"
+          "raw_text": "Selpercatinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic RET fusion-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain-penetrant RET inhibitors important due to intracranial metastasis risk.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "pralsetinib",
       "display_name": "Pralsetinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "RET TKI",
+      "mechanism": "RET fusion inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1933,15 +2313,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pralsetinib"
+          "raw_text": "Pralsetinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic RET fusion-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain-penetrant RET inhibitors important due to intracranial metastasis risk.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "cabozantinib",
       "display_name": "Cabozantinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "Multikinase TKI",
+      "mechanism": "RET/MET/VEGFR and other kinase inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1949,15 +2334,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Cabozantinib"
+          "raw_text": "Cabozantinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic RET fusion-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Less selective than selpercatinib/pralsetinib.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "selpercatinib or pralsetinib",
       "display_name": "Selpercatinib or Pralsetinib (if not given in 1L)",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "RET TKI",
+      "mechanism": "RET fusion inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1965,15 +2355,20 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Selpercatinib or Pralsetinib (if not given in 1L)"
+          "raw_text": "Selpercatinib or Pralsetinib (if not given in 1L)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic RET fusion-positive NSCLC",
+          "route": "Oral",
+          "safety_notes": "Brain-penetrant RET inhibitors important due to intracranial metastasis risk.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "zongertinib",
       "display_name": "Zongertinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "HER2 TKI",
+      "mechanism": "HER2/ERBB2 mutant signaling inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -1981,7 +2376,12 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Zongertinib"
+          "raw_text": "Zongertinib",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic HER2-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "Diarrhea and liver enzyme elevations noted in guideline discussion.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ERBB2 (HER2) Mutations",
@@ -2003,8 +2403,8 @@
     {
       "id": "fam",
       "display_name": "Fam-trastuzumab deruxtecan-nxki",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "HER2-directed ADC",
+      "mechanism": "HER2 antibody + topoisomerase I inhibitor payload",
       "source": "guideline",
       "occurrences": [
         {
@@ -2012,22 +2412,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Fam-trastuzumab deruxtecan-nxki"
+          "raw_text": "Fam-trastuzumab deruxtecan-nxki",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic HER2-mutated NSCLC",
+          "route": "IV ADC",
+          "safety_notes": "Listed with HER2 mutation treatment options.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ERBB2 (HER2) Mutations",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Fam-trastuzumab deruxtecan-nxki"
+          "raw_text": "Fam-trastuzumab deruxtecan-nxki",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic HER2-mutated NSCLC",
+          "route": "IV ADC",
+          "safety_notes": "Listed with HER2 mutation treatment options.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "sevabertinib",
       "display_name": "Sevabertinib",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "HER2/EGFR TKI",
+      "mechanism": "HER2 and EGFR kinase signaling inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -2035,7 +2445,12 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Sevabertinib"
+          "raw_text": "Sevabertinib",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Locally advanced/metastatic HER2-mutated NSCLC",
+          "route": "Oral",
+          "safety_notes": "No prospective sequencing data between zongertinib and sevabertinib.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ERBB2 (HER2) Mutations",
@@ -2054,8 +2469,8 @@
     {
       "id": "ado",
       "display_name": "Ado-trastuzumab emtansine (UICC option)",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "HER2-directed ADC",
+      "mechanism": "HER2 antibody + cytotoxic payload",
       "source": "guideline",
       "occurrences": [
         {
@@ -2063,7 +2478,12 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Ado-trastuzumab emtansine (UICC option)"
+          "raw_text": "Ado-trastuzumab emtansine (UICC option)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic HER2-altered NSCLC",
+          "route": "IV ADC",
+          "safety_notes": "Can be used if not previously given.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::ERBB2 (HER2) Mutations",
@@ -2082,8 +2502,8 @@
     {
       "id": "zenocutuzumab",
       "display_name": "Zenocutuzumab",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "HER2/HER3 bispecific antibody",
+      "mechanism": "HER2/HER3 signaling blockade",
       "source": "guideline",
       "occurrences": [
         {
@@ -2091,22 +2511,32 @@
           "track": "Track C - Biomarker Driver Positive",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Zenocutuzumab"
+          "raw_text": "Zenocutuzumab",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic NRG1 fusion-positive NSCLC",
+          "route": "IV antibody",
+          "safety_notes": "RNA-based NGS preferred; IHC not suitable for NRG1 detection.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Biomarker Driver Positive::NRG1 Gene Fusions",
           "track": "Track C - Biomarker Driver Positive",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Zenocutuzumab (if not given in 1L)"
+          "raw_text": "Zenocutuzumab (if not given in 1L)",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic NRG1 fusion-positive NSCLC",
+          "route": "IV antibody",
+          "safety_notes": "RNA-based NGS preferred; IHC not suitable for NRG1 detection.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "pembrolizumab monotherapy",
       "display_name": "Pembrolizumab monotherapy",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "PD-1 immune checkpoint inhibitor",
+      "mechanism": "PD-1 blockade",
       "source": "guideline",
       "occurrences": [
         {
@@ -2114,36 +2544,56 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab monotherapy"
+          "raw_text": "Pembrolizumab monotherapy",
+          "histology": "NSCLC; non-squamous or squamous",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV; SC pembrolizumab/berahyaluronidase mentioned as substitute in sheet",
+          "safety_notes": "Avoid if EGFR/ALK later discovered before TKI due to immune toxicity risk; assess autoimmune contraindications.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::>= 50% (High Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab monotherapy"
+          "raw_text": "Pembrolizumab monotherapy",
+          "histology": "NSCLC; non-squamous or squamous",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV; SC pembrolizumab/berahyaluronidase mentioned as substitute in sheet",
+          "safety_notes": "Avoid if EGFR/ALK later discovered before TKI due to immune toxicity risk; assess autoimmune contraindications.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab monotherapy"
+          "raw_text": "Pembrolizumab monotherapy",
+          "histology": "NSCLC; non-squamous or squamous",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV; SC pembrolizumab/berahyaluronidase mentioned as substitute in sheet",
+          "safety_notes": "Avoid if EGFR/ALK later discovered before TKI due to immune toxicity risk; assess autoimmune contraindications.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab monotherapy"
+          "raw_text": "Pembrolizumab monotherapy",
+          "histology": "NSCLC; non-squamous or squamous",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV; SC pembrolizumab/berahyaluronidase mentioned as substitute in sheet",
+          "safety_notes": "Avoid if EGFR/ALK later discovered before TKI due to immune toxicity risk; assess autoimmune contraindications.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "atezolizumab monotherapy",
       "display_name": "Atezolizumab monotherapy",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "PD-L1 immune checkpoint inhibitor",
+      "mechanism": "PD-L1 blockade",
       "source": "guideline",
       "occurrences": [
         {
@@ -2151,22 +2601,32 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Atezolizumab monotherapy"
+          "raw_text": "Atezolizumab monotherapy",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV",
+          "safety_notes": "Avoid in active autoimmune disease or when actionable driver not ruled out.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::>= 50% (High Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Atezolizumab monotherapy"
+          "raw_text": "Atezolizumab monotherapy",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV",
+          "safety_notes": "Avoid in active autoimmune disease or when actionable driver not ruled out.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "cemiplimab monotherapy",
       "display_name": "Cemiplimab monotherapy",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "PD-1 immune checkpoint inhibitor",
+      "mechanism": "PD-1 blockade",
       "source": "guideline",
       "occurrences": [
         {
@@ -2174,22 +2634,32 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Cemiplimab monotherapy"
+          "raw_text": "Cemiplimab monotherapy",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV",
+          "safety_notes": "Avoid in active autoimmune disease or when actionable driver not ruled out.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::>= 50% (High Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Cemiplimab monotherapy"
+          "raw_text": "Cemiplimab monotherapy",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV",
+          "safety_notes": "Avoid in active autoimmune disease or when actionable driver not ruled out.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "pembrolizumab + carboplatin + pemetrexed",
       "display_name": "Pembrolizumab + Carboplatin + Pemetrexed",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "PD-1 inhibitor + platinum/pemetrexed chemotherapy",
+      "mechanism": "PD-1 blockade + cytotoxic chemotherapy",
       "source": "guideline",
       "occurrences": [
         {
@@ -2197,22 +2667,32 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab + Carboplatin + Pemetrexed"
+          "raw_text": "Pembrolizumab + Carboplatin + Pemetrexed",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Pemetrexed strictly non-squamous.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab + Carboplatin + Pemetrexed (Category 1)"
+          "raw_text": "Pembrolizumab + Carboplatin + Pemetrexed (Category 1)",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Pemetrexed strictly non-squamous.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "pembrolizumab + cisplatin + pemetrexed",
       "display_name": "Pembrolizumab + Cisplatin + Pemetrexed",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "PD-1 inhibitor + platinum/pemetrexed chemotherapy",
+      "mechanism": "PD-1 blockade + cytotoxic chemotherapy",
       "source": "guideline",
       "occurrences": [
         {
@@ -2220,22 +2700,32 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab + Cisplatin + Pemetrexed"
+          "raw_text": "Pembrolizumab + Cisplatin + Pemetrexed",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Pemetrexed strictly non-squamous.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab + Cisplatin + Pemetrexed (Category 1)"
+          "raw_text": "Pembrolizumab + Cisplatin + Pemetrexed (Category 1)",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Pemetrexed strictly non-squamous.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "nivolumab + ipilimumab",
       "display_name": "Nivolumab + Ipilimumab",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "PD-1 inhibitor + CTLA-4 inhibitor",
+      "mechanism": "Dual checkpoint blockade",
       "source": "guideline",
       "occurrences": [
         {
@@ -2243,36 +2733,56 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Nivolumab + Ipilimumab"
+          "raw_text": "Nivolumab + Ipilimumab",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV",
+          "safety_notes": "Assess autoimmune contraindications.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::>= 50% (High Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Nivolumab + Ipilimumab"
+          "raw_text": "Nivolumab + Ipilimumab",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV",
+          "safety_notes": "Assess autoimmune contraindications.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Nivolumab + Ipilimumab"
+          "raw_text": "Nivolumab + Ipilimumab",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV",
+          "safety_notes": "Assess autoimmune contraindications.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Nivolumab + Ipilimumab"
+          "raw_text": "Nivolumab + Ipilimumab",
+          "histology": "NSCLC",
+          "setting": "Advanced/metastatic driver-negative NSCLC",
+          "route": "IV",
+          "safety_notes": "Assess autoimmune contraindications.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "tremelimumab + durvalumab + carboplatin + pemetrexed",
       "display_name": "Tremelimumab + Durvalumab + Carboplatin + Pemetrexed",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "CTLA-4 inhibitor + PD-L1 inhibitor + chemo",
+      "mechanism": "Dual checkpoint blockade + cytotoxic chemotherapy",
       "source": "guideline",
       "occurrences": [
         {
@@ -2280,21 +2790,36 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Pemetrexed"
+          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Pemetrexed",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Pemetrexed non-squamous only.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Pemetrexed"
+          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Pemetrexed",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Pemetrexed non-squamous only.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::< 1% (Negative Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Pemetrexed"
+          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Pemetrexed",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Pemetrexed non-squamous only.",
+          "evidence_trials": []
         }
       ]
     },
@@ -2310,7 +2835,12 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "If immune checkpoint inhibitor given as monotherapy: Navigate to Platinum-doublet chemotherapy options (Carboplatin or Cisplatin + Pemetrexed). If chemo-immunotherapy given in 1L: Docetaxel +/- Ramucirumab."
+          "raw_text": "If immune checkpoint inhibitor given as monotherapy: Navigate to Platinum-doublet chemotherapy options (Carboplatin or Cisplatin + Pemetrexed). If chemo-immunotherapy given in 1L: Docetaxel +/- Ramucirumab.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2326,7 +2856,12 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab + Carboplatin + (Paclitaxel or Nab-Paclitaxel)"
+          "raw_text": "Pembrolizumab + Carboplatin + (Paclitaxel or Nab-Paclitaxel)",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2342,15 +2877,20 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab + Cisplatin + (Paclitaxel or Nab-Paclitaxel)"
+          "raw_text": "Pembrolizumab + Cisplatin + (Paclitaxel or Nab-Paclitaxel)",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "tremelimumab + durvalumab + carboplatin + paclitaxel",
       "display_name": "Tremelimumab + Durvalumab + Carboplatin + Paclitaxel",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "CTLA-4 inhibitor + PD-L1 inhibitor + chemo",
+      "mechanism": "Dual checkpoint blockade + cytotoxic chemotherapy",
       "source": "guideline",
       "occurrences": [
         {
@@ -2358,21 +2898,36 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Paclitaxel"
+          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Paclitaxel",
+          "histology": "Squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Taxane-based option for squamous histology.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::1% - 49% (Low Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Paclitaxel"
+          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Paclitaxel",
+          "histology": "Squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Taxane-based option for squamous histology.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::< 1% (Negative Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Paclitaxel"
+          "raw_text": "Tremelimumab + Durvalumab + Carboplatin + Paclitaxel",
+          "histology": "Squamous NSCLC",
+          "setting": "Advanced/metastatic driver-negative squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Taxane-based option for squamous histology.",
+          "evidence_trials": []
         }
       ]
     },
@@ -2388,15 +2943,20 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "If monotherapy given in 1L: Shift to standard squamous chemotherapy doublets (Carboplatin + Paclitaxel/Gemcitabine). If chemo-immunotherapy given in 1L: Docetaxel +/- Ramucirumab or Gemcitabine monotherapy."
+          "raw_text": "If monotherapy given in 1L: Shift to standard squamous chemotherapy doublets (Carboplatin + Paclitaxel/Gemcitabine). If chemo-immunotherapy given in 1L: Docetaxel +/- Ramucirumab or Gemcitabine monotherapy.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "pemetrexed monotherapy",
       "display_name": "Pemetrexed monotherapy (if not given in a prior line)",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "Antifolate chemotherapy",
+      "mechanism": "Folate-dependent enzyme inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -2404,22 +2964,32 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Pemetrexed monotherapy (if not given in a prior line)"
+          "raw_text": "Pemetrexed monotherapy (if not given in a prior line)",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Do not use in squamous NSCLC.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::< 1% (Negative Expressor) | Non-Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Pemetrexed monotherapy"
+          "raw_text": "Pemetrexed monotherapy",
+          "histology": "Non-squamous NSCLC",
+          "setting": "Advanced/metastatic non-squamous NSCLC",
+          "route": "IV",
+          "safety_notes": "Do not use in squamous NSCLC.",
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "gemcitabine",
       "display_name": "Gemcitabine",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "Antimetabolite chemotherapy",
+      "mechanism": "DNA synthesis inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -2427,7 +2997,12 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Gemcitabine"
+          "raw_text": "Gemcitabine",
+          "histology": "Squamous or non-squamous where listed",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Listed especially in driver-negative pathways.",
+          "evidence_trials": []
         }
       ]
     },
@@ -2443,7 +3018,12 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab + Carboplatin + (Paclitaxel or Nab-Paclitaxel) (Category 1)"
+          "raw_text": "Pembrolizumab + Carboplatin + (Paclitaxel or Nab-Paclitaxel) (Category 1)",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2459,15 +3039,20 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Pembrolizumab + Cisplatin + (Paclitaxel or Nab-Paclitaxel) (Category 1)"
+          "raw_text": "Pembrolizumab + Cisplatin + (Paclitaxel or Nab-Paclitaxel) (Category 1)",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
     {
       "id": "gemcitabine monotherapy",
       "display_name": "Gemcitabine monotherapy",
-      "drug_class": null,
-      "mechanism": null,
+      "drug_class": "Antimetabolite chemotherapy",
+      "mechanism": "DNA synthesis inhibition",
       "source": "guideline",
       "occurrences": [
         {
@@ -2475,14 +3060,24 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Gemcitabine monotherapy"
+          "raw_text": "Gemcitabine monotherapy",
+          "histology": "Squamous or non-squamous where listed",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Listed especially in driver-negative pathways.",
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::< 1% (Negative Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "2L+ Subsequent",
           "status": "current_soc",
-          "raw_text": "Gemcitabine monotherapy"
+          "raw_text": "Gemcitabine monotherapy",
+          "histology": "Squamous or non-squamous where listed",
+          "setting": "Advanced/metastatic NSCLC",
+          "route": "IV",
+          "safety_notes": "Listed especially in driver-negative pathways.",
+          "evidence_trials": []
         }
       ]
     },
@@ -2498,7 +3093,12 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Carboplatin + Pemetrexed + Pembrolizumab"
+          "raw_text": "Carboplatin + Pemetrexed + Pembrolizumab",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2514,7 +3114,12 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Cisplatin + Pemetrexed + Pembrolizumab"
+          "raw_text": "Cisplatin + Pemetrexed + Pembrolizumab",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2530,14 +3135,24 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Nivolumab + Ipilimumab + 2 Cycles of Platinum Chemotherapy"
+          "raw_text": "Nivolumab + Ipilimumab + 2 Cycles of Platinum Chemotherapy",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track C - Driver Negative (PD-L1)::< 1% (Negative Expressor) | Squamous",
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L UICC",
           "status": "current_soc",
-          "raw_text": "Nivolumab + Ipilimumab + 2 Cycles of Platinum Chemotherapy"
+          "raw_text": "Nivolumab + Ipilimumab + 2 Cycles of Platinum Chemotherapy",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2553,7 +3168,12 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Carboplatin + (Paclitaxel or Nab-Paclitaxel) + Pembrolizumab"
+          "raw_text": "Carboplatin + (Paclitaxel or Nab-Paclitaxel) + Pembrolizumab",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2569,7 +3189,12 @@
           "track": "Track C - Driver Negative (PD-L1)",
           "line": "1L Preferred",
           "status": "current_soc",
-          "raw_text": "Cisplatin + (Paclitaxel or Nab-Paclitaxel) + Pembrolizumab"
+          "raw_text": "Cisplatin + (Paclitaxel or Nab-Paclitaxel) + Pembrolizumab",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2585,28 +3210,48 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None (Proceed straight to surgery)."
+          "raw_text": "None (Proceed straight to surgery).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IA1, IA2, IA3 | Biomarker Positive (EGFR / ALK / Others)",
           "track": "Track A - Localized / Curative Intent",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None (Proceed straight to surgery)."
+          "raw_text": "None (Proceed straight to surgery).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IB | Biomarker Negative (Wild-Type)",
           "track": "Track A - Localized / Curative Intent",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None (Proceed straight to surgery)."
+          "raw_text": "None (Proceed straight to surgery).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IB | EGFR Classic Positive (ex19del / L858R)",
           "track": "Track A - Localized / Curative Intent",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None (Proceed straight to surgery)."
+          "raw_text": "None (Proceed straight to surgery).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2622,28 +3267,48 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection: Lobectomy + Lymph Node Dissection."
+          "raw_text": "Surgical Resection: Lobectomy + Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IA1, IA2, IA3 | Biomarker Positive (EGFR / ALK / Others)",
           "track": "Track A - Localized / Curative Intent",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection: Lobectomy + Lymph Node Dissection."
+          "raw_text": "Surgical Resection: Lobectomy + Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IB | Biomarker Negative (Wild-Type)",
           "track": "Track A - Localized / Curative Intent",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection: Lobectomy + Lymph Node Dissection."
+          "raw_text": "Surgical Resection: Lobectomy + Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IB | EGFR Classic Positive (ex19del / L858R)",
           "track": "Track A - Localized / Curative Intent",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection: Lobectomy + Lymph Node Dissection."
+          "raw_text": "Surgical Resection: Lobectomy + Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2659,7 +3324,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Adjuvant",
           "status": "current_soc",
-          "raw_text": "Observation Only. No chemotherapy or immunotherapy indicated for R0 status."
+          "raw_text": "Observation Only. No chemotherapy or immunotherapy indicated for R0 status.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2675,7 +3345,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Adjuvant",
           "status": "current_soc",
-          "raw_text": "Observation Only. Targeted TKIs are not indicated for Stage IA."
+          "raw_text": "Observation Only. Targeted TKIs are not indicated for Stage IA.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2691,7 +3366,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Adjuvant",
           "status": "current_soc",
-          "raw_text": "Observation OR consider Cisplatin-based Chemotherapy if high-risk features are present."
+          "raw_text": "Observation OR consider Cisplatin-based Chemotherapy if high-risk features are present.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2707,7 +3387,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Adjuvant",
           "status": "current_soc",
-          "raw_text": "Optional Cisplatin Chemotherapy (if high-risk features match) , followed by Adjuvant Osimertinib for up to 3 years"
+          "raw_text": "Optional Cisplatin Chemotherapy (if high-risk features match) , followed by Adjuvant Osimertinib for up to 3 years",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2723,7 +3408,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "Preferred: Neoadjuvant Chemo-Immunotherapy (e.g., Nivolumab + Platinum Doublet) if tumor $\\ge 4$ cm."
+          "raw_text": "Preferred: Neoadjuvant Chemo-Immunotherapy (e.g., Nivolumab + Platinum Doublet) if tumor $\\ge 4$ cm.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2739,21 +3429,36 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection (Lobectomy) + Mediastinal Lymph Node Dissection."
+          "raw_text": "Surgical Resection (Lobectomy) + Mediastinal Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IIA / IIB | EGFR Classic Positive (ex19del / L858R)",
           "track": "Track A - Localized / Curative Intent",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection (Lobectomy) + Mediastinal Lymph Node Dissection."
+          "raw_text": "Surgical Resection (Lobectomy) + Mediastinal Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IIA / IIB | ALK Fusion Positive",
           "track": "Track A - Localized / Curative Intent",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection (Lobectomy) + Mediastinal Lymph Node Dissection."
+          "raw_text": "Surgical Resection (Lobectomy) + Mediastinal Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2769,7 +3474,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Adjuvant",
           "status": "current_soc",
-          "raw_text": "If Neoadjuvant IO used: Complete planned course of Adjuvant Immunotherapy. If Surgery upfront: Cisplatin Chemotherapy, Adjuvant Pembrolizumab (1 yr)."
+          "raw_text": "If Neoadjuvant IO used: Complete planned course of Adjuvant Immunotherapy. If Surgery upfront: Cisplatin Chemotherapy, Adjuvant Pembrolizumab (1 yr).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2785,14 +3495,24 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None. Absolute Contraindication to neoadjuvant immunotherapy."
+          "raw_text": "None. Absolute Contraindication to neoadjuvant immunotherapy.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IIA / IIB | ALK Fusion Positive",
           "track": "Track A - Localized / Curative Intent",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None. Absolute Contraindication to neoadjuvant immunotherapy."
+          "raw_text": "None. Absolute Contraindication to neoadjuvant immunotherapy.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2808,21 +3528,36 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Adjuvant",
           "status": "current_soc",
-          "raw_text": "Adjuvant Cisplatin-based Chemotherapy, followed by Adjuvant Osimertinib (80mg daily) for up to 3 years"
+          "raw_text": "Adjuvant Cisplatin-based Chemotherapy, followed by Adjuvant Osimertinib (80mg daily) for up to 3 years",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track A - Localized / Curative Intent::Stage IIA / IIB | Other Drivers (ROS1, RET, BRAF, KRAS, MET, etc.)",
           "track": "Track A - Localized / Curative Intent",
           "line": "Adjuvant",
           "status": "current_soc",
-          "raw_text": "Adjuvant Cisplatin-based Chemotherapy doublet alone."
+          "raw_text": "Adjuvant Cisplatin-based Chemotherapy doublet alone.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track B - Locally Advanced / Regional::Stage IIIA / IIIB | EGFR Classic Positive (ex19del / L858R)",
           "track": "Track B - Locally Advanced / Regional",
           "line": "Consolidation",
           "status": "current_soc",
-          "raw_text": "Adjuvant Cisplatin-based Chemotherapy, followed by Adjuvant Osimertinib for 3 years."
+          "raw_text": "Adjuvant Cisplatin-based Chemotherapy, followed by Adjuvant Osimertinib for 3 years.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2838,7 +3573,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Adjuvant",
           "status": "current_soc",
-          "raw_text": "Driven by the ALINA trial (ASCO/NCCN approved). High brain penetration provides robust central nervous system protection."
+          "raw_text": "Driven by the ALINA trial (ASCO/NCCN approved). High brain penetration provides robust central nervous system protection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2854,7 +3594,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None (Upfront surgery preferred)."
+          "raw_text": "None (Upfront surgery preferred).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2870,7 +3615,12 @@
           "track": "Track A - Localized / Curative Intent",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection (Lobectomy) + Lymph Node Dissection."
+          "raw_text": "Surgical Resection (Lobectomy) + Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2886,7 +3636,12 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "Preferred Standard: Neoadjuvant Chemo-Immunotherapy (e.g., Nivolumab + Platinum doublet)"
+          "raw_text": "Preferred Standard: Neoadjuvant Chemo-Immunotherapy (e.g., Nivolumab + Platinum doublet)",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2902,21 +3657,36 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection + Mediastinal Lymph Node Dissection."
+          "raw_text": "Surgical Resection + Mediastinal Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track B - Locally Advanced / Regional::Stage IIIA / IIIB | EGFR Classic Positive (ex19del / L858R)",
           "track": "Track B - Locally Advanced / Regional",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection + Mediastinal Lymph Node Dissection."
+          "raw_text": "Surgical Resection + Mediastinal Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track B - Locally Advanced / Regional::Stage IIIA / IIIB | ALK Fusion Positive",
           "track": "Track B - Locally Advanced / Regional",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Surgical Resection + Mediastinal Lymph Node Dissection."
+          "raw_text": "Surgical Resection + Mediastinal Lymph Node Dissection.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2932,7 +3702,12 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Consolidation",
           "status": "current_soc",
-          "raw_text": "Complete planned course of Adjuvant Immunotherapy (e.g., Nivolumab) to ensure full maintenance."
+          "raw_text": "Complete planned course of Adjuvant Immunotherapy (e.g., Nivolumab) to ensure full maintenance.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2948,14 +3723,24 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None or Neoadjuvant Chemotherapy alone. Do not give pre-op IO."
+          "raw_text": "None or Neoadjuvant Chemotherapy alone. Do not give pre-op IO.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track B - Locally Advanced / Regional::Stage IIIA / IIIB | ALK Fusion Positive",
           "track": "Track B - Locally Advanced / Regional",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None or Neoadjuvant Chemotherapy alone. Do not give pre-op IO."
+          "raw_text": "None or Neoadjuvant Chemotherapy alone. Do not give pre-op IO.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2971,7 +3756,12 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Consolidation",
           "status": "current_soc",
-          "raw_text": "Adjuvant Alectinib (600mg BID) for up to 2 years. (Replaces standard post-op chemotherapy)"
+          "raw_text": "Adjuvant Alectinib (600mg BID) for up to 2 years. (Replaces standard post-op chemotherapy)",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -2987,21 +3777,36 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None (Proceed straight to definitive local therapy)."
+          "raw_text": "None (Proceed straight to definitive local therapy).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track B - Locally Advanced / Regional::Stage IIIA / IIIB / IIIC | EGFR Classic Positive (ex19del / L858R)",
           "track": "Track B - Locally Advanced / Regional",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None (Proceed straight to definitive local therapy)."
+          "raw_text": "None (Proceed straight to definitive local therapy).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track B - Locally Advanced / Regional::Stage IIIA / IIIB / IIIC | ALK Fusion Positive",
           "track": "Track B - Locally Advanced / Regional",
           "line": "Pre-Op",
           "status": "current_soc",
-          "raw_text": "None (Proceed straight to definitive local therapy)."
+          "raw_text": "None (Proceed straight to definitive local therapy).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -3017,21 +3822,36 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Definitive Concurrent Chemoradiation: Thoracic RT delivered simultaneously with a Platinum-doublet sensitizer."
+          "raw_text": "Definitive Concurrent Chemoradiation: Thoracic RT delivered simultaneously with a Platinum-doublet sensitizer.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track B - Locally Advanced / Regional::Stage IIIA / IIIB / IIIC | EGFR Classic Positive (ex19del / L858R)",
           "track": "Track B - Locally Advanced / Regional",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Definitive Concurrent Chemoradiation: Thoracic RT delivered simultaneously with a Platinum-doublet sensitizer."
+          "raw_text": "Definitive Concurrent Chemoradiation: Thoracic RT delivered simultaneously with a Platinum-doublet sensitizer.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Track B - Locally Advanced / Regional::Stage IIIA / IIIB / IIIC | ALK Fusion Positive",
           "track": "Track B - Locally Advanced / Regional",
           "line": "Local Intervention",
           "status": "current_soc",
-          "raw_text": "Definitive Concurrent Chemoradiation: Thoracic RT delivered simultaneously with a Platinum-doublet sensitizer."
+          "raw_text": "Definitive Concurrent Chemoradiation: Thoracic RT delivered simultaneously with a Platinum-doublet sensitizer.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -3047,7 +3867,12 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Consolidation",
           "status": "current_soc",
-          "raw_text": "Consolidation Durvalumab (Immunotherapy) for up to 12 months."
+          "raw_text": "Consolidation Durvalumab (Immunotherapy) for up to 12 months.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -3063,7 +3888,12 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Consolidation",
           "status": "current_soc",
-          "raw_text": "Consolidation Osimertinib (Targeted TKI) taken daily until progression or toxicity."
+          "raw_text": "Consolidation Osimertinib (Targeted TKI) taken daily until progression or toxicity.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -3079,7 +3909,12 @@
           "track": "Track B - Locally Advanced / Regional",
           "line": "Consolidation",
           "status": "current_soc",
-          "raw_text": "Consolidation ALK TKI (via clinical trial or institutional discretion)."
+          "raw_text": "Consolidation ALK TKI (via clinical trial or institutional discretion).",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -3095,14 +3930,24 @@
           "track": "Uncommon Subtypes",
           "line": "Guideline Treatment",
           "status": "current_soc",
-          "raw_text": "Follows Non-Squamous Logics: Treated exactly like Adenocarcinoma. Track C (Stage IV): Mandatory broad panel NGS biomarker testing. If driver-negative, utilize Non-Squamous combinations-meaning Pemetrexed is fully indicated and highly effective here."
+          "raw_text": "Follows Non-Squamous Logics: Treated exactly like Adenocarcinoma. Track C (Stage IV): Mandatory broad panel NGS biomarker testing. If driver-negative, utilize Non-Squamous combinations-meaning Pemetrexed is fully indicated and highly effective here.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         },
         {
           "biomarker_id": "Uncommon Subtypes::NSCLC Not Otherwise Specified (NOS)",
           "track": "Uncommon Subtypes",
           "line": "Guideline Treatment",
           "status": "current_soc",
-          "raw_text": "Follows Non-Squamous Logics: To protect the patient, NCCN defaults NOS to the non-squamous pathway. Biomarker Rule: Requires complete NGS multiplex molecular profiling. Systemic Therapy: Managed using non-squamous chemo-immunotherapy regimens containing Pemetrexed."
+          "raw_text": "Follows Non-Squamous Logics: To protect the patient, NCCN defaults NOS to the non-squamous pathway. Biomarker Rule: Requires complete NGS multiplex molecular profiling. Systemic Therapy: Managed using non-squamous chemo-immunotherapy regimens containing Pemetrexed.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -3118,7 +3963,12 @@
           "track": "Uncommon Subtypes",
           "line": "Guideline Treatment",
           "status": "current_soc",
-          "raw_text": "The SCLC Hybrid Loophole: NCCN explicitly recognizes LCNEC as a highly aggressive variant. Early Stages (I\u2013III): Surgical resection followed by Small Cell Lung Cancer (SCLC)-style adjuvant chemotherapy (Etoposide + Cisplatin/Carboplatin). Advanced Setting (Stage IV): Can be treated with non-squamous regimens OR SCLC-style Platinum/Etoposide +/- Immunotherapy."
+          "raw_text": "The SCLC Hybrid Loophole: NCCN explicitly recognizes LCNEC as a highly aggressive variant. Early Stages (I\u2013III): Surgical resection followed by Small Cell Lung Cancer (SCLC)-style adjuvant chemotherapy (Etoposide + Cisplatin/Carboplatin). Advanced Setting (Stage IV): Can be treated with non-squamous regimens OR SCLC-style Platinum/Etoposide +/- Immunotherapy.",
+          "histology": null,
+          "setting": null,
+          "route": null,
+          "safety_notes": null,
+          "evidence_trials": []
         }
       ]
     },
@@ -3336,6 +4186,7 @@
     "source_file": "Current_Treatment_mapping_NCCN_ASCO__for_NSCLC.xlsx",
     "biomarker_count": 38,
     "drug_count": 98,
+    "drugs_with_class_or_mechanism": 59,
     "current_soc_occurrences": 171,
     "pipeline_pending_occurrences": 3,
     "ambiguous_occurrences": 12,
