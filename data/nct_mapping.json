@@ -1,0 +1,2799 @@
+{
+  "Adagrasib": {
+    "searchTerm": "adagrasib",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT04685135",
+        "title": "Phase 3 Study of MRTX849 (Adagrasib) vs Docetaxel in Patients With Advanced Non-Small Cell Lung Cancer With KRAS G12C Mutation",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-02-23",
+        "primaryCompletionDate": "2023-12-30",
+        "enrollment": 453
+      }
+    ]
+  },
+  "Ado-trastuzumab emtansine (T-DM1)": {
+    "searchTerm": "trastuzumab emtansine",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT07610616",
+        "title": "Study on the Mechanism of ADC Drug Evaluation Based on Immune Co-culture of Lung Cancer Organoids",
+        "phases": [],
+        "status": "RECRUITING",
+        "startDate": "2025-12-28",
+        "primaryCompletionDate": "2027-10-01",
+        "enrollment": 10
+      },
+      {
+        "nctId": "NCT04589845",
+        "title": "Tumor-agnostic Precision Immuno-oncology and Somatic Targeting Rational for You (TAPISTRY) Platform Study",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-01-18",
+        "primaryCompletionDate": "2032-09-25",
+        "enrollment": 920
+      },
+      {
+        "nctId": "NCT02314481",
+        "title": "Deciphering Antitumour Response and Resistance With INtratumour Heterogeneity",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-05-12",
+        "primaryCompletionDate": "2025-11-30",
+        "enrollment": 50
+      },
+      {
+        "nctId": "NCT05081609",
+        "title": "A Study to Investigate Safety and Tolerability of TransCon IL-2 \u03b2/\u03b3 Alone or in Combination With Pembrolizumab and/or TransCon TLR7/8 Agonist or Other Anticancer Therapies in Adult Participants With Locally Advanced or Metastatic Solid Tumor Malignancies",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2022-01-11",
+        "primaryCompletionDate": "2027-08",
+        "enrollment": 320
+      },
+      {
+        "nctId": "NCT07259226",
+        "title": "Optimal Methods to Characterize ADC Resistance in Solid Tumors and Identify Clinically Useful Biomarkers",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-11-14",
+        "primaryCompletionDate": "2030-11-01",
+        "enrollment": 400
+      }
+    ]
+  },
+  "Afatinib": {
+    "searchTerm": "afatinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT07185997",
+        "title": "Study to Evaluate Efficacy and Safety of Firmonertinib Compared With Investigator's Choice of EGFR Inhibitor as First-Line Treatment in Participants Who Have Locally Advanced or Metastatic NSCLC With EGFR P-Loop and Alpha C-Helix Compressing (PACC) Uncommon Mutations",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-12-17",
+        "primaryCompletionDate": "2029-02",
+        "enrollment": 480
+      },
+      {
+        "nctId": "NCT06385483",
+        "title": "Testing Afatinib as Potentially Targeted Treatment in Cancers With EGFR Genetic Changes (MATCH - Subprotocol A)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2018-02-28",
+        "primaryCompletionDate": "2022-12-06",
+        "enrollment": 19
+      },
+      {
+        "nctId": "NCT02438722",
+        "title": "S1403, Afatinib Dimaleate With or Without Cetuximab in Treating Patients With Newly Diagnosed Stage IV or Recurrent, EGFR Mutation Positive Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2",
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2015-05-07",
+        "primaryCompletionDate": "2018-09-25",
+        "enrollment": 174
+      },
+      {
+        "nctId": "NCT06486142",
+        "title": "EGFR-mutated Lung Cancer in Randomized Investigator-Initiated Study",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2022-09-21",
+        "primaryCompletionDate": "2028-09",
+        "enrollment": 200
+      },
+      {
+        "nctId": "NCT05588609",
+        "title": "Study Evaluating Zenocutuzumab in Patients With or Without Molecularly Defined Cancers",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "TERMINATED",
+        "startDate": "2022-11-17",
+        "primaryCompletionDate": "2025-07-03",
+        "enrollment": 13
+      }
+    ]
+  },
+  "Alectinib": {
+    "searchTerm": "alectinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT02838420",
+        "title": "A Study to Evaluate and Compare the Efficacy and Safety of Alectinib Versus Crizotinib and to Evaluate the Pharmacokinetics of Alectinib in Asian Participants With Treatment-Naive Anaplastic Lymphoma Kinase (ALK)-Positive Advanced Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2016-08-03",
+        "primaryCompletionDate": "2018-05-31",
+        "enrollment": 187
+      },
+      {
+        "nctId": "NCT07655583",
+        "title": "OBSERVE: A Pilot Study Of Omission Of Brain Metastasis Stereotactic Radiosurgery Following Resection With CNS-Active Systemic Therapy",
+        "phases": [],
+        "status": "SUSPENDED",
+        "startDate": "2026-05-27",
+        "primaryCompletionDate": "2028-06-30",
+        "enrollment": 20
+      },
+      {
+        "nctId": "NCT05987956",
+        "title": "Pharmacogenomics IND SNP Clinical Trial - Alectinib and Single Nucleotide Polymorphisms",
+        "phases": [
+          "PHASE2",
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2026-03-18",
+        "primaryCompletionDate": "2026-11-18",
+        "enrollment": 600
+      },
+      {
+        "nctId": "NCT03194893",
+        "title": "A Rollover Study of Alectinib in Patients With Anaplastic Lymphoma Kinase (ALK)-Positive or Rearranged During Transfection (RET)-Positive Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-07-05",
+        "primaryCompletionDate": "2025-09-18",
+        "enrollment": 50
+      },
+      {
+        "nctId": "NCT04302025",
+        "title": "A Study of Multiple Therapies in Biomarker-selected Participants With Resectable Stages IB-III Non-small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-11-06",
+        "primaryCompletionDate": "2026-11-30",
+        "enrollment": 99
+      }
+    ]
+  },
+  "Alternate NTRK inhibitor": {
+    "searchTerm": "Alternate NTRK inhibitor",
+    "note": "Placeholder/generic \u2014 no specific trial",
+    "trials": []
+  },
+  "Amivantamab + Hyaluronidase-lpuj": {
+    "searchTerm": "amivantamab",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT07174388",
+        "title": "An External Control Arm Study in Non-Small Cell Lung Cancer",
+        "phases": [],
+        "status": "RECRUITING",
+        "startDate": "2026-01-07",
+        "primaryCompletionDate": "2029-04",
+        "enrollment": 650
+      },
+      {
+        "nctId": "NCT05801029",
+        "title": "A Study to Investigate Safety and Efficacy of Osimertinib and Amivantamab in Participants With Non-small Cell Lung Cancer With Common Epidermal Growth Factor Receptor Mutations",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2023-07-18",
+        "primaryCompletionDate": "2027-10-01",
+        "enrollment": 60
+      },
+      {
+        "nctId": "NCT06532032",
+        "title": "A Study of Combination Therapy With Amivantamab and Docetaxel in Participants With Metastatic Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2024-07-23",
+        "primaryCompletionDate": "2026-05-29",
+        "enrollment": 12
+      },
+      {
+        "nctId": "NCT07601399",
+        "title": "An EAP Treatment Protocol of Zipalertinib",
+        "phases": [],
+        "status": "AVAILABLE",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07586202",
+        "title": "A Study of Neoadjuvant Amivantamab With Either Lazertinib or Chemotherapy in Participants With Resectable EGFR-Mutated NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-07-17",
+        "primaryCompletionDate": "2028-03-02",
+        "enrollment": 68
+      }
+    ]
+  },
+  "Amivantamab-vmjw": {
+    "searchTerm": "amivantamab",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT07174388",
+        "title": "An External Control Arm Study in Non-Small Cell Lung Cancer",
+        "phases": [],
+        "status": "RECRUITING",
+        "startDate": "2026-01-07",
+        "primaryCompletionDate": "2029-04",
+        "enrollment": 650
+      },
+      {
+        "nctId": "NCT05801029",
+        "title": "A Study to Investigate Safety and Efficacy of Osimertinib and Amivantamab in Participants With Non-small Cell Lung Cancer With Common Epidermal Growth Factor Receptor Mutations",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2023-07-18",
+        "primaryCompletionDate": "2027-10-01",
+        "enrollment": 60
+      },
+      {
+        "nctId": "NCT06532032",
+        "title": "A Study of Combination Therapy With Amivantamab and Docetaxel in Participants With Metastatic Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2024-07-23",
+        "primaryCompletionDate": "2026-05-29",
+        "enrollment": 12
+      },
+      {
+        "nctId": "NCT07601399",
+        "title": "An EAP Treatment Protocol of Zipalertinib",
+        "phases": [],
+        "status": "AVAILABLE",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07586202",
+        "title": "A Study of Neoadjuvant Amivantamab With Either Lazertinib or Chemotherapy in Participants With Resectable EGFR-Mutated NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-07-17",
+        "primaryCompletionDate": "2028-03-02",
+        "enrollment": 68
+      }
+    ]
+  },
+  "Amivantamab-vmjw + Carboplatin + Pemetrexed": {
+    "searchTerm": "amivantamab",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT07174388",
+        "title": "An External Control Arm Study in Non-Small Cell Lung Cancer",
+        "phases": [],
+        "status": "RECRUITING",
+        "startDate": "2026-01-07",
+        "primaryCompletionDate": "2029-04",
+        "enrollment": 650
+      },
+      {
+        "nctId": "NCT05801029",
+        "title": "A Study to Investigate Safety and Efficacy of Osimertinib and Amivantamab in Participants With Non-small Cell Lung Cancer With Common Epidermal Growth Factor Receptor Mutations",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2023-07-18",
+        "primaryCompletionDate": "2027-10-01",
+        "enrollment": 60
+      },
+      {
+        "nctId": "NCT06532032",
+        "title": "A Study of Combination Therapy With Amivantamab and Docetaxel in Participants With Metastatic Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2024-07-23",
+        "primaryCompletionDate": "2026-05-29",
+        "enrollment": 12
+      },
+      {
+        "nctId": "NCT07601399",
+        "title": "An EAP Treatment Protocol of Zipalertinib",
+        "phases": [],
+        "status": "AVAILABLE",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07586202",
+        "title": "A Study of Neoadjuvant Amivantamab With Either Lazertinib or Chemotherapy in Participants With Resectable EGFR-Mutated NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-07-17",
+        "primaryCompletionDate": "2028-03-02",
+        "enrollment": 68
+      }
+    ]
+  },
+  "Atezolizumab": {
+    "searchTerm": "atezolizumab",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT02366143",
+        "title": "A Study of Atezolizumab in Combination With Carboplatin Plus (+) Paclitaxel With or Without Bevacizumab Compared With Carboplatin+Paclitaxel+Bevacizumab in Participants With Stage IV Non-Squamous Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2015-03-31",
+        "primaryCompletionDate": "2019-09-13",
+        "enrollment": 1202
+      }
+    ]
+  },
+  "Brigatinib": {
+    "searchTerm": "brigatinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT04318938",
+        "title": "Advancing Brigatinib Properties in ALK+ NSCLC Patients by Deep Phenotyping",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2020-03-30",
+        "primaryCompletionDate": "2026-05-30",
+        "enrollment": 118
+      },
+      {
+        "nctId": "NCT07655583",
+        "title": "OBSERVE: A Pilot Study Of Omission Of Brain Metastasis Stereotactic Radiosurgery Following Resection With CNS-Active Systemic Therapy",
+        "phases": [],
+        "status": "SUSPENDED",
+        "startDate": "2026-05-27",
+        "primaryCompletionDate": "2028-06-30",
+        "enrollment": 20
+      },
+      {
+        "nctId": "NCT05384626",
+        "title": "A Study of Neladalkib (NVL-655) in Patients With Advanced NSCLC and Other Solid Tumors Harboring ALK Rearrangement or Activating ALK Mutation (ALKOVE-1)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2022-06-09",
+        "primaryCompletionDate": "2027-12",
+        "enrollment": 840
+      },
+      {
+        "nctId": "NCT06620835",
+        "title": "Trial for Local Ablative Treatment (LAT) Optimization in Patients With Advanced Non-Small Cells Lung Cancer (NSCLC) Presenting an Anaplastic Lymphoma Kinase (ALK) Rearrangement Treated by Brigatinib",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-06-19",
+        "primaryCompletionDate": "2030-10-01",
+        "enrollment": 45
+      },
+      {
+        "nctId": "NCT03737994",
+        "title": "Targeted Treatment for ALK Positive Patients Who Have Previously Been Treated for Non-squamous Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "TERMINATED",
+        "startDate": "2019-07-25",
+        "primaryCompletionDate": "2021-07-21",
+        "enrollment": 10
+      }
+    ]
+  },
+  "Cabozantinib": {
+    "searchTerm": "cabozantinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT03816345",
+        "title": "Testing an Immunotherapy Anti-cancer Drug, Nivolumab, for Advanced Cancers in Patients With Autoimmune Disorders, AIM-NIVO",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2019-07-16",
+        "primaryCompletionDate": "2028-03-30",
+        "enrollment": 300
+      },
+      {
+        "nctId": "NCT01708954",
+        "title": "Erlotinib Hydrochloride and Cabozantinib-s-Malate Alone or in Combination as Second or Third Line Therapy in Treating Patients With Stage IV Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2013-02-13",
+        "primaryCompletionDate": "2015-08-14",
+        "enrollment": 125
+      },
+      {
+        "nctId": "NCT04310007",
+        "title": "Testing the Addition of the Pill Chemotherapy, Cabozantinib, to the Standard Immune Therapy Nivolumab Compared to Standard Chemotherapy for Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2020-07-13",
+        "primaryCompletionDate": "2026-12-31",
+        "enrollment": 117
+      },
+      {
+        "nctId": "NCT06026410",
+        "title": "KO-2806 Monotherapy and Combination Therapies in Advanced Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2023-10-18",
+        "primaryCompletionDate": "2027-01",
+        "enrollment": 300
+      },
+      {
+        "nctId": "NCT04514484",
+        "title": "Testing the Combination of the Anti-cancer Drugs XL184 (Cabozantinib) and Nivolumab in Patients With Advanced Cancer and HIV",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-11-22",
+        "primaryCompletionDate": "2024-11-11",
+        "enrollment": 8
+      }
+    ]
+  },
+  "Capmatinib": {
+    "searchTerm": "capmatinib",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT02414139",
+        "title": "Study of Oral cMET Inhibitor INC280 in Patients With EGFR Wild-type (wt), Advanced Non-small Cell Lung Cancer (NSCLC) (Geometry Mono-1)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2015-06-11",
+        "primaryCompletionDate": "2023-04-12",
+        "enrollment": 373
+      }
+    ]
+  },
+  "Carboplatin + Gemcitabine": {
+    "searchTerm": "carboplatin gemcitabine",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06694454",
+        "title": "Neoadjuvant Inhaled Azacytidine With Platinum-Based Chemotherapy and Durvalumab (MEDI4736) - a Combined Epigenetic-Immunotherapy (AZA-AEGEAN) Regimen for Operable Early-Stage Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-06-30",
+        "primaryCompletionDate": "2031-12-31",
+        "enrollment": 60
+      },
+      {
+        "nctId": "NCT03088540",
+        "title": "Study of REGN 2810 Compared to Platinum-Based Chemotherapies in Participants With Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-05-29",
+        "primaryCompletionDate": "2025-04-18",
+        "enrollment": 712
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT07337096",
+        "title": "Electro-Acupuncture in Lung cancER : EALER Study",
+        "phases": [
+          "NA"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-01-15",
+        "primaryCompletionDate": "2027-12",
+        "enrollment": 424
+      },
+      {
+        "nctId": "NCT04267848",
+        "title": "Testing the Addition of a Type of Drug Called Immunotherapy to the Usual Chemotherapy Treatment for Non-small Cell Lung Cancer, an ALCHEMIST Treatment Trial (Chemo-IO [ACCIO])",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-06-16",
+        "primaryCompletionDate": "2027-01-31",
+        "enrollment": 1210
+      }
+    ]
+  },
+  "Carboplatin + Osimertinib + Pemetrexed": {
+    "searchTerm": "osimertinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT05624996",
+        "title": "Testing the Addition of High Dose, Targeted Radiation to the Usual Treatment for Locally-Advanced Inoperable Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2023-07-12",
+        "primaryCompletionDate": "2031-10-15",
+        "enrollment": 474
+      },
+      {
+        "nctId": "NCT07669779",
+        "title": "A Phase II Study of AK146D1 in Combination With AK112 in Advanced Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-06-30",
+        "primaryCompletionDate": "2027-08-30",
+        "enrollment": 348
+      },
+      {
+        "nctId": "NCT05017025",
+        "title": "Aurora Kinase Inhibitor LY3295668 in Combination With Osimertinib for the Treatment of Advanced or Metastatic EGFR-Mutant Non-squamous Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2022-02-17",
+        "primaryCompletionDate": "2028-06-07",
+        "enrollment": 32
+      },
+      {
+        "nctId": "NCT07361705",
+        "title": "Zorifertinib With Osimertinib for NSCLC With Meningeal Progression",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-01-31",
+        "primaryCompletionDate": "2028-04-23",
+        "enrollment": 42
+      },
+      {
+        "nctId": "NCT07100080",
+        "title": "Study of Izalontamab Brengitecan (BMS-986507) Versus Platinum-Pemetrexed for EGFR-mutated Non-small Cell Lung Cancer After Failure of EGFR TKI Therapy (IZABRIGHT-Lung01)",
+        "phases": [
+          "PHASE2",
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-11-05",
+        "primaryCompletionDate": "2028-12-15",
+        "enrollment": 500
+      }
+    ]
+  },
+  "Carboplatin + Paclitaxel": {
+    "searchTerm": "carboplatin paclitaxel",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06694454",
+        "title": "Neoadjuvant Inhaled Azacytidine With Platinum-Based Chemotherapy and Durvalumab (MEDI4736) - a Combined Epigenetic-Immunotherapy (AZA-AEGEAN) Regimen for Operable Early-Stage Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-06-30",
+        "primaryCompletionDate": "2031-12-31",
+        "enrollment": 60
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT05624996",
+        "title": "Testing the Addition of High Dose, Targeted Radiation to the Usual Treatment for Locally-Advanced Inoperable Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2023-07-12",
+        "primaryCompletionDate": "2031-10-15",
+        "enrollment": 474
+      },
+      {
+        "nctId": "NCT07131319",
+        "title": "SFRT+Tislelizumab+Platinum Chemotherapy for Unresectable Stage III NSCLC",
+        "phases": [
+          "PHASE2",
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-04-21",
+        "primaryCompletionDate": "2028-10-31",
+        "enrollment": 30
+      },
+      {
+        "nctId": "NCT03088540",
+        "title": "Study of REGN 2810 Compared to Platinum-Based Chemotherapies in Participants With Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-05-29",
+        "primaryCompletionDate": "2025-04-18",
+        "enrollment": 712
+      }
+    ]
+  },
+  "Carboplatin + Pemetrexed": {
+    "searchTerm": "carboplatin pemetrexed",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06694454",
+        "title": "Neoadjuvant Inhaled Azacytidine With Platinum-Based Chemotherapy and Durvalumab (MEDI4736) - a Combined Epigenetic-Immunotherapy (AZA-AEGEAN) Regimen for Operable Early-Stage Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-06-30",
+        "primaryCompletionDate": "2031-12-31",
+        "enrollment": 60
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT05624996",
+        "title": "Testing the Addition of High Dose, Targeted Radiation to the Usual Treatment for Locally-Advanced Inoperable Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2023-07-12",
+        "primaryCompletionDate": "2031-10-15",
+        "enrollment": 474
+      },
+      {
+        "nctId": "NCT07131319",
+        "title": "SFRT+Tislelizumab+Platinum Chemotherapy for Unresectable Stage III NSCLC",
+        "phases": [
+          "PHASE2",
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-04-21",
+        "primaryCompletionDate": "2028-10-31",
+        "enrollment": 30
+      },
+      {
+        "nctId": "NCT03088540",
+        "title": "Study of REGN 2810 Compared to Platinum-Based Chemotherapies in Participants With Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-05-29",
+        "primaryCompletionDate": "2025-04-18",
+        "enrollment": 712
+      }
+    ]
+  },
+  "Cemiplimab": {
+    "searchTerm": "cemiplimab",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT03088540",
+        "title": "Study of REGN 2810 Compared to Platinum-Based Chemotherapies in Participants With Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-05-29",
+        "primaryCompletionDate": "2025-04-18",
+        "enrollment": 712
+      },
+      {
+        "nctId": "NCT06219317",
+        "title": "Immunotherapy Consolidation After Radical Treatment of Synchronous Oligo-metastatic NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2025-01-14",
+        "primaryCompletionDate": "2030-01",
+        "enrollment": 136
+      },
+      {
+        "nctId": "NCT05363319",
+        "title": "An Observational Study to Assess the Effectiveness and Safety of a Cemiplimab in Adult Patients With Advanced Non-Small Cell Lung Cancer (NSCLC) in Routine Clinical Practice Settings in Europe",
+        "phases": [],
+        "status": "RECRUITING",
+        "startDate": "2022-10-26",
+        "primaryCompletionDate": "2028-10-30",
+        "enrollment": 500
+      },
+      {
+        "nctId": "NCT06931717",
+        "title": "A Clinical Study to Assess the Efficacy of Adjuvant Immunotherapy With Cemiplimab in Patients With Surgically Removed Non-small Cell Lung Cancer Who Have Not Received Prior Chemotherapy",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-01-12",
+        "primaryCompletionDate": "2029-03",
+        "enrollment": 390
+      },
+      {
+        "nctId": "NCT06943664",
+        "title": "Photoimmunotherapy With ASP-1929 and Cemiplimab for the Treatment of Refractory, Inoperable, and Metastatic Stage IIIB-IV Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-08-15",
+        "primaryCompletionDate": "2027-05-01",
+        "enrollment": 27
+      }
+    ]
+  },
+  "Ceritinib": {
+    "searchTerm": "ceritinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT02393625",
+        "title": "Study of Safety and Efficacy of Ceritinib in Combination With Nivolumab in Patients With ALK-positive Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2015-05-27",
+        "primaryCompletionDate": "2027-04-09",
+        "enrollment": 57
+      },
+      {
+        "nctId": "NCT05384626",
+        "title": "A Study of Neladalkib (NVL-655) in Patients With Advanced NSCLC and Other Solid Tumors Harboring ALK Rearrangement or Activating ALK Mutation (ALKOVE-1)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2022-06-09",
+        "primaryCompletionDate": "2027-12",
+        "enrollment": 840
+      },
+      {
+        "nctId": "NCT02321501",
+        "title": "Ceritinib and Everolimus in Treating Patients With Locally Advanced or Metastatic Solid Tumors or Stage IIIB-IV Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2016-06-22",
+        "primaryCompletionDate": "2026-12-31",
+        "enrollment": 37
+      },
+      {
+        "nctId": "NCT03611738",
+        "title": "Ceritinib Plus Docetaxel in ALK-Negative, EGFR WT Advanced NSCLC",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2019-02-01",
+        "primaryCompletionDate": "2025-04-28",
+        "enrollment": 21
+      },
+      {
+        "nctId": "NCT03737994",
+        "title": "Targeted Treatment for ALK Positive Patients Who Have Previously Been Treated for Non-squamous Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "TERMINATED",
+        "startDate": "2019-07-25",
+        "primaryCompletionDate": "2021-07-21",
+        "enrollment": 10
+      }
+    ]
+  },
+  "Cisplatin + Osimertinib + Pemetrexed": {
+    "searchTerm": "osimertinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT05624996",
+        "title": "Testing the Addition of High Dose, Targeted Radiation to the Usual Treatment for Locally-Advanced Inoperable Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2023-07-12",
+        "primaryCompletionDate": "2031-10-15",
+        "enrollment": 474
+      },
+      {
+        "nctId": "NCT07669779",
+        "title": "A Phase II Study of AK146D1 in Combination With AK112 in Advanced Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-06-30",
+        "primaryCompletionDate": "2027-08-30",
+        "enrollment": 348
+      },
+      {
+        "nctId": "NCT05017025",
+        "title": "Aurora Kinase Inhibitor LY3295668 in Combination With Osimertinib for the Treatment of Advanced or Metastatic EGFR-Mutant Non-squamous Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2022-02-17",
+        "primaryCompletionDate": "2028-06-07",
+        "enrollment": 32
+      },
+      {
+        "nctId": "NCT07361705",
+        "title": "Zorifertinib With Osimertinib for NSCLC With Meningeal Progression",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-01-31",
+        "primaryCompletionDate": "2028-04-23",
+        "enrollment": 42
+      },
+      {
+        "nctId": "NCT07100080",
+        "title": "Study of Izalontamab Brengitecan (BMS-986507) Versus Platinum-Pemetrexed for EGFR-mutated Non-small Cell Lung Cancer After Failure of EGFR TKI Therapy (IZABRIGHT-Lung01)",
+        "phases": [
+          "PHASE2",
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-11-05",
+        "primaryCompletionDate": "2028-12-15",
+        "enrollment": 500
+      }
+    ]
+  },
+  "Cisplatin + Pemetrexed": {
+    "searchTerm": "cisplatin pemetrexed",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06694454",
+        "title": "Neoadjuvant Inhaled Azacytidine With Platinum-Based Chemotherapy and Durvalumab (MEDI4736) - a Combined Epigenetic-Immunotherapy (AZA-AEGEAN) Regimen for Operable Early-Stage Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-06-30",
+        "primaryCompletionDate": "2031-12-31",
+        "enrollment": 60
+      },
+      {
+        "nctId": "NCT05624996",
+        "title": "Testing the Addition of High Dose, Targeted Radiation to the Usual Treatment for Locally-Advanced Inoperable Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2023-07-12",
+        "primaryCompletionDate": "2031-10-15",
+        "enrollment": 474
+      },
+      {
+        "nctId": "NCT03088540",
+        "title": "Study of REGN 2810 Compared to Platinum-Based Chemotherapies in Participants With Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-05-29",
+        "primaryCompletionDate": "2025-04-18",
+        "enrollment": 712
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT07337096",
+        "title": "Electro-Acupuncture in Lung cancER : EALER Study",
+        "phases": [
+          "NA"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-01-15",
+        "primaryCompletionDate": "2027-12",
+        "enrollment": 424
+      }
+    ]
+  },
+  "Crizotinib": {
+    "searchTerm": "crizotinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT02838420",
+        "title": "A Study to Evaluate and Compare the Efficacy and Safety of Alectinib Versus Crizotinib and to Evaluate the Pharmacokinetics of Alectinib in Asian Participants With Treatment-Naive Anaplastic Lymphoma Kinase (ALK)-Positive Advanced Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2016-08-03",
+        "primaryCompletionDate": "2018-05-31",
+        "enrollment": 187
+      },
+      {
+        "nctId": "NCT04084717",
+        "title": "Study of Crizotinib for ROS1 and MET Activated Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2019-12-03",
+        "primaryCompletionDate": "2024-12-30",
+        "enrollment": 33
+      },
+      {
+        "nctId": "NCT06552234",
+        "title": "Phase II Efficacy Study of Repotrectinib in Frail and/or Elderly Patients With ROS1-rearranged Advanced NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-10-01",
+        "primaryCompletionDate": "2031-09",
+        "enrollment": 30
+      },
+      {
+        "nctId": "NCT03194893",
+        "title": "A Rollover Study of Alectinib in Patients With Anaplastic Lymphoma Kinase (ALK)-Positive or Rearranged During Transfection (RET)-Positive Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-07-05",
+        "primaryCompletionDate": "2025-09-18",
+        "enrollment": 50
+      }
+    ]
+  },
+  "Dabrafenib + Trametinib": {
+    "searchTerm": "dabrafenib trametinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT03340506",
+        "title": "Dabrafenib and/or Trametinib Rollover Study",
+        "phases": [
+          "PHASE4"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2017-12-28",
+        "primaryCompletionDate": "2032-12-28",
+        "enrollment": 100
+      },
+      {
+        "nctId": "NCT04439292",
+        "title": "Testing Trametinib and Dabrafenib as a Potential Targeted Treatment in Cancers With BRAF Genetic Changes (MATCH-Subprotocol H)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2016-01-04",
+        "primaryCompletionDate": "2023-11-27",
+        "enrollment": 44
+      },
+      {
+        "nctId": "NCT02693535",
+        "title": "TAPUR: Testing the Use of Food and Drug Administration (FDA) Approved Drugs That Target a Specific Abnormality in a Tumor Gene in People With Advanced Stage Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2016-03-14",
+        "primaryCompletionDate": "2027-12-31",
+        "enrollment": 4200
+      },
+      {
+        "nctId": "NCT06563999",
+        "title": "Neoadjuvant Umbrella Trial for Patients With Unresectable Stage III NSCLC Harboring Rare Mutations.",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-11-01",
+        "primaryCompletionDate": "2027-11-01",
+        "enrollment": 120
+      },
+      {
+        "nctId": "NCT04452877",
+        "title": "A Study of Dabrafenib in Combination With Trametinib in Chinese Patients With BRAF V600E Mutant Metastatic NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2020-08-19",
+        "primaryCompletionDate": "2024-11-07",
+        "enrollment": 40
+      }
+    ]
+  },
+  "Dacomitinib": {
+    "searchTerm": "dacomitinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT04155541",
+        "title": "Special Investigation for VIZIMPRO Tablets (Secondary Data Collection Study; Safety and Efficacy of VIZIMPRO Under Japanese Medical Practice)",
+        "phases": [],
+        "status": "COMPLETED",
+        "startDate": "2020-01-24",
+        "primaryCompletionDate": "2025-04-25",
+        "enrollment": 40
+      },
+      {
+        "nctId": "NCT06321510",
+        "title": "A Study to Learn About Dacomitinib in Patients With Non-small Cell Lung Cancer.",
+        "phases": [],
+        "status": "COMPLETED",
+        "startDate": "2024-07-01",
+        "primaryCompletionDate": "2025-09-19",
+        "enrollment": 29
+      },
+      {
+        "nctId": "NCT06486142",
+        "title": "EGFR-mutated Lung Cancer in Randomized Investigator-Initiated Study",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2022-09-21",
+        "primaryCompletionDate": "2028-09",
+        "enrollment": 200
+      },
+      {
+        "nctId": "NCT06282991",
+        "title": "A Study to Learn About Lorlatinib in Patients With Non-Small Cell Lung Cancer Which Could Not Be Controlled",
+        "phases": [],
+        "status": "COMPLETED",
+        "startDate": "2020-07-22",
+        "primaryCompletionDate": "2021-01-18",
+        "enrollment": 73
+      },
+      {
+        "nctId": "NCT04721106",
+        "title": "Korea Post Marketing Surveillance (PMS) Study of Vizimpro",
+        "phases": [],
+        "status": "COMPLETED",
+        "startDate": "2021-03-07",
+        "primaryCompletionDate": "2026-01-19",
+        "enrollment": 188
+      }
+    ]
+  },
+  "Datopotamab deruxtecan-dlnk": {
+    "searchTerm": "datopotamab deruxtecan",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT04656652",
+        "title": "Study of DS-1062a Versus Docetaxel in Previously Treated Advanced or Metastatic Non-small Cell Lung Cancer With or Without Actionable Genomic Alterations (TROPION-LUNG01)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2020-12-21",
+        "primaryCompletionDate": "2024-05-10",
+        "enrollment": 605
+      },
+      {
+        "nctId": "NCT05555732",
+        "title": "Datopotamab Deruxtecan (Dato-DXd) and Pembrolizumab With or Without Platinum Chemotherapy in 1L Non-Small Cell Lung Cancer (TROPION-Lung07)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2023-01-11",
+        "primaryCompletionDate": "2029-05-11",
+        "enrollment": 1170
+      }
+    ]
+  },
+  "Docetaxel +/- Ramucirumab": {
+    "searchTerm": "docetaxel ramucirumab",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT01168973",
+        "title": "A Study of Chemotherapy and Ramucirumab Versus Chemotherapy Alone in Second Line Non-Small Cell Lung Cancer (NSCLC) Participants Who Received Prior First Line Platinum-based Chemotherapy",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2010-12",
+        "primaryCompletionDate": "2013-12",
+        "enrollment": 1253
+      }
+    ]
+  },
+  "Encorafenib + Binimetinib": {
+    "searchTerm": "encorafenib binimetinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT04800822",
+        "title": "PF-07284892 in Participants With Advanced Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "TERMINATED",
+        "startDate": "2021-03-17",
+        "primaryCompletionDate": "2024-06-19",
+        "enrollment": 53
+      },
+      {
+        "nctId": "NCT05195632",
+        "title": "Phase II Study Investigating the Combination of Encorafenib and Binimetinib in BRAF V600E Mutated Chinese Patients With Metastatic Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2022-06-02",
+        "primaryCompletionDate": "2024-05-27",
+        "enrollment": 63
+      },
+      {
+        "nctId": "NCT03915951",
+        "title": "An Open-label Study of Encorafenib + Binimetinib in Patients With BRAFV600-mutant Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2019-06-04",
+        "primaryCompletionDate": "2022-09-22",
+        "enrollment": 98
+      },
+      {
+        "nctId": "NCT04585815",
+        "title": "Study of Immunotherapy (Sasanlimab) in Combination With Targeted Therapies in People With Advanced Non-small Cell Lung Cancer (NSCLC) (Landscape 1011 Study)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "TERMINATED",
+        "startDate": "2020-11-10",
+        "primaryCompletionDate": "2023-05-17",
+        "enrollment": 34
+      },
+      {
+        "nctId": "NCT04526782",
+        "title": "ENCOrafenib With Binimetinib in bRAF NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-01-19",
+        "primaryCompletionDate": "2025-07-16",
+        "enrollment": 119
+      }
+    ]
+  },
+  "Entrectinib": {
+    "searchTerm": "entrectinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06552234",
+        "title": "Phase II Efficacy Study of Repotrectinib in Frail and/or Elderly Patients With ROS1-rearranged Advanced NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-10-01",
+        "primaryCompletionDate": "2031-09",
+        "enrollment": 30
+      },
+      {
+        "nctId": "NCT04302025",
+        "title": "A Study of Multiple Therapies in Biomarker-selected Participants With Resectable Stages IB-III Non-small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-11-06",
+        "primaryCompletionDate": "2026-11-30",
+        "enrollment": 99
+      },
+      {
+        "nctId": "NCT03178552",
+        "title": "A Study to Evaluate the Efficacy and Safety of Multiple Targeted Therapies as Treatments for Participants With Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE2",
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2017-09-22",
+        "primaryCompletionDate": "2026-10-31",
+        "enrollment": 1000
+      },
+      {
+        "nctId": "NCT04603807",
+        "title": "A Study to Compare the Efficacy and Safety of Entrectinib and Crizotinib in Participants With Advanced or Metastatic ROS1 Non-small Cell Lung Cancer (NSCLC) With and Without Central Nervous System (CNS) Metastases",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-09-30",
+        "primaryCompletionDate": "2028-06-26",
+        "enrollment": 220
+      },
+      {
+        "nctId": "NCT02568267",
+        "title": "Basket Study of Entrectinib (RXDX-101) for the Treatment of Patients With Solid Tumors Harboring NTRK 1/2/3 (Trk A/B/C), ROS1, or ALK Gene Rearrangements (Fusions)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2015-11-19",
+        "primaryCompletionDate": "2027-06-30",
+        "enrollment": 534
+      }
+    ]
+  },
+  "Erlotinib": {
+    "searchTerm": "erlotinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT02193282",
+        "title": "Erlotinib Hydrochloride in Treating Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been Completely Removed by Surgery (An ALCHEMIST Treatment Trial)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2015-02-11",
+        "primaryCompletionDate": "2025-12-06",
+        "enrollment": 390
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT01708954",
+        "title": "Erlotinib Hydrochloride and Cabozantinib-s-Malate Alone or in Combination as Second or Third Line Therapy in Treating Patients With Stage IV Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2013-02-13",
+        "primaryCompletionDate": "2015-08-14",
+        "enrollment": 125
+      },
+      {
+        "nctId": "NCT03137771",
+        "title": "Maintenance Chemotherapy With or Without Local Consolidative Therapy in Treating Patients With Stage IV Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2017-04-07",
+        "primaryCompletionDate": "2023-12-20",
+        "enrollment": 218
+      },
+      {
+        "nctId": "NCT04449874",
+        "title": "A Study to Evaluate the Safety, Pharmacokinetics, and Activity of GDC-6036 Alone or in Combination in Participants With Advanced or Metastatic Solid Tumors With a KRAS G12C Mutation",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2020-07-29",
+        "primaryCompletionDate": "2027-12-31",
+        "enrollment": 498
+      }
+    ]
+  },
+  "Fam-trastuzumab deruxtecan-nxki": {
+    "searchTerm": "trastuzumab deruxtecan",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT03505710",
+        "title": "DS-8201a in Human Epidermal Growth Factor Receptor 2 (HER2)-Expressing or -Mutated Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "TERMINATED",
+        "startDate": "2018-05-21",
+        "primaryCompletionDate": "2021-05-03",
+        "enrollment": 181
+      },
+      {
+        "nctId": "NCT04644237",
+        "title": "Trastuzumab Deruxtecan in Participants With HER2-mutated Metastatic Non-small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2021-03-19",
+        "primaryCompletionDate": "2022-12-23",
+        "enrollment": 152
+      }
+    ]
+  },
+  "Gefitinib": {
+    "searchTerm": "gefitinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT03040973",
+        "title": "Study to Allow Patients Previously Participating in a Novartis Sponsored Trial to Continue Receiving Capmatinib Treatment as Single Agent or in Combination With Other Treatments or the Combination Treatment Alone",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2017-08-23",
+        "primaryCompletionDate": "2027-07-30",
+        "enrollment": 29
+      },
+      {
+        "nctId": "NCT00238628",
+        "title": "A Phase I/II Study of Bexarotene in Combination With ZD1839 (IRESSA\u00ae) in the Treatment of Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2004-04",
+        "primaryCompletionDate": "2005-04",
+        "enrollment": 6
+      },
+      {
+        "nctId": "NCT02856893",
+        "title": "Osimertinib Treatment on EGFR T790M Plasma Positive NSCLC Patients (APPLE)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-10-10",
+        "primaryCompletionDate": "2022-09-20",
+        "enrollment": 156
+      },
+      {
+        "nctId": "NCT04248829",
+        "title": "Clinical Trial of YH25448(Lazertinib) as the First-line Treatment in Patients With EGFR Mutation Positive Locally Advanced or Metastatic NSCLC (LASER301)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2020-02-13",
+        "primaryCompletionDate": "2022-07-29",
+        "enrollment": 393
+      },
+      {
+        "nctId": "NCT03758287",
+        "title": "Ningetinib (CT053PTSA) Plus Gefitinib in Stage IIIB or IV NSCLC Patients With EGFR Mutation and T790M Negative",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2016-11",
+        "primaryCompletionDate": "2021-09-17",
+        "enrollment": 108
+      }
+    ]
+  },
+  "Gemcitabine monotherapy": {
+    "searchTerm": "Gemcitabine monotherapy",
+    "note": "Placeholder/generic \u2014 no specific trial",
+    "trials": []
+  },
+  "Larotrectinib": {
+    "searchTerm": "larotrectinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT02576431",
+        "title": "A Study to Test the Effect of the Drug Larotrectinib in Adults and Children With NTRK-fusion Positive Solid Tumors",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2015-09-30",
+        "primaryCompletionDate": "2025-09-29",
+        "enrollment": 215
+      },
+      {
+        "nctId": "NCT06563999",
+        "title": "Neoadjuvant Umbrella Trial for Patients With Unresectable Stage III NSCLC Harboring Rare Mutations.",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-11-01",
+        "primaryCompletionDate": "2027-11-01",
+        "enrollment": 120
+      },
+      {
+        "nctId": "NCT05192642",
+        "title": "A Study Called VICTORIA to Learn More About How Well Larotrectinib Works in Adults With TRK Fusion-positive Cancer by Comparing Larotrectinib Data From Clinical Studies With Data of Other Treatments From Actual Practice",
+        "phases": [],
+        "status": "COMPLETED",
+        "startDate": "2021-12-03",
+        "primaryCompletionDate": "2023-08-31",
+        "enrollment": 368
+      }
+    ]
+  },
+  "Lazertinib": {
+    "searchTerm": "lazertinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT07174388",
+        "title": "An External Control Arm Study in Non-Small Cell Lung Cancer",
+        "phases": [],
+        "status": "RECRUITING",
+        "startDate": "2026-01-07",
+        "primaryCompletionDate": "2029-04",
+        "enrollment": 650
+      },
+      {
+        "nctId": "NCT07586202",
+        "title": "A Study of Neoadjuvant Amivantamab With Either Lazertinib or Chemotherapy in Participants With Resectable EGFR-Mutated NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-07-17",
+        "primaryCompletionDate": "2028-03-02",
+        "enrollment": 68
+      },
+      {
+        "nctId": "NCT04988295",
+        "title": "A Study of Amivantamab and Lazertinib in Combination With Platinum-Based Chemotherapy Compared With Platinum-Based Chemotherapy in Patients With Epidermal Growth Factor Receptor (EGFR)-Mutated Locally Advanced or Metastatic Non- Small Cell Lung Cancer After Osimertinib Failure",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-11-17",
+        "primaryCompletionDate": "2023-07-10",
+        "enrollment": 776
+      },
+      {
+        "nctId": "NCT05663866",
+        "title": "Premedication to Reduce Amivantamab Associated Infusion Related Reactions",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2023-05-18",
+        "primaryCompletionDate": "2024-03-29",
+        "enrollment": 68
+      },
+      {
+        "nctId": "NCT05388669",
+        "title": "A Study of Lazertinib With Subcutaneous Amivantamab Compared With Intravenous Amivantamab in Participants With Epidermal Growth Factor Receptor (EGFR)-Mutated Advanced or Metastatic Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2022-08-05",
+        "primaryCompletionDate": "2024-01-03",
+        "enrollment": 418
+      }
+    ]
+  },
+  "Lazertinib + Amivantamab-vmjw": {
+    "searchTerm": "lazertinib amivantamab",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT07174388",
+        "title": "An External Control Arm Study in Non-Small Cell Lung Cancer",
+        "phases": [],
+        "status": "RECRUITING",
+        "startDate": "2026-01-07",
+        "primaryCompletionDate": "2029-04",
+        "enrollment": 650
+      },
+      {
+        "nctId": "NCT07586202",
+        "title": "A Study of Neoadjuvant Amivantamab With Either Lazertinib or Chemotherapy in Participants With Resectable EGFR-Mutated NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-07-17",
+        "primaryCompletionDate": "2028-03-02",
+        "enrollment": 68
+      },
+      {
+        "nctId": "NCT04988295",
+        "title": "A Study of Amivantamab and Lazertinib in Combination With Platinum-Based Chemotherapy Compared With Platinum-Based Chemotherapy in Patients With Epidermal Growth Factor Receptor (EGFR)-Mutated Locally Advanced or Metastatic Non- Small Cell Lung Cancer After Osimertinib Failure",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-11-17",
+        "primaryCompletionDate": "2023-07-10",
+        "enrollment": 776
+      },
+      {
+        "nctId": "NCT05663866",
+        "title": "Premedication to Reduce Amivantamab Associated Infusion Related Reactions",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2023-05-18",
+        "primaryCompletionDate": "2024-03-29",
+        "enrollment": 68
+      },
+      {
+        "nctId": "NCT05388669",
+        "title": "A Study of Lazertinib With Subcutaneous Amivantamab Compared With Intravenous Amivantamab in Participants With Epidermal Growth Factor Receptor (EGFR)-Mutated Advanced or Metastatic Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2022-08-05",
+        "primaryCompletionDate": "2024-01-03",
+        "enrollment": 418
+      }
+    ]
+  },
+  "Lorlatinib": {
+    "searchTerm": "lorlatinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06678555",
+        "title": "A Study to Learn About Lorlatinib in Patients With Non-Small Cell Lung Cancer (NSCLC) Which Has Spread Out.",
+        "phases": [],
+        "status": "COMPLETED",
+        "startDate": "2025-07-04",
+        "primaryCompletionDate": "2026-04-14",
+        "enrollment": 35
+      },
+      {
+        "nctId": "NCT07655583",
+        "title": "OBSERVE: A Pilot Study Of Omission Of Brain Metastasis Stereotactic Radiosurgery Following Resection With CNS-Active Systemic Therapy",
+        "phases": [],
+        "status": "SUSPENDED",
+        "startDate": "2026-05-27",
+        "primaryCompletionDate": "2028-06-30",
+        "enrollment": 20
+      },
+      {
+        "nctId": "NCT07491497",
+        "title": "A Phase 1/2 Study of TRI-611 in ALK-Positive NSCLC",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-03-11",
+        "primaryCompletionDate": "2029-05-31",
+        "enrollment": 160
+      },
+      {
+        "nctId": "NCT07633626",
+        "title": "Vortioxetine for Cognitive Function in ALK-positive NSCLC Treated With Lorlatinib",
+        "phases": [],
+        "status": "RECRUITING",
+        "startDate": "2026-03-10",
+        "primaryCompletionDate": "2027-03-10",
+        "enrollment": 24
+      },
+      {
+        "nctId": "NCT07140016",
+        "title": "A Study of Gilteritinib in Adults With Advanced ALK-positive Non-small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-09-22",
+        "primaryCompletionDate": "2029-12-31",
+        "enrollment": 40
+      }
+    ]
+  },
+  "Nivolumab + Ipilimumab": {
+    "searchTerm": "nivolumab ipilimumab",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT02477826",
+        "title": "An Investigational Immuno-therapy Trial of Nivolumab, or Nivolumab Plus Ipilimumab, or Nivolumab Plus Platinum-doublet Chemotherapy, Compared to Platinum Doublet Chemotherapy in Patients With Stage IV Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2015-08-05",
+        "primaryCompletionDate": "2024-10-25",
+        "enrollment": 2747
+      }
+    ]
+  },
+  "Nivolumab + Ipilimumab + 2 cycles platinum chemotherapy": {
+    "searchTerm": "nivolumab ipilimumab",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT03215706",
+        "title": "A Study of Nivolumab and Ipilimumab Combined With Chemotherapy Compared to Chemotherapy Alone in First Line NSCLC",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2017-08-24",
+        "primaryCompletionDate": "2019-08-16",
+        "enrollment": 719
+      }
+    ]
+  },
+  "Osimertinib": {
+    "searchTerm": "osimertinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT05624996",
+        "title": "Testing the Addition of High Dose, Targeted Radiation to the Usual Treatment for Locally-Advanced Inoperable Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2023-07-12",
+        "primaryCompletionDate": "2031-10-15",
+        "enrollment": 474
+      },
+      {
+        "nctId": "NCT07669779",
+        "title": "A Phase II Study of AK146D1 in Combination With AK112 in Advanced Non-Small Cell Lung Cancer",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-06-30",
+        "primaryCompletionDate": "2027-08-30",
+        "enrollment": 348
+      },
+      {
+        "nctId": "NCT05017025",
+        "title": "Aurora Kinase Inhibitor LY3295668 in Combination With Osimertinib for the Treatment of Advanced or Metastatic EGFR-Mutant Non-squamous Non-small Cell Lung Cancer",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2022-02-17",
+        "primaryCompletionDate": "2028-06-07",
+        "enrollment": 32
+      },
+      {
+        "nctId": "NCT07361705",
+        "title": "Zorifertinib With Osimertinib for NSCLC With Meningeal Progression",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-01-31",
+        "primaryCompletionDate": "2028-04-23",
+        "enrollment": 42
+      },
+      {
+        "nctId": "NCT07100080",
+        "title": "Study of Izalontamab Brengitecan (BMS-986507) Versus Platinum-Pemetrexed for EGFR-mutated Non-small Cell Lung Cancer After Failure of EGFR TKI Therapy (IZABRIGHT-Lung01)",
+        "phases": [
+          "PHASE2",
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-11-05",
+        "primaryCompletionDate": "2028-12-15",
+        "enrollment": 500
+      }
+    ]
+  },
+  "Pembrolizumab": {
+    "searchTerm": "pembrolizumab",
+    "note": "Refined \u2014 KEYNOTE-189 as primary trial",
+    "trials": [
+      {
+        "nctId": "NCT02578680",
+        "title": "Pembrolizumab in Combination With Platinum Based Chemotherapy in First Line Non-small Cell Lung Cancer (KEYNOTE-189)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07094113",
+        "title": "AMG 410 Alone and in Combination With Other Agents in Participants With KRAS Altered Advanced or Metastatic Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-07-31",
+        "primaryCompletionDate": "2028-04-18",
+        "enrollment": 434
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT06216301",
+        "title": "LUNAR-2: TTFields With Pembrolizumab + Platinum-based Chemotherapy for Metastatic NSCLC",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-07-31",
+        "primaryCompletionDate": "2028-10",
+        "enrollment": 734
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT04267848",
+        "title": "Testing the Addition of a Type of Drug Called Immunotherapy to the Usual Chemotherapy Treatment for Non-small Cell Lung Cancer, an ALCHEMIST Treatment Trial (Chemo-IO [ACCIO])",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-06-16",
+        "primaryCompletionDate": "2027-01-31",
+        "enrollment": 1210
+      }
+    ]
+  },
+  "Pembrolizumab + Carboplatin + Nab-paclitaxel": {
+    "searchTerm": "pembrolizumab",
+    "note": "Refined \u2014 KEYNOTE-189 as primary trial",
+    "trials": [
+      {
+        "nctId": "NCT02578680",
+        "title": "Pembrolizumab in Combination With Platinum Based Chemotherapy in First Line Non-small Cell Lung Cancer (KEYNOTE-189)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07094113",
+        "title": "AMG 410 Alone and in Combination With Other Agents in Participants With KRAS Altered Advanced or Metastatic Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-07-31",
+        "primaryCompletionDate": "2028-04-18",
+        "enrollment": 434
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT06216301",
+        "title": "LUNAR-2: TTFields With Pembrolizumab + Platinum-based Chemotherapy for Metastatic NSCLC",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-07-31",
+        "primaryCompletionDate": "2028-10",
+        "enrollment": 734
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT04267848",
+        "title": "Testing the Addition of a Type of Drug Called Immunotherapy to the Usual Chemotherapy Treatment for Non-small Cell Lung Cancer, an ALCHEMIST Treatment Trial (Chemo-IO [ACCIO])",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-06-16",
+        "primaryCompletionDate": "2027-01-31",
+        "enrollment": 1210
+      }
+    ]
+  },
+  "Pembrolizumab + Carboplatin + Paclitaxel": {
+    "searchTerm": "pembrolizumab",
+    "note": "Refined \u2014 KEYNOTE-189 as primary trial",
+    "trials": [
+      {
+        "nctId": "NCT02578680",
+        "title": "Pembrolizumab in Combination With Platinum Based Chemotherapy in First Line Non-small Cell Lung Cancer (KEYNOTE-189)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07094113",
+        "title": "AMG 410 Alone and in Combination With Other Agents in Participants With KRAS Altered Advanced or Metastatic Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-07-31",
+        "primaryCompletionDate": "2028-04-18",
+        "enrollment": 434
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT06216301",
+        "title": "LUNAR-2: TTFields With Pembrolizumab + Platinum-based Chemotherapy for Metastatic NSCLC",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-07-31",
+        "primaryCompletionDate": "2028-10",
+        "enrollment": 734
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT04267848",
+        "title": "Testing the Addition of a Type of Drug Called Immunotherapy to the Usual Chemotherapy Treatment for Non-small Cell Lung Cancer, an ALCHEMIST Treatment Trial (Chemo-IO [ACCIO])",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-06-16",
+        "primaryCompletionDate": "2027-01-31",
+        "enrollment": 1210
+      }
+    ]
+  },
+  "Pembrolizumab + Carboplatin + Pemetrexed": {
+    "searchTerm": "pembrolizumab",
+    "note": "Refined \u2014 KEYNOTE-189 as primary trial",
+    "trials": [
+      {
+        "nctId": "NCT02578680",
+        "title": "Pembrolizumab in Combination With Platinum Based Chemotherapy in First Line Non-small Cell Lung Cancer (KEYNOTE-189)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07094113",
+        "title": "AMG 410 Alone and in Combination With Other Agents in Participants With KRAS Altered Advanced or Metastatic Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-07-31",
+        "primaryCompletionDate": "2028-04-18",
+        "enrollment": 434
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT06216301",
+        "title": "LUNAR-2: TTFields With Pembrolizumab + Platinum-based Chemotherapy for Metastatic NSCLC",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-07-31",
+        "primaryCompletionDate": "2028-10",
+        "enrollment": 734
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT04267848",
+        "title": "Testing the Addition of a Type of Drug Called Immunotherapy to the Usual Chemotherapy Treatment for Non-small Cell Lung Cancer, an ALCHEMIST Treatment Trial (Chemo-IO [ACCIO])",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-06-16",
+        "primaryCompletionDate": "2027-01-31",
+        "enrollment": 1210
+      }
+    ]
+  },
+  "Pembrolizumab + Cisplatin + Nab-paclitaxel": {
+    "searchTerm": "pembrolizumab",
+    "note": "Refined \u2014 KEYNOTE-189 as primary trial",
+    "trials": [
+      {
+        "nctId": "NCT02578680",
+        "title": "Pembrolizumab in Combination With Platinum Based Chemotherapy in First Line Non-small Cell Lung Cancer (KEYNOTE-189)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07094113",
+        "title": "AMG 410 Alone and in Combination With Other Agents in Participants With KRAS Altered Advanced or Metastatic Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-07-31",
+        "primaryCompletionDate": "2028-04-18",
+        "enrollment": 434
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT06216301",
+        "title": "LUNAR-2: TTFields With Pembrolizumab + Platinum-based Chemotherapy for Metastatic NSCLC",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-07-31",
+        "primaryCompletionDate": "2028-10",
+        "enrollment": 734
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT04267848",
+        "title": "Testing the Addition of a Type of Drug Called Immunotherapy to the Usual Chemotherapy Treatment for Non-small Cell Lung Cancer, an ALCHEMIST Treatment Trial (Chemo-IO [ACCIO])",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-06-16",
+        "primaryCompletionDate": "2027-01-31",
+        "enrollment": 1210
+      }
+    ]
+  },
+  "Pembrolizumab + Cisplatin + Paclitaxel": {
+    "searchTerm": "pembrolizumab",
+    "note": "Refined \u2014 KEYNOTE-189 as primary trial",
+    "trials": [
+      {
+        "nctId": "NCT02578680",
+        "title": "Pembrolizumab in Combination With Platinum Based Chemotherapy in First Line Non-small Cell Lung Cancer (KEYNOTE-189)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07094113",
+        "title": "AMG 410 Alone and in Combination With Other Agents in Participants With KRAS Altered Advanced or Metastatic Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-07-31",
+        "primaryCompletionDate": "2028-04-18",
+        "enrollment": 434
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT06216301",
+        "title": "LUNAR-2: TTFields With Pembrolizumab + Platinum-based Chemotherapy for Metastatic NSCLC",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-07-31",
+        "primaryCompletionDate": "2028-10",
+        "enrollment": 734
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT04267848",
+        "title": "Testing the Addition of a Type of Drug Called Immunotherapy to the Usual Chemotherapy Treatment for Non-small Cell Lung Cancer, an ALCHEMIST Treatment Trial (Chemo-IO [ACCIO])",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-06-16",
+        "primaryCompletionDate": "2027-01-31",
+        "enrollment": 1210
+      }
+    ]
+  },
+  "Pembrolizumab + Cisplatin + Pemetrexed": {
+    "searchTerm": "pembrolizumab",
+    "note": "Refined \u2014 KEYNOTE-189 as primary trial",
+    "trials": [
+      {
+        "nctId": "NCT02578680",
+        "title": "Pembrolizumab in Combination With Platinum Based Chemotherapy in First Line Non-small Cell Lung Cancer (KEYNOTE-189)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07094113",
+        "title": "AMG 410 Alone and in Combination With Other Agents in Participants With KRAS Altered Advanced or Metastatic Solid Tumors",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-07-31",
+        "primaryCompletionDate": "2028-04-18",
+        "enrollment": 434
+      },
+      {
+        "nctId": "NCT02220894",
+        "title": "Study of Pembrolizumab (MK-3475) Versus Platinum-Based Chemotherapy for Participants With Programmed Cell Death-Ligand 1 (PD-L1)-Positive Advanced or Metastatic Non-Small Cell Lung Cancer (MK-3475-042/KEYNOTE-042)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "COMPLETED",
+        "startDate": "2014-10-30",
+        "primaryCompletionDate": "2018-09-04",
+        "enrollment": 1274
+      },
+      {
+        "nctId": "NCT06216301",
+        "title": "LUNAR-2: TTFields With Pembrolizumab + Platinum-based Chemotherapy for Metastatic NSCLC",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-07-31",
+        "primaryCompletionDate": "2028-10",
+        "enrollment": 734
+      },
+      {
+        "nctId": "NCT02194738",
+        "title": "Genetic Testing in Screening Patients With Stage IB-IIIA Non-small Cell Lung Cancer That Has Been or Will Be Removed by Surgery (The ALCHEMIST Screening Trial)",
+        "phases": [
+          "NA"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2014-09-26",
+        "primaryCompletionDate": "2026-09-28",
+        "enrollment": 8300
+      },
+      {
+        "nctId": "NCT04267848",
+        "title": "Testing the Addition of a Type of Drug Called Immunotherapy to the Usual Chemotherapy Treatment for Non-small Cell Lung Cancer, an ALCHEMIST Treatment Trial (Chemo-IO [ACCIO])",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-06-16",
+        "primaryCompletionDate": "2027-01-31",
+        "enrollment": 1210
+      }
+    ]
+  },
+  "Pemetrexed monotherapy": {
+    "searchTerm": "Pemetrexed monotherapy",
+    "note": "Placeholder/generic \u2014 no specific trial",
+    "trials": []
+  },
+  "Platinum-doublet chemotherapy regimens": {
+    "searchTerm": "Platinum-doublet chemotherapy regimens",
+    "note": "Placeholder/generic \u2014 no specific trial",
+    "trials": []
+  },
+  "Pralsetinib": {
+    "searchTerm": "pralsetinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT04302025",
+        "title": "A Study of Multiple Therapies in Biomarker-selected Participants With Resectable Stages IB-III Non-small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2020-11-06",
+        "primaryCompletionDate": "2026-11-30",
+        "enrollment": 99
+      },
+      {
+        "nctId": "NCT04589845",
+        "title": "Tumor-agnostic Precision Immuno-oncology and Somatic Targeting Rational for You (TAPISTRY) Platform Study",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-01-18",
+        "primaryCompletionDate": "2032-09-25",
+        "enrollment": 920
+      },
+      {
+        "nctId": "NCT06563999",
+        "title": "Neoadjuvant Umbrella Trial for Patients With Unresectable Stage III NSCLC Harboring Rare Mutations.",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-11-01",
+        "primaryCompletionDate": "2027-11-01",
+        "enrollment": 120
+      },
+      {
+        "nctId": "NCT04222972",
+        "title": "A Study of Pralsetinib Versus Standard of Care for First-Line Treatment of Advanced Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "TERMINATED",
+        "startDate": "2020-07-24",
+        "primaryCompletionDate": "2025-01-27",
+        "enrollment": 223
+      },
+      {
+        "nctId": "NCT07418879",
+        "title": "A Real-world Study of Pralsetinib Combined With Leucogen in the Treatment of RET Fusion-positive NSCLC",
+        "phases": [
+          "NA"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-02-05",
+        "primaryCompletionDate": "2027-12-31",
+        "enrollment": 25
+      }
+    ]
+  },
+  "Repotrectinib": {
+    "searchTerm": "repotrectinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06552234",
+        "title": "Phase II Efficacy Study of Repotrectinib in Frail and/or Elderly Patients With ROS1-rearranged Advanced NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-10-01",
+        "primaryCompletionDate": "2031-09",
+        "enrollment": 30
+      },
+      {
+        "nctId": "NCT03093116",
+        "title": "A Study of Repotrectinib (TPX-0005) in Patients With Advanced Solid Tumors Harboring ALK, ROS1, or NTRK1-3 Rearrangements",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2017-03-07",
+        "primaryCompletionDate": "2028-02-29",
+        "enrollment": 500
+      },
+      {
+        "nctId": "NCT07599007",
+        "title": "Repotrectinib Post-Marketing Surveillance in Korean Patients With ROS1-Positive Non-Small Cell Lung Cancer (NSCLC) or Solid Tumors Harboring a Neurotrophic Tyrosine Receptor Kinase (NTRK) Gene Fusion",
+        "phases": [],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-05-24",
+        "primaryCompletionDate": "2027-12-30",
+        "enrollment": 10
+      },
+      {
+        "nctId": "NCT06315010",
+        "title": "REPotrectinib in ROS1-positive Non-small Cell Lung Cancer Patients With Active Brain mEtastasis",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-06-27",
+        "primaryCompletionDate": "2027-03",
+        "enrollment": 20
+      },
+      {
+        "nctId": "NCT06140836",
+        "title": "A Study of Repotrectinib Versus Crizotinib in Participants With Locally Advanced or Metastatic Tyrosine Kinase Inhibitor (TKI)-na\u00efve ROS1-positive Non-Small Cell Lung Cancer (NSCLC) (TRIDENT-3)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2023-12-21",
+        "primaryCompletionDate": "2026-03-13",
+        "enrollment": 190
+      }
+    ]
+  },
+  "Selpercatinib": {
+    "searchTerm": "selpercatinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT04280081",
+        "title": "A Study of Selpercatinib (LY3527723) in Participants With Advanced Solid Tumors Including RET Fusion-positive Solid Tumors, Medullary Thyroid Cancer and Other Tumors With RET Activation",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2020-03-16",
+        "primaryCompletionDate": "2021-03-25",
+        "enrollment": 77
+      },
+      {
+        "nctId": "NCT03157128",
+        "title": "A Study of Selpercatinib (LOXO-292) in Participants With Advanced Solid Tumors, RET Fusion-Positive Solid Tumors, and Medullary Thyroid Cancer (LIBRETTO-001)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2017-05-02",
+        "primaryCompletionDate": "2025-02-14",
+        "enrollment": 857
+      },
+      {
+        "nctId": "NCT04268550",
+        "title": "Targeted Treatment for RET Fusion-Positive Advanced Non-Small Cell Lung Cancer (A LUNG-MAP Treatment Trial)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2020-04-08",
+        "primaryCompletionDate": "2026-12-01",
+        "enrollment": 124
+      },
+      {
+        "nctId": "NCT04819100",
+        "title": "A Study of Selpercatinib After Surgery or Radiation in Participants With Non-Small Cell Lung Cancer (NSCLC)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-12-20",
+        "primaryCompletionDate": "2026-01-12",
+        "enrollment": 152
+      },
+      {
+        "nctId": "NCT07146893",
+        "title": "Feasibility Study for Repurposing RET Inhibitors",
+        "phases": [
+          "EARLY_PHASE1"
+        ],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2026-02-26",
+        "primaryCompletionDate": "2027-02-23",
+        "enrollment": 7
+      }
+    ]
+  },
+  "Sevabertinib": {
+    "searchTerm": "sevabertinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06452277",
+        "title": "A Study to Learn More About How Well Sevabertinib Works and How Safe it is Compared With Standard Treatment, in Participants Who Have Advanced Non-small Cell Lung Cancer (NSCLC) With Mutations of the Human Epidermal Growth Factor Receptor 2 (HER2)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-08-28",
+        "primaryCompletionDate": "2027-10-28",
+        "enrollment": 444
+      },
+      {
+        "nctId": "NCT05099172",
+        "title": "First in Human Study of BAY2927088 in Participants Who Have Advanced Non-small Cell Lung Cancer (NSCLC) With Mutations in the Genes of Epidermal Growth Factor Receptor (EGFR) and/or Human Epidermal Growth Factor Receptor 2 (HER2)",
+        "phases": [
+          "PHASE1",
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2021-10-25",
+        "primaryCompletionDate": "2026-11-30",
+        "enrollment": 400
+      },
+      {
+        "nctId": "NCT06761976",
+        "title": "Expanded Access to Provide Sevabertinib (BAY 2927088) for the Treatment of Locally Advanced or Metastatic NSCLC With HER2 Mutation",
+        "phases": [],
+        "status": "AVAILABLE",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT06760819",
+        "title": "A Study to Learn More About How Well Treatment With Sevabertinib (BAY 2927088) Tablets Works and How Safe it is in Participants Who Have a Solid Tumor With Mutations of the Human Epidermal Growth Factor Receptor 2 (HER2)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-02-13",
+        "primaryCompletionDate": "2027-02-03",
+        "enrollment": 111
+      }
+    ]
+  },
+  "Sotorasib": {
+    "searchTerm": "sotorasib",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT04303780",
+        "title": "Study to Compare AMG 510 \"Proposed INN Sotorasib\" With Docetaxel in Non Small Cell Lung Cancer (NSCLC) (CodeBreak 200).",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2020-06-04",
+        "primaryCompletionDate": "2022-08-02",
+        "enrollment": 345
+      }
+    ]
+  },
+  "Taletrectinib": {
+    "searchTerm": "taletrectinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT07154706",
+        "title": "Phase 3 Study of Taletrectinib vs Placebo as an Adjuvant Therapy in ROS1 Positive NSCLC (TRUST-IV)",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2025-08-21",
+        "primaryCompletionDate": "2030-08-30",
+        "enrollment": 180
+      },
+      {
+        "nctId": "NCT06564324",
+        "title": "A Phase III Study Comparing Taletrectinib With Standard Therapy in ROS1 Positive Locally Advanced or Metastatic Non-small Cell Lung Cancer Patients",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2024-11-27",
+        "primaryCompletionDate": "2029-01",
+        "enrollment": 194
+      },
+      {
+        "nctId": "NCT04919811",
+        "title": "Taletrectinib Phase 2 Global Study in ROS1 Positive NSCLC",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-09-01",
+        "primaryCompletionDate": "2025-06-11",
+        "enrollment": 217
+      },
+      {
+        "nctId": "NCT06841874",
+        "title": "Expanded Access Program of Taletrectinib in Patients With Advanced or Metastatic ROS1-Positive NSCLC",
+        "phases": [],
+        "status": "NO_LONGER_AVAILABLE",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT07199010",
+        "title": "Real-world Study of Taletrectinib in Advanced ROS1+ NSCLC Following Entrectinib Progression",
+        "phases": [],
+        "status": "NOT_YET_RECRUITING",
+        "startDate": "2025-10",
+        "primaryCompletionDate": "2027-09",
+        "enrollment": 50
+      }
+    ]
+  },
+  "Tepotinib": {
+    "searchTerm": "tepotinib",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT02864992",
+        "title": "Tepotinib Phase II in NSCLC Harboring MET Alterations (VISION)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2016-09-13",
+        "primaryCompletionDate": "2022-05-16",
+        "enrollment": 337
+      }
+    ]
+  },
+  "Tremelimumab + Durvalumab + Carboplatin + Paclitaxel": {
+    "searchTerm": "tremelimumab durvalumab",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT03164616",
+        "title": "Study of Durvalumab + Tremelimumab With Chemotherapy or Durvalumab With Chemotherapy or Chemotherapy Alone for Patients With Lung Cancer (POSEIDON).",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2017-06-01",
+        "primaryCompletionDate": "2021-03-12",
+        "enrollment": 1186
+      }
+    ]
+  },
+  "Tremelimumab + Durvalumab + Carboplatin + Pemetrexed": {
+    "searchTerm": "tremelimumab durvalumab",
+    "note": "Refined \u2014 pivotal trial",
+    "trials": [
+      {
+        "nctId": "NCT03164616",
+        "title": "Study of Durvalumab + Tremelimumab With Chemotherapy or Durvalumab With Chemotherapy or Chemotherapy Alone for Patients With Lung Cancer (POSEIDON).",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2017-06-01",
+        "primaryCompletionDate": "2021-03-12",
+        "enrollment": 1186
+      }
+    ]
+  },
+  "Zenocutuzumab": {
+    "searchTerm": "zenocutuzumab",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT05588609",
+        "title": "Study Evaluating Zenocutuzumab in Patients With or Without Molecularly Defined Cancers",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "TERMINATED",
+        "startDate": "2022-11-17",
+        "primaryCompletionDate": "2025-07-03",
+        "enrollment": 13
+      },
+      {
+        "nctId": "NCT04100694",
+        "title": "Early Access Program Providing HER2/HER3 Bispecific Antibody, MCLA-128, for a Patient With Advanced NRG1-Fusion Positive Solid Tumor",
+        "phases": [],
+        "status": "APPROVED_FOR_MARKETING",
+        "startDate": "",
+        "primaryCompletionDate": "",
+        "enrollment": null
+      },
+      {
+        "nctId": "NCT02912949",
+        "title": "A Study of Zenocutuzumab (MCLA-128) in Patients With Solid Tumors Harboring an NRG1 Fusion (eNRGy)",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2015-01",
+        "primaryCompletionDate": "2026-12-31",
+        "enrollment": 250
+      }
+    ]
+  },
+  "Zongertinib": {
+    "searchTerm": "zongertinib",
+    "note": "",
+    "trials": [
+      {
+        "nctId": "NCT06151574",
+        "title": "Beamion LUNG-2: A Study to Test Whether Zongertinib (BI 1810631) Helps People With Advanced Non-small Cell Lung Cancer With HER2 Mutations Compared With Standard Treatment",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2024-02-09",
+        "primaryCompletionDate": "2026-09-02",
+        "enrollment": 428
+      },
+      {
+        "nctId": "NCT07195695",
+        "title": "Beamion LUNG-3: Adjuvant Zongertinib vs Standard Treatment in People With Completely Resected Stage II-IIIB NSCLC Harboring Activating HER2 TKD Mutations",
+        "phases": [
+          "PHASE3"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-01-16",
+        "primaryCompletionDate": "2032-02-26",
+        "enrollment": 400
+      },
+      {
+        "nctId": "NCT04886804",
+        "title": "Beamion LUNG-1: A Study to Test Different Doses of Zongertinib in People With Different Types of Advanced Cancer (Solid Tumours With Changes in the HER2 Gene)",
+        "phases": [
+          "PHASE1"
+        ],
+        "status": "ACTIVE_NOT_RECRUITING",
+        "startDate": "2021-07-02",
+        "primaryCompletionDate": "2026-12-30",
+        "enrollment": 608
+      },
+      {
+        "nctId": "NCT07486817",
+        "title": "Beamion 44: A Study to Test How Well Zongertinib is Tolerated by People With Advanced Non-small Cell Lung Cancer With HER2 Mutations When Given in Combination With Chemotherapy With or Without Pembrolizumab",
+        "phases": [
+          "PHASE2"
+        ],
+        "status": "RECRUITING",
+        "startDate": "2026-06-04",
+        "primaryCompletionDate": "2027-08-12",
+        "enrollment": 60
+      }
+    ]
+  }
+}

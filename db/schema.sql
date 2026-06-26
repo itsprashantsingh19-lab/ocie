@@ -1,49 +1,69 @@
--- OCIE Guideline <-> Pipeline Mapping — schema
--- Host-agnostic: run this in the Supabase SQL editor, or against any
--- Postgres instance (Neon, Vercel Postgres, local) pointed at by DATABASE_URL.
---
--- Mirrors the data model in scripts/parse_guidelines.py exactly — one row
--- per biomarker, one per drug, one per (drug, biomarker, line) occurrence.
--- See PROJECT_BRIEF.md for the classification logic these columns encode.
+-- OCIE: Oncology Guidelines Intelligence Engine
+-- Supabase schema for Current SOC + Pipeline + White Space modules
 
-drop table if exists occurrences;
-drop table if exists drugs;
-drop table if exists biomarkers;
-
-create table biomarkers (
-  id              text primary key,
-  name            text not null,
-  track           text not null,
-  incidence_pct   text,
-  notes           text,
-  notable_trials  text[] not null default '{}'
+-- Regimens: one row per drug/regimen entry from NCCN/ASCO guidelines
+CREATE TABLE IF NOT EXISTS regimens (
+  id SERIAL PRIMARY KEY,
+  drug TEXT NOT NULL,
+  type TEXT,
+  single_or_combination TEXT,
+  drug_class TEXT,
+  mechanism TEXT,
+  biomarker TEXT,
+  biomarker_detail TEXT,
+  histology TEXT,
+  lot TEXT,
+  tier TEXT,
+  setting TEXT,
+  route TEXT,
+  notes TEXT,
+  pd_l1_expression TEXT,
+  patient_population TEXT,
+  source_sheet TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-create table drugs (
-  id            text primary key,
-  display_name  text not null,
-  drug_class    text,
-  mechanism     text,
-  source        text not null check (source in ('guideline', 'missing_drugs'))
+-- Trials: NCT IDs and metadata from ClinicalTrials.gov
+CREATE TABLE IF NOT EXISTS trials (
+  id SERIAL PRIMARY KEY,
+  nct_id TEXT UNIQUE NOT NULL,
+  drug_name TEXT,
+  title TEXT,
+  phases TEXT[],
+  status TEXT,
+  start_date TEXT,
+  primary_completion_date TEXT,
+  enrollment INTEGER,
+  created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-create table occurrences (
-  id              serial primary key,
-  drug_id         text not null references drugs(id) on delete cascade,
-  biomarker_id    text not null references biomarkers(id) on delete cascade,
-  track           text not null,
-  line            text not null,
-  status          text not null check (status in ('current_soc', 'pipeline_pending', 'ambiguous')),
-  status_detail   text check (status_detail in ('white_space_gap', 'pipeline_signal', 'unclear')),
-  raw_text        text,
-  histology       text,
-  setting         text,
-  route           text,
-  safety_notes    text,
-  evidence_trials text[] not null default '{}'
+-- Junction: which trials are linked to which regimens
+CREATE TABLE IF NOT EXISTS regimen_trials (
+  regimen_id INTEGER REFERENCES regimens(id) ON DELETE CASCADE,
+  nct_id TEXT REFERENCES trials(nct_id) ON DELETE CASCADE,
+  PRIMARY KEY (regimen_id, nct_id)
 );
 
-create index idx_occurrences_biomarker on occurrences(biomarker_id);
-create index idx_occurrences_drug on occurrences(drug_id);
-create index idx_occurrences_status on occurrences(status);
-create index idx_biomarkers_track on biomarkers(track);
+-- Inclusion criteria: linked by NCT ID (populated later from trial protocols)
+CREATE TABLE IF NOT EXISTS inclusion_criteria (
+  id SERIAL PRIMARY KEY,
+  nct_id TEXT REFERENCES trials(nct_id) ON DELETE CASCADE,
+  criterion TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Exclusion criteria: linked by NCT ID (populated later from trial protocols)
+CREATE TABLE IF NOT EXISTS exclusion_criteria (
+  id SERIAL PRIMARY KEY,
+  nct_id TEXT REFERENCES trials(nct_id) ON DELETE CASCADE,
+  criterion TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Indexes for common queries
+CREATE INDEX IF NOT EXISTS idx_regimens_biomarker ON regimens(biomarker);
+CREATE INDEX IF NOT EXISTS idx_regimens_lot ON regimens(lot);
+CREATE INDEX IF NOT EXISTS idx_regimens_tier ON regimens(tier);
+CREATE INDEX IF NOT EXISTS idx_trials_nct_id ON trials(nct_id);
+CREATE INDEX IF NOT EXISTS idx_regimen_trials_regimen ON regimen_trials(regimen_id);
+CREATE INDEX IF NOT EXISTS idx_regimen_trials_nct ON regimen_trials(nct_id);

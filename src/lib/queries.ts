@@ -1,38 +1,54 @@
 import { getPool } from "./db";
-import type { Biomarker, Drug, Occurrence, DashboardData } from "@/types";
+import type { Regimen, Trial, DashboardData, WhiteSpaceRow } from "@/types";
 
-/**
- * Fetches the full dataset in three queries. At this data size (tens of
- * biomarkers, ~100 drugs, ~200 occurrences) loading everything up front and
- * letting the client component filter/group in memory is simpler and faster
- * than paginated per-tab queries — revisit if the dataset grows an order of
- * magnitude.
- */
 export async function getDashboardData(): Promise<DashboardData> {
   const pool = getPool();
 
-  const [biomarkers, drugs, occurrences] = await Promise.all([
-    pool.query<Biomarker>(
-      `select id, name, track, incidence_pct, notes, notable_trials
-       from biomarkers
-       order by track, name`
+  const [regimens, trials, whiteSpace] = await Promise.all([
+    pool.query<Regimen>(
+      `select id, drug, type, single_or_combination, drug_class, mechanism,
+              biomarker, biomarker_detail, histology, lot, tier, setting,
+              route, notes, pd_l1_expression, patient_population, source_sheet
+       from regimens
+       order by biomarker, drug`
     ),
-    pool.query<Drug>(
-      `select id, display_name, drug_class, mechanism, source
-       from drugs
-       order by display_name`
+    pool.query<Trial>(
+      `select id, nct_id, drug_name, title, phases, status,
+              start_date, primary_completion_date, enrollment
+       from trials
+       order by drug_name`
     ),
-    pool.query<Occurrence>(
-      `select id, drug_id, biomarker_id, track, line, status, status_detail,
-              raw_text, histology, setting, route, safety_notes, evidence_trials
-       from occurrences
-       order by id`
+    pool.query<WhiteSpaceRow>(
+      `with bio_lot as (
+         select biomarker, lot,
+                count(*) as total,
+                count(*) filter (where tier = 'Preferred') as preferred,
+                count(*) filter (where tier = 'UICC') as uicc,
+                count(*) filter (where tier = 'Subsequent') as subsequent
+         from regimens
+         group by biomarker, lot
+       ),
+       bio_trials as (
+         select r.biomarker,
+                count(distinct rt.nct_id) as trials,
+                count(distinct rt.nct_id) filter (where t.status not in ('TERMINATED','WITHDRAWN','COMPLETED')) as active_trials
+         from regimens r
+         join regimen_trials rt on rt.regimen_id = r.id
+         join trials t on t.nct_id = rt.nct_id
+         group by r.biomarker
+       )
+       select bl.biomarker, bl.lot, bl.total, bl.preferred, bl.uicc, bl.subsequent,
+              coalesce(bt.trials, 0) as trials,
+              coalesce(bt.active_trials, 0) as active_trials
+       from bio_lot bl
+       left join bio_trials bt on bt.biomarker = bl.biomarker
+       order by bl.biomarker, bl.lot`
     ),
   ]);
 
   return {
-    biomarkers: biomarkers.rows,
-    drugs: drugs.rows,
-    occurrences: occurrences.rows,
+    regimens: regimens.rows,
+    trials: trials.rows,
+    whiteSpace: whiteSpace.rows,
   };
 }

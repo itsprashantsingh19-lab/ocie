@@ -6,16 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "db:seed": "tsx scripts/seed.ts",
-    "etl": "python3 scripts/parse_guidelines.py"
+    "db:seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
     "next": "16.2.9",
     "pg": "^8.22.0",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
