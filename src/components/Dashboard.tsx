@@ -59,15 +59,30 @@ export default function Dashboard({ data, error }: Props) {
     if (pipeline.length > 0 && !inferredDone) {
       const profiles: Record<string, TrialProfile> = {};
       const risks: Record<string, RiskSliders> = {};
+      // Use extracted profiles from ClinicalTrials.gov pipeline, if available
+      const pp = data?.pipelineProfiles;
       for (const p of pipeline) {
-        profiles[p.nct_id] = inferProfile(p.phases || []);
+        const ext = pp?.find((x) => x.nctId === p.nct_id);
+        if (ext) {
+          profiles[p.nct_id] = {
+            endpoint: ext.endpoint,
+            enrollment: ext.enrollmentRate,
+            design: ext.designType,
+            pathway: ext.fda.aa ? "Accelerated" : "Standard",
+            btd: ext.fda.btd,
+            aa: ext.fda.aa,
+            priorityReview: ext.fda.priorityReview,
+          };
+        } else {
+          profiles[p.nct_id] = inferProfile(p.phases || []);
+        }
         risks[p.nct_id] = { ...DEFAULT_RISK };
       }
       setDrugProfiles(profiles);
       setDrugRisks(risks);
       setInferredDone(true);
     }
-  }, [pipeline, inferredDone]);
+  }, [pipeline, inferredDone, data?.pipelineProfiles]);
   const [filters, setFilters] = useState({
     biomarker: "All Biomarkers",
     combo: "All",

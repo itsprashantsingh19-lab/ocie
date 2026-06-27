@@ -35,6 +35,17 @@ export interface DashboardData {
   trials: Trial[];
   whiteSpace: WhiteSpaceRow[];
   pipeline: PipelineRow[];
+  pipelineProfiles?: PipelineProfile[];
+}
+
+export interface PipelineProfile {
+  nctId: string;
+  drug: string;
+  biomarker: string;
+  designType: "RCT" | "SingleArm" | "Adaptive";
+  endpoint: "PFS" | "ORR" | "OS";
+  enrollmentRate: "Fast" | "Average" | "Slow";
+  fda: { btd: boolean; aa: boolean; priorityReview: boolean };
 }
 
 export interface WhiteSpaceRow {
