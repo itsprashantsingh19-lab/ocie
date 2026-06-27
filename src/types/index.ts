@@ -270,6 +270,35 @@ export function projectTimeline(
   };
 }
 
+export function profileTagSummary(profile: TrialProfile): string {
+  const parts: string[] = [];
+  parts.push(profile.endpoint);
+  parts.push(profile.design === "RCT" ? "RCT" : profile.design === "SingleArm" ? "SA" : "Adapt");
+  parts.push(profile.enrollment === "Fast" ? "Fast" : profile.enrollment === "Average" ? "Avg" : "Slow");
+  if (profile.btd) parts.push("BTD");
+  if (profile.aa) parts.push("AA");
+  if (profile.priorityReview) parts.push("PR");
+  return parts.join("·");
+}
+
+export function inferProfile(phases: string[], pathway?: TrialPathway): TrialProfile {
+  const hasP3 = phases.some((p) => p.includes("PHASE3"));
+  const hasP2 = phases.some((p) => p.includes("PHASE2"));
+  const hasP1 = phases.some((p) => p.includes("PHASE1"));
+  const pw = pathway || "Standard";
+
+  if (hasP3) {
+    return { endpoint: "PFS", enrollment: "Fast", design: "RCT", pathway: pw, btd: true, aa: false, priorityReview: true };
+  }
+  if (hasP2) {
+    return { endpoint: "ORR", enrollment: "Average", design: "SingleArm", pathway: pw, btd: true, aa: false, priorityReview: false };
+  }
+  if (hasP1) {
+    return { endpoint: "ORR", enrollment: "Slow", design: "SingleArm", pathway: pw, btd: false, aa: false, priorityReview: false };
+  }
+  return { endpoint: "PFS", enrollment: "Fast", design: "RCT", pathway: pw, btd: true, aa: false, priorityReview: true };
+}
+
 export const BIOMARKERS = [
   "All Biomarkers", "EGFR", "EGFR Exon 20", "ALK", "ROS1", "PD-L1",
   "KRAS G12C", "BRAF V600E", "RET", "NTRK", "MET", "HER2", "No Driver",

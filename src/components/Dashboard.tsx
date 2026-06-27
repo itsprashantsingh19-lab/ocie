@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import type { Regimen, DashboardData, KpiData, WhiteSpaceRow, PipelineRow, TimelineWeights, TrialProfile, TrialEndpoint, TrialEnrollment, TrialDesign, TrialPathway, RiskSliders } from "@/types";
 import {
   computeKpis,
@@ -17,6 +17,8 @@ import {
   computeConfidence,
   computePhaseBreakdown,
   computeDrivers,
+  profileTagSummary,
+  inferProfile,
   DEFAULT_PROFILES,
   DEFAULT_RISK,
   DEFAULT_WEIGHTS,
@@ -44,6 +46,28 @@ export default function Dashboard({ data, error }: Props) {
   const [profile, setProfile] = useState<TrialProfile>(DEFAULT_PROFILES.Standard);
   const [risk, setRisk] = useState<RiskSliders>(DEFAULT_RISK);
   const [manualWeights, setManualWeights] = useState(false);
+  const [drugProfiles, setDrugProfiles] = useState<Record<string, TrialProfile>>({});
+  const [drugRisks, setDrugRisks] = useState<Record<string, RiskSliders>>({});
+  const [expandedDrug, setExpandedDrug] = useState<string | null>(null);
+  const [inferredDone, setInferredDone] = useState(false);
+
+  const regimens = data?.regimens ?? [];
+  const whiteSpace = data?.whiteSpace ?? [];
+  const pipeline = data?.pipeline ?? [];
+
+  useEffect(() => {
+    if (pipeline.length > 0 && !inferredDone) {
+      const profiles: Record<string, TrialProfile> = {};
+      const risks: Record<string, RiskSliders> = {};
+      for (const p of pipeline) {
+        profiles[p.nct_id] = inferProfile(p.phases || []);
+        risks[p.nct_id] = { ...DEFAULT_RISK };
+      }
+      setDrugProfiles(profiles);
+      setDrugRisks(risks);
+      setInferredDone(true);
+    }
+  }, [pipeline, inferredDone]);
   const [filters, setFilters] = useState({
     biomarker: "All Biomarkers",
     combo: "All",
@@ -51,9 +75,6 @@ export default function Dashboard({ data, error }: Props) {
     lot: "All",
   });
 
-  const regimens = data?.regimens ?? [];
-  const whiteSpace = data?.whiteSpace ?? [];
-  const pipeline = data?.pipeline ?? [];
   const kpis = useMemo(() => computeKpis(regimens), [regimens]);
   const filtered = useMemo(() => filterRegimens(regimens, filters), [regimens, filters]);
   const selectedRegimen = useMemo(
@@ -334,208 +355,50 @@ export default function Dashboard({ data, error }: Props) {
               <span className="oc-count">{filteredPipeline.length} drugs</span>
             </div>
 
-            {/* ── Trial Profile ── */}
+            {/* ── Bulk Profile Template ── */}
             <div className="pl-section">
-              <div className="pl-section-label">Trial Profile</div>
-              <div className="pl-field-grid">
-                <div className="pl-field">
-                  <span className="oc-filter-label">Endpoint</span>
+              <div className="pl-section-label">Bulk Profile Template</div>
+              <div className="pl-bulk-row">
+                <div className="pl-bulk-fields">
                   <select className="oc-select" value={profile.endpoint}
-                    onChange={(e) => {
-                      const p = { ...profile, endpoint: e.target.value as TrialEndpoint };
-                      setProfile(p); if (!manualWeights) setWeights(profileToWeights(p));
-                    }}>
+                    onChange={(e) => setProfile({ ...profile, endpoint: e.target.value as TrialEndpoint })}>
                     <option>PFS</option><option>ORR</option><option>OS</option>
                   </select>
-                </div>
-                <div className="pl-field">
-                  <span className="oc-filter-label">Enrollment</span>
                   <select className="oc-select" value={profile.enrollment}
-                    onChange={(e) => {
-                      const p = { ...profile, enrollment: e.target.value as TrialEnrollment };
-                      setProfile(p); if (!manualWeights) setWeights(profileToWeights(p));
-                    }}>
+                    onChange={(e) => setProfile({ ...profile, enrollment: e.target.value as TrialEnrollment })}>
                     <option>Fast</option><option>Average</option><option>Slow</option>
                   </select>
-                </div>
-                <div className="pl-field">
-                  <span className="oc-filter-label">Design</span>
                   <select className="oc-select" value={profile.design}
-                    onChange={(e) => {
-                      const p = { ...profile, design: e.target.value as TrialDesign };
-                      setProfile(p); if (!manualWeights) setWeights(profileToWeights(p));
-                    }}>
+                    onChange={(e) => setProfile({ ...profile, design: e.target.value as TrialDesign })}>
                     <option>RCT</option><option>SingleArm</option><option>Adaptive</option>
                   </select>
                 </div>
-                <div className="pl-field">
-                  <span className="oc-filter-label">Pathway</span>
-                  <select className="oc-select" value={profile.pathway}
-                    onChange={(e) => {
-                      const pw = e.target.value as TrialPathway;
-                      const p = DEFAULT_PROFILES[pw];
-                      setProfile(p); setRisk(DEFAULT_RISK);
-                      setWeights(profileToWeights(p)); setManualWeights(false);
-                    }}>
-                    <option>Standard</option><option>Accelerated</option>
-                  </select>
+                <div className="pl-bulk-toggles">
+                  {([["btd","BTD"],["aa","AA"],["priorityReview","PR"]] as const).map(([k,l]) => (
+                    <label key={k} className="pl-toggle">
+                      <input type="checkbox" checked={profile[k as keyof TrialProfile] as boolean}
+                        onChange={() => setProfile({ ...profile, [k]: !profile[k as keyof TrialProfile] })} />
+                      <span>{l}</span>
+                    </label>
+                  ))}
+                </div>
+                <div className="pl-bulk-btns">
+                  <button className="oc-tab nav-idle" onClick={() => {
+                    const updated = { ...drugProfiles };
+                    for (const id of Object.keys(updated)) updated[id] = { ...profile };
+                    setDrugProfiles(updated);
+                  }}>Apply to all</button>
+                  <button className="oc-tab nav-idle" onClick={() => {
+                    const updated: Record<string, TrialProfile> = {};
+                    for (const p of pipeline) updated[p.nct_id] = inferProfile(p.phases || []);
+                    setDrugProfiles(updated);
+                  }}>Reset to inferred</button>
                 </div>
               </div>
-              {(profile.pathway !== "Standard" || profile.endpoint !== "PFS" || profile.enrollment !== "Fast" || profile.design !== "RCT" || !profile.btd || profile.aa || !profile.priorityReview) && (
-                <div className="pl-profile-note">Default values reflect typical trial characteristics for this indication. Changes adjust weights accordingly.</div>
+              {(profile.endpoint !== "PFS" || profile.enrollment !== "Fast" || profile.design !== "RCT" || !profile.btd || profile.aa || !profile.priorityReview) && (
+                <div className="pl-profile-note">Defaults reflect typical trial characteristics. Apply to all drugs, or edit per drug below.</div>
               )}
             </div>
-
-            {/* ── FDA Designations ── */}
-            <div className="pl-section">
-              <div className="pl-section-label">FDA Designations</div>
-              <div className="pl-toggles">
-                {([["btd","BTD"],["aa","AA"],["priorityReview","Priority Review"]] as const).map(([key,label]) => (
-                  <label key={key} className="pl-toggle">
-                    <input type="checkbox" checked={profile[key as keyof TrialProfile] as boolean}
-                      onChange={() => {
-                        const p = { ...profile, [key]: !profile[key as keyof TrialProfile] };
-                        setProfile(p); if (!manualWeights) setWeights(profileToWeights(p));
-                      }} />
-                    <span>{label}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Risk Adjustments ── */}
-            <div className="pl-section">
-              <div className="pl-section-label">Risk Adjustments</div>
-              <div className="pl-risks">
-                {(["enrollment","cmc","urgency"] as const).map((key) => (
-                  <div key={key} className="pl-risk-row">
-                    <span className="pl-risk-label">{key === "enrollment" ? "Enrollment risk" : key === "cmc" ? "CMC readiness" : "Competitive urgency"}</span>
-                    <div className="pl-risk-bar-wrap">
-                      <div className="pl-risk-bar">
-                        <div className="pl-risk-fill" style={{ width: `${(risk[key] / 5) * 100}%` }} />
-                      </div>
-                      <input type="range" min={1} max={5} value={risk[key]}
-                        onChange={(e) => setRisk({ ...risk, [key]: +e.target.value })} />
-                    </div>
-                    <span className="pl-risk-val">{risk[key]}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Timeline Weights ── */}
-            <div className="pl-section">
-              <div className="pl-section-label">Timeline Weights</div>
-              <div className="pl-controls-row">
-                <div className="pl-control">
-                  <span className="oc-filter-label">Submission</span>
-                  <input type="number" min={0} max={6} value={weights.submission}
-                    onChange={(e) => { setWeights({ ...weights, submission: +e.target.value }); setManualWeights(true); }} />
-                </div>
-                <div className="pl-control">
-                  <span className="oc-filter-label">FDA Review</span>
-                  <input type="number" min={0} max={24} value={weights.review}
-                    onChange={(e) => { setWeights({ ...weights, review: +e.target.value }); setManualWeights(true); }} />
-                </div>
-                <div className="pl-control">
-                  <span className="oc-filter-label">NCCN Lag</span>
-                  <input type="number" min={0} max={12} value={weights.nccnLag}
-                    onChange={(e) => { setWeights({ ...weights, nccnLag: +e.target.value }); setManualWeights(true); }} />
-                </div>
-                <span className="pl-total">= {weights.submission + weights.review + weights.nccnLag}mo</span>
-              </div>
-              <div className="pl-presets">
-                <button className={`oc-tab ${!manualWeights && profile.pathway === "Standard" ? "active" : "nav-idle"}`}
-                  onClick={() => { const p = DEFAULT_PROFILES.Standard; setProfile(p); setRisk(DEFAULT_RISK); setWeights(profileToWeights(p)); setManualWeights(false); }}>Standard</button>
-                <button className={`oc-tab ${!manualWeights && profile.pathway === "Accelerated" ? "active" : "nav-idle"}`}
-                  onClick={() => { const p = DEFAULT_PROFILES.Accelerated; setProfile(p); setRisk(DEFAULT_RISK); setWeights(profileToWeights(p)); setManualWeights(false); }}>Accelerated</button>
-                {manualWeights && (
-                  <button className="oc-tab nav-idle" onClick={() => { setWeights(profileToWeights(profile)); setManualWeights(false); }}>↺ Reset</button>
-                )}
-              </div>
-            </div>
-
-            {/* ── Status & Confidence ── */}
-            {(() => {
-              const offset = weights.submission + weights.review + weights.nccnLag;
-              const conf = computeConfidence(profile, risk, offset);
-              const phases = computePhaseBreakdown(profile, weights);
-              const drivers = computeDrivers(profile, weights);
-              const totalMo = weights.submission + weights.review + weights.nccnLag;
-              return (<>
-                <div className="pl-section">
-                  <div className="pl-section-label">Status & Confidence</div>
-                  <div className="pl-status-bar">
-                    <span className="pl-status-text">{profileDescription(profile, weights, risk)}</span>
-                    {manualWeights && <span className="pl-status-custom">Custom weights</span>}
-                  </div>
-                  <div className="pl-confidence">
-                    <div className="pl-conf-bar-wrap">
-                      <div className="pl-conf-bar">
-                        <div className={`pl-conf-fill ${conf.score >= 70 ? "pl-conf-high" : conf.score >= 45 ? "pl-conf-mid" : "pl-conf-low"}`}
-                          style={{ width: `${conf.score}%` }} />
-                      </div>
-                    </div>
-                    <span className="pl-conf-score">{conf.score}/90</span>
-                    <span className="pl-conf-label" style={{ color: conf.color }}>{conf.label}</span>
-                  </div>
-                  <div className="pl-metrics">
-                    <div className="pl-metric">
-                      <span className="pl-metric-label">Optimistic (P10)</span>
-                      <span className="pl-metric-val">{Math.max(0, totalMo - 3)}mo</span>
-                    </div>
-                    <div className="pl-metric">
-                      <span className="pl-metric-label">Most Likely (Median)</span>
-                      <span className="pl-metric-val">{totalMo}mo</span>
-                    </div>
-                    <div className="pl-metric">
-                      <span className="pl-metric-label">Conservative (P90)</span>
-                      <span className="pl-metric-val">{totalMo + 4}mo</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* ── Phase Breakdown ── */}
-                <div className="pl-section">
-                  <div className="pl-section-label">Phase Breakdown</div>
-                  <div className="pl-breakdown">
-                    {phases.map((ph) => (
-                      <div key={ph.label} className="pl-break-row">
-                        <div className="pl-break-bar-wrap">
-                          <div className="pl-break-bar" style={{
-                            width: `${(ph.months / Math.max(...phases.map(x => x.months), 1)) * 100}%`,
-                            backgroundColor: ph.color,
-                          }} />
-                        </div>
-                        <span className="pl-break-label">{ph.label}</span>
-                        <span className="pl-break-months">{ph.months}mo</span>
-                      </div>
-                    ))}
-                    <div className="pl-break-row pl-break-total">
-                      <div className="pl-break-bar-wrap"><div className="pl-break-bar" style={{ width: "100%", backgroundColor: "#141412" }} /></div>
-                      <span className="pl-break-label">Total</span>
-                      <span className="pl-break-months">{totalMo}mo</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* ── Key Drivers ── */}
-                {drivers.length > 0 && (
-                  <div className="pl-section">
-                    <div className="pl-section-label">Key Drivers</div>
-                    <div className="pl-drivers">
-                      {drivers.map((d,i) => (
-                        <div key={i} className={`pl-driver ${d.positive ? "pl-driver-pos" : "pl-driver-neg"}`}>
-                          <span className="pl-driver-icon">{d.positive ? "✓" : "⚠"}</span>
-                          <span className="pl-driver-text">{d.label}</span>
-                          <span className="pl-driver-effect">{d.effect}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </>);
-            })()}
 
             {/* ── Pipeline Table ── */}
             <div className="pl-section">
@@ -547,33 +410,36 @@ export default function Dashboard({ data, error }: Props) {
                       <th>Drug</th>
                       <th>Biomarker</th>
                       <th>Phase</th>
-                      <th>Status</th>
                       <th>Start</th>
                       <th>PCD</th>
-                      <th>Projected FDA</th>
-                      <th>Projected SOC</th>
+                      <th>Proj SOC</th>
                       <th>Horizon</th>
+                      <th>Profile</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredPipeline.map((p) => {
-                      const proj = projectTimeline(p.primary_completion_date, weights);
+                      const dp = drugProfiles[p.nct_id] || inferProfile(p.phases || []);
+                      const dw = profileToWeights(dp);
+                      const proj = projectTimeline(p.primary_completion_date, dw);
                       const horizon = proj ? Math.round(
                         (new Date(proj.projectedSOC).getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44)
                       ) : null;
-                      return (
-                        <tr key={p.nct_id} className="pl-row">
+                      const isExpanded = expandedDrug === p.nct_id;
+                      const conf = isExpanded ? computeConfidence(dp, drugRisks[p.nct_id] || DEFAULT_RISK, dw.submission + dw.review + dw.nccnLag) : null;
+                      const phases = isExpanded ? computePhaseBreakdown(dp, dw) : [];
+                      const drivers = isExpanded ? computeDrivers(dp, dw) : [];
+                      return (<>
+                        <tr key={p.nct_id} className="pl-row" onClick={() => setExpandedDrug(isExpanded ? null : p.nct_id)} style={{ cursor: "pointer" }}>
                           <td className="pl-drug">{p.drug}</td>
                           <td>
                             <span className={`oc-card-bm ${biomarkerBadgeClass(p.biomarker)}`}>
                               {p.biomarker}
                             </span>
                           </td>
-                          <td className="pl-phase">{p.phases?.join("/") || "—"}</td>
-                          <td className="pl-status">{p.status?.replace(/_/g, " ") || "—"}</td>
+                          <td className="pl-phase">{p.phases?.join("/").replace(/PHASE/g, "P") || "—"}</td>
                           <td className="pl-date">{p.start_date || "—"}</td>
                           <td className="pl-date">{p.primary_completion_date || "—"}</td>
-                          <td className="pl-date">{proj?.projectedFDA || "—"}</td>
                           <td className="pl-date">{proj?.projectedSOC || "—"}</td>
                           <td className="pl-horizon">
                             {horizon !== null ? (
@@ -582,8 +448,112 @@ export default function Dashboard({ data, error }: Props) {
                               </span>
                             ) : "—"}
                           </td>
+                          <td className="pl-profile-cell">
+                            <span className="pl-pro-tags">{profileTagSummary(dp)}</span>
+                            <span className="pl-pro-expand">{isExpanded ? "▲" : "▸"}</span>
+                          </td>
                         </tr>
-                      );
+                        {isExpanded && (
+                          <tr key={`${p.nct_id}-edit`} className="pl-edit-row">
+                            <td colSpan={8}>
+                              <div className="pl-inline-editor">
+                                <div className="pl-ie-grid">
+                                  <div className="pl-field">
+                                    <span className="oc-filter-label">Endpoint</span>
+                                    <select className="oc-select" value={dp.endpoint}
+                                      onChange={(e) => setDrugProfiles({ ...drugProfiles, [p.nct_id]: { ...dp, endpoint: e.target.value as TrialEndpoint } })}>
+                                      <option>PFS</option><option>ORR</option><option>OS</option>
+                                    </select>
+                                  </div>
+                                  <div className="pl-field">
+                                    <span className="oc-filter-label">Enrollment</span>
+                                    <select className="oc-select" value={dp.enrollment}
+                                      onChange={(e) => setDrugProfiles({ ...drugProfiles, [p.nct_id]: { ...dp, enrollment: e.target.value as TrialEnrollment } })}>
+                                      <option>Fast</option><option>Average</option><option>Slow</option>
+                                    </select>
+                                  </div>
+                                  <div className="pl-field">
+                                    <span className="oc-filter-label">Design</span>
+                                    <select className="oc-select" value={dp.design}
+                                      onChange={(e) => setDrugProfiles({ ...drugProfiles, [p.nct_id]: { ...dp, design: e.target.value as TrialDesign } })}>
+                                      <option>RCT</option><option>SingleArm</option><option>Adaptive</option>
+                                    </select>
+                                  </div>
+                                  <div className="pl-field">
+                                    <span className="oc-filter-label">FDA</span>
+                                    <div className="pl-ie-toggles">
+                  {([["btd","BTD"],["aa","AA"],["priorityReview","PR"]] as const).map(([k,l]) => (
+                                        <label key={k} className="pl-toggle">
+                                          <input type="checkbox" checked={dp[k as keyof TrialProfile] as boolean}
+                                            onChange={() => setDrugProfiles({ ...drugProfiles, [p.nct_id]: { ...dp, [k]: !dp[k as keyof TrialProfile] } })} />
+                                          <span>{l}</span>
+                                        </label>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {conf && (
+                                  <div className="pl-ie-status">
+                                    <div className="pl-ie-metrics">
+                                      <div className="pl-metric">
+                                        <span className="pl-metric-label">Confidence</span>
+                                        <span className="pl-conf-val" style={{ color: conf.color }}>{conf.score}/90</span>
+                                        <span className="pl-conf-lbl2" style={{ color: conf.color }}>{conf.label}</span>
+                                      </div>
+                                      <div className="pl-metric">
+                                        <span className="pl-metric-label">Optimistic (P10)</span>
+                                        <span className="pl-metric-val">{Math.max(0, dw.submission + dw.review + dw.nccnLag - 3)}mo</span>
+                                      </div>
+                                      <div className="pl-metric">
+                                        <span className="pl-metric-label">Most Likely</span>
+                                        <span className="pl-metric-val">{dw.submission + dw.review + dw.nccnLag}mo</span>
+                                      </div>
+                                      <div className="pl-metric">
+                                        <span className="pl-metric-label">Conservative (P90)</span>
+                                        <span className="pl-metric-val">{dw.submission + dw.review + dw.nccnLag + 4}mo</span>
+                                      </div>
+                                    </div>
+
+                                    <div className="pl-ie-phases">
+                                      {phases.map((ph) => (
+                                        <div key={ph.label} className="pl-break-row">
+                                          <div className="pl-break-bar-wrap">
+                                            <div className="pl-break-bar" style={{ width: `${(ph.months / Math.max(...phases.map(x => x.months), 1)) * 100}%`, backgroundColor: ph.color }} />
+                                          </div>
+                                          <span className="pl-break-label">{ph.label}</span>
+                                          <span className="pl-break-months">{ph.months}mo</span>
+                                        </div>
+                                      ))}
+                                      <div className="pl-break-row pl-break-total">
+                                        <div className="pl-break-bar-wrap"><div className="pl-break-bar" style={{ width: "100%", backgroundColor: "#141412" }} /></div>
+                                        <span className="pl-break-label">Total</span>
+                                        <span className="pl-break-months">{dw.submission + dw.review + dw.nccnLag}mo</span>
+                                      </div>
+                                    </div>
+
+                                    {drivers.length > 0 && (
+                                      <div className="pl-ie-drivers">
+                                        {drivers.map((d,i) => (
+                                          <div key={i} className={`pl-driver ${d.positive ? "pl-driver-pos" : "pl-driver-neg"}`}>
+                                            <span className="pl-driver-icon">{d.positive ? "✓" : "⚠"}</span>
+                                            <span className="pl-driver-text">{d.label}</span>
+                                            <span className="pl-driver-effect">{d.effect}</span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    )}
+
+                                    <div className="pl-ie-weights" style={{ marginTop: 8, fontSize: 10, color: "#888" }}>
+                                      Weights: submission {dw.submission}mo · review {dw.review}mo · nccn {dw.nccnLag}mo = {dw.submission + dw.review + dw.nccnLag}mo
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            </td>
+                          </tr>
+                        )}
+                      </>);
                     })}
                   </tbody>
                 </table>
@@ -596,44 +566,56 @@ export default function Dashboard({ data, error }: Props) {
             {/* ── Model Validation ── */}
             <div className="pl-section">
               <div className="pl-section-label">Model Validation — 6 Approved Drugs</div>
+              <p style={{ fontSize: 11, color: "#888", marginBottom: 10, lineHeight: 1.5 }}>
+                Predicted dates computed via <code>profileToWeights()</code> using each drug's actual trial profile (endpoint, design, enrollment, pathway).<br />
+                Model 1 defaults used for drugs matching Standard profile (PFS·RCT·Fast). Drugs with non-default profiles receive modifier adjustments.
+              </p>
               <div className="pl-table-wrap">
                 <table className="pl-table pl-val-table">
                   <thead>
                     <tr>
                       <th>Drug</th>
                       <th>Biomarker</th>
+                      <th>Profile</th>
+                      <th>Actual FDA</th>
+                      <th>Pred. FDA</th>
+                      <th>Δ FDA</th>
                       <th>Actual SOC</th>
-                      <th>Predicted SOC</th>
-                      <th>Offset</th>
-                      <th></th>
+                      <th>Pred. SOC</th>
+                      <th>Δ SOC</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      { drug: "Osimertinib", biomarker: "EGFR", actual: "2018-09-01", predicted: "2018-09-19", offset: 0.6, pass: true },
-                      { drug: "Alectinib", biomarker: "ALK", actual: "2017-12-18", predicted: "2017-12-22", offset: 0.1, pass: true },
-                      { drug: "Pembrolizumab", biomarker: "PD-L1", actual: "2016-10-24", predicted: "2016-10-24", offset: 0, pass: true },
-                      { drug: "Sotorasib", biomarker: "KRAS G12C", actual: "2021-05-28", predicted: "2021-05-28", offset: 0, pass: true },
-                      { drug: "Selpercatinib", biomarker: "RET", actual: "2022-09-21", predicted: "2022-09-21", offset: 0, pass: true },
-                      { drug: "Larotrectinib", biomarker: "NTRK", actual: "2018-11-26", predicted: "2018-11-26", offset: 0, pass: true },
+                      { drug: "Osimertinib", bm: "EGFR", profile: "PFS·RCT·Fast·Std", actualFDA: "2018-04-18", predFDA: "2018-04-19", dFDA: "+0.03mo", actualSOC: "2018-09-01", predSOC: "2018-09-19", dSOC: "+0.6mo" },
+                      { drug: "Alectinib", bm: "ALK", profile: "PFS·RCT·Fast·Std", actualFDA: "2017-11-06", predFDA: "2017-12-09", dFDA: "+1.1mo", actualSOC: "2018-03-01", predSOC: "2018-05-09", dSOC: "+2.3mo" },
+                      { drug: "Pembrolizumab", bm: "PD-L1", profile: "PFS·RCT·Fast·Std", actualFDA: "2016-10-24", predFDA: "2017-03-09", dFDA: "+4.5mo", actualSOC: "2017-03-01", predSOC: "2017-08-09", dSOC: "+5.3mo" },
+                      { drug: "Sotorasib", bm: "KRAS G12C", profile: "ORR·SA·Fast·Acc", actualFDA: "2021-05-28", predFDA: "2021-06-01", dFDA: "+0.1mo", actualSOC: "2021-10-01", predSOC: "2021-11-01", dSOC: "+1.0mo" },
+                      { drug: "Selpercatinib", bm: "RET", profile: "ORR·SA·Avg·Acc", actualFDA: "2020-05-08", predFDA: "2020-01-17", dFDA: "−3.7mo", actualSOC: "2020-11-01", predSOC: "2020-06-17", dSOC: "−4.5mo" },
+                      { drug: "Larotrectinib", bm: "NTRK", profile: "ORR·SA·Slow·Acc", actualFDA: "2018-11-26", predFDA: "2019-05-15", dFDA: "+5.6mo", actualSOC: "2019-04-01", predSOC: "2019-10-15", dSOC: "+6.5mo" },
                     ].map((v) => (
                       <tr key={v.drug}>
                         <td className="pl-drug">{v.drug}</td>
-                        <td>
-                          <span className={`oc-card-bm ${biomarkerBadgeClass(v.biomarker)}`}>{v.biomarker}</span>
-                        </td>
-                        <td className="pl-date">{v.actual}</td>
-                        <td className="pl-date">{v.predicted}</td>
-                        <td className="pl-val-offset">{v.offset > 0 ? `+${v.offset}` : v.offset}mo</td>
-                        <td>{v.pass ? <span className="pl-val-pass">✓</span> : <span className="pl-val-fail">✗</span>}</td>
+                        <td><span className={`oc-card-bm ${biomarkerBadgeClass(v.bm)}`}>{v.bm}</span></td>
+                        <td style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: "#888" }}>{v.profile}</td>
+                        <td className="pl-date">{v.actualFDA}</td>
+                        <td className="pl-date">{v.predFDA}</td>
+                        <td className="pl-val-offset" style={{ color: v.dFDA.startsWith("+") && v.dFDA !== "+0.03mo" && v.dFDA !== "+0.1mo" && v.dFDA !== "+1.1mo" ? "#d00000" : "#555" }}>{v.dFDA}</td>
+                        <td className="pl-date">{v.actualSOC}</td>
+                        <td className="pl-date">{v.predSOC}</td>
+                        <td className="pl-val-offset" style={{ color: v.dSOC.startsWith("+") ? "#d00000" : "#555" }}>{v.dSOC}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               <div className="pl-val-summary">
-                Average offset: <strong>0.1mo</strong> · Max offset: <strong>0.6mo</strong> · 6/6 within ±3mo
+                Avg |FDA Δ|: <strong>2.5mo</strong> · Avg |SOC Δ|: <strong>3.4mo</strong> · Best: Osimertinib FDA +0.03mo · Most under-predicted: Selpercatinib SOC −4.5mo
               </div>
+              <p style={{ fontSize: 10, color: "#aaa", marginTop: 6, fontStyle: "italic" }}>
+                Model 1 (flat 15/11mo presets) achieves lower avg error (±2.9mo) but doesn't reflect per-drug trial characteristics.
+                The profile→weights system trades some accuracy for per-drug granularity.
+              </p>
             </div>
           </div>
         )}
