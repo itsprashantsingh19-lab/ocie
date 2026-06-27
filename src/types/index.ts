@@ -223,23 +223,73 @@ export function profileDescription(profile: TrialProfile, weights: TimelineWeigh
   return parts.join(" · ");
 }
 
-export function computeConfidence(profile: TrialProfile, risk: RiskSliders, offsetMonths: number): { score: number; label: string; color: string } {
-  let score = 100;
-  score -= risk.enrollment * 6;
-  score -= risk.cmc * 3;
-  score += risk.urgency * 3;
-  if (profile.btd) score += 10;
-  if (profile.priorityReview) score += 6;
-  if (profile.aa) score += 5;
-  if (profile.endpoint === "OS") score -= 10;
-  score = Math.min(Math.max(score, 20), 90);
+/** Sample from a triangular distribution with min, mode, max */
+function sampleTriangular(min: number, mode: number, max: number): number {
+  const u = Math.random();
+  const f = (mode - min) / (max - min);
+  if (u <= f) return min + Math.sqrt(u * (max - min) * (mode - min));
+  return max - Math.sqrt((1 - u) * (max - min) * (max - mode));
+}
+
+/**
+ * Monte Carlo simulation over timeline weights.
+ * Runs N iterations sampling each weight from a triangular distribution whose
+ * bounds widen based on risk sliders and tighten based on FDA designations.
+ *
+ * Returns percentiles and a confidence score based on distribution tightness.
+ */
+export function monteCarloConfidence(
+  weights: TimelineWeights,
+  profile: TrialProfile,
+  risk: RiskSliders,
+  n = 10000
+): {
+  p10: number;
+  p50: number;
+  p90: number;
+  confidence: number;
+  label: string;
+  color: string;
+} {
+  const r = risk.enrollment / 5;
+  const results: number[] = [];
+
+  // Distribution bounds per weight, adjusted by risk + designations
+  const subMin = Math.max(0, weights.submission - 1 - r);
+  const subMode = profile.btd ? Math.max(0, weights.submission - 0.5) : weights.submission;
+  const subMax = Math.min(8, weights.submission + 2 + r);
+
+  const revMin = profile.priorityReview ? Math.max(2, weights.review - 1) : Math.max(0, weights.review - 2 - r);
+  const revMode = weights.review;
+  const revMax = profile.btd ? Math.min(12, weights.review + 2) : Math.min(18, weights.review + 4 + r + risk.cmc / 5);
+
+  const nccnMin = Math.max(0, weights.nccnLag - 1);
+  const nccnMode = weights.nccnLag;
+  const nccnMax = weights.nccnLag + 3 + risk.urgency / 5;
+
+  for (let i = 0; i < n; i++) {
+    const sub = sampleTriangular(subMin, subMode, subMax);
+    const rev = sampleTriangular(revMin, revMode, revMax);
+    const nccn = sampleTriangular(nccnMin, nccnMode, nccnMax);
+    results.push(sub + rev + nccn);
+  }
+
+  results.sort((a, b) => a - b);
+  const p10 = results[Math.floor(n * 0.1)];
+  const p50 = results[Math.floor(n * 0.5)];
+  const p90 = results[Math.floor(n * 0.9)];
+
+  // Confidence: inverse of relative spread
+  const spread = p90 - p10;
+  const confRaw = 100 - spread * 3.5;
+  const confidence = Math.max(10, Math.min(99, Math.round(confRaw)));
 
   let label: string, color: string;
-  if (score >= 70) { label = "High confidence"; color = "#2d6a4f"; }
-  else if (score >= 45) { label = "Moderate confidence"; color = "#e09f3e"; }
+  if (confidence >= 70) { label = "High confidence"; color = "#2d6a4f"; }
+  else if (confidence >= 45) { label = "Moderate confidence"; color = "#e09f3e"; }
   else { label = "Low confidence"; color = "#d00000"; }
 
-  return { score, label, color };
+  return { p10: Math.round(p10 * 10) / 10, p50: Math.round(p50 * 10) / 10, p90: Math.round(p90 * 10) / 10, confidence, label, color };
 }
 
 export function computePhaseBreakdown(profile: TrialProfile, weights: TimelineWeights): { label: string; months: number; color: string }[] {

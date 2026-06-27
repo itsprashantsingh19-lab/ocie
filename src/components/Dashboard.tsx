@@ -13,8 +13,7 @@ import {
   gapColor,
   projectTimeline,
   profileToWeights,
-  profileDescription,
-  computeConfidence,
+  monteCarloConfidence,
   computePhaseBreakdown,
   computeDrivers,
   profileTagSummary,
@@ -441,7 +440,7 @@ export default function Dashboard({ data, error }: Props) {
                         (new Date(proj.projectedSOC).getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44)
                       ) : null;
                       const isExpanded = expandedDrug === p.nct_id;
-                      const conf = isExpanded ? computeConfidence(dp, drugRisks[p.nct_id] || DEFAULT_RISK, dw.submission + dw.review + dw.nccnLag) : null;
+                      const conf = isExpanded ? monteCarloConfidence(dw, dp, drugRisks[p.nct_id] || DEFAULT_RISK) : null;
                       const phases = isExpanded ? computePhaseBreakdown(dp, dw) : [];
                       const drivers = isExpanded ? computeDrivers(dp, dw) : [];
                       return (<>
@@ -521,25 +520,28 @@ export default function Dashboard({ data, error }: Props) {
                                   </div>
                                 </div>
 
-                                {conf && (
+                                  {conf && (
                                   <div className="pl-ie-status">
                                     <div className="pl-ie-metrics">
                                       <div className="pl-metric">
-                                        <span className="pl-metric-label">Confidence</span>
-                                        <span className="pl-conf-val" style={{ color: conf.color }}>{conf.score}/90</span>
+                                        <span className="pl-metric-label">MC Confidence</span>
+                                        <span className="pl-conf-val" style={{ color: conf.color }}>{conf.confidence}</span>
                                         <span className="pl-conf-lbl2" style={{ color: conf.color }}>{conf.label}</span>
                                       </div>
                                       <div className="pl-metric">
                                         <span className="pl-metric-label">Optimistic (P10)</span>
-                                        <span className="pl-metric-val">{Math.max(0, dw.submission + dw.review + dw.nccnLag - 3)}mo</span>
+                                        <span className="pl-metric-val">{conf.p10}mo</span>
+                                        <div className="pl-mc-bar"><div className="pl-mc-fill" style={{ width: `${(conf.p10 / conf.p90) * 100}%`, backgroundColor: "#2d6a4f" }} /></div>
                                       </div>
                                       <div className="pl-metric">
-                                        <span className="pl-metric-label">Most Likely</span>
-                                        <span className="pl-metric-val">{dw.submission + dw.review + dw.nccnLag}mo</span>
+                                        <span className="pl-metric-label">Median (P50)</span>
+                                        <span className="pl-metric-val">{conf.p50}mo</span>
+                                        <div className="pl-mc-bar"><div className="pl-mc-fill" style={{ width: `${(conf.p50 / conf.p90) * 100}%`, backgroundColor: "#141412" }} /></div>
                                       </div>
                                       <div className="pl-metric">
                                         <span className="pl-metric-label">Conservative (P90)</span>
-                                        <span className="pl-metric-val">{dw.submission + dw.review + dw.nccnLag + 4}mo</span>
+                                        <span className="pl-metric-val">{conf.p90}mo</span>
+                                        <div className="pl-mc-bar"><div className="pl-mc-fill" style={{ width: "100%", backgroundColor: "#d00000" }} /></div>
                                       </div>
                                     </div>
 
