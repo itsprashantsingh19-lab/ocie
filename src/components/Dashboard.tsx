@@ -47,6 +47,7 @@ export default function Dashboard({ data, error }: Props) {
   const [manualWeights, setManualWeights] = useState(false);
   const [drugProfiles, setDrugProfiles] = useState<Record<string, TrialProfile>>({});
   const [drugRisks, setDrugRisks] = useState<Record<string, RiskSliders>>({});
+  const [drugWeights, setDrugWeights] = useState<Record<string, TimelineWeights>>({});
   const [expandedDrug, setExpandedDrug] = useState<string | null>(null);
   const [inferredDone, setInferredDone] = useState(false);
 
@@ -58,7 +59,7 @@ export default function Dashboard({ data, error }: Props) {
     if (pipeline.length > 0 && !inferredDone) {
       const profiles: Record<string, TrialProfile> = {};
       const risks: Record<string, RiskSliders> = {};
-      // Use extracted profiles from ClinicalTrials.gov pipeline, if available
+      const dw: Record<string, TimelineWeights> = {};
       const pp = data?.pipelineProfiles;
       for (const p of pipeline) {
         const ext = pp?.find((x) => x.nctId === p.nct_id);
@@ -76,9 +77,11 @@ export default function Dashboard({ data, error }: Props) {
           profiles[p.nct_id] = inferProfile(p.phases || []);
         }
         risks[p.nct_id] = { ...DEFAULT_RISK };
+        dw[p.nct_id] = profileToWeights(profiles[p.nct_id]);
       }
       setDrugProfiles(profiles);
       setDrugRisks(risks);
+      setDrugWeights(dw);
       setInferredDone(true);
     }
   }, [pipeline, inferredDone, data?.pipelineProfiles]);
@@ -434,7 +437,9 @@ export default function Dashboard({ data, error }: Props) {
                   <tbody>
                     {filteredPipeline.map((p) => {
                       const dp = drugProfiles[p.nct_id] || inferProfile(p.phases || []);
-                      const dw = profileToWeights(dp);
+                      const computedW = profileToWeights(dp);
+                      const dw = drugWeights[p.nct_id] || computedW;
+                      const isCustomW = drugWeights[p.nct_id] !== undefined && (drugWeights[p.nct_id].submission !== computedW.submission || drugWeights[p.nct_id].review !== computedW.review || drugWeights[p.nct_id].nccnLag !== computedW.nccnLag);
                       const proj = projectTimeline(p.primary_completion_date, dw);
                       const horizon = proj ? Math.round(
                         (new Date(proj.projectedSOC).getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44)
@@ -542,6 +547,35 @@ export default function Dashboard({ data, error }: Props) {
                                         <span className="pl-metric-label">Conservative (P90)</span>
                                         <span className="pl-metric-val">{conf.p90}mo</span>
                                         <div className="pl-mc-bar"><div className="pl-mc-fill" style={{ width: "100%", backgroundColor: "#d00000" }} /></div>
+                                      </div>
+                                    </div>
+
+                                    <div className="pl-ie-weight-override">
+                                      <div className="pl-ie-subsection">
+                                        <span className="oc-filter-label">Weight Overrides</span>
+                                        {isCustomW && <span className="pl-status-custom">Custom</span>}
+                                      </div>
+                                      <div className="pl-ie-weight-inputs">
+                                        <div className="pl-control">
+                                          <span className="oc-filter-label">Submission</span>
+                                          <input type="number" min={0} max={6} value={dw.submission}
+                                            onChange={(e) => setDrugWeights({ ...drugWeights, [p.nct_id]: { ...dw, submission: +e.target.value } })} />
+                                        </div>
+                                        <div className="pl-control">
+                                          <span className="oc-filter-label">FDA Review</span>
+                                          <input type="number" min={0} max={24} value={dw.review}
+                                            onChange={(e) => setDrugWeights({ ...drugWeights, [p.nct_id]: { ...dw, review: +e.target.value } })} />
+                                        </div>
+                                        <div className="pl-control">
+                                          <span className="oc-filter-label">NCCN Lag</span>
+                                          <input type="number" min={0} max={12} value={dw.nccnLag}
+                                            onChange={(e) => setDrugWeights({ ...drugWeights, [p.nct_id]: { ...dw, nccnLag: +e.target.value } })} />
+                                        </div>
+                                        <span className="pl-total">= {dw.submission + dw.review + dw.nccnLag}mo</span>
+                                        {isCustomW && (
+                                          <button className="oc-tab nav-idle" style={{ fontSize: 10, padding: "4px 10px" }}
+                                            onClick={() => setDrugWeights({ ...drugWeights, [p.nct_id]: computedW })}>↺ Reset</button>
+                                        )}
                                       </div>
                                     </div>
 
