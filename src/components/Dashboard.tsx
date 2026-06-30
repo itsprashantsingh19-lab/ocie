@@ -67,10 +67,8 @@ export default function Dashboard({ data, error }: Props) {
     lot: "All",
   });
 
-  const YEAR_MIN = 2026;
-  const YEAR_MAX = 2033;
-  const [yearMin, setYearMin] = useState<number>(YEAR_MIN);
-  const [yearMax, setYearMax] = useState<number>(YEAR_MAX);
+  const HORIZONS = ["All", "<1yr", "1-2yr", "2-4yr", ">4yr"] as const;
+  const [horizonFilter, setHorizonFilter] = useState<string>("All");
 
   const regimens = data?.regimens ?? [];
   const whiteSpace = data?.whiteSpace ?? [];
@@ -135,16 +133,19 @@ export default function Dashboard({ data, error }: Props) {
   }, [pipeline, appliedFilters, data?.pipelineProfiles]);
 
   const pipelineYearFiltered = useMemo(() => {
-    if (yearMin === null || yearMax === null) return [];
     return filteredPipeline.filter((p) => {
       const dp = drugProfiles[p.nct_id] || inferProfile(p.phases || []);
       const dw = drugWeights[p.nct_id] || profileToWeights(dp);
       const proj = projectTimeline(p.primary_completion_date, dw);
       if (!proj) return false;
-      const y = new Date(proj.projectedSOC).getFullYear();
-      return y >= yearMin && y <= yearMax;
+      const horizonMo = Math.round((new Date(proj.projectedSOC).getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44));
+      if (horizonFilter === "<1yr") return horizonMo < 12;
+      if (horizonFilter === "1-2yr") return horizonMo >= 12 && horizonMo < 24;
+      if (horizonFilter === "2-4yr") return horizonMo >= 24 && horizonMo < 48;
+      if (horizonFilter === ">4yr") return horizonMo >= 48;
+      return true;
     });
-  }, [filteredPipeline, yearMin, yearMax, drugProfiles, drugWeights]);
+  }, [filteredPipeline, horizonFilter, drugProfiles, drugWeights]);
 
   const setPendingFilter = (key: string, val: string) => {
     setPendingFilters((prev) => ({ ...prev, [key]: val }));
@@ -435,43 +436,20 @@ export default function Dashboard({ data, error }: Props) {
             </div>
 
             <div className="pl-instruct">
-              Select a year range to see which drugs are projected to reach SOC. Click a tile to adjust per-drug parameters.
+              Click a tile to adjust per-drug parameters.
             </div>
 
-            {/* ── Year Range Slider ── */}
-            <div className="pl-year-slider-wrap">
-              <div className="pl-year-label">
-                {yearMin !== null && yearMax !== null ? `${yearMin} — ${yearMax}` : "Select range"}
-              </div>
-              <div className="pl-year-sliders">
-                <input type="range" className="pl-range pl-range-min"
-                  min={YEAR_MIN} max={YEAR_MAX} step={1}
-                  value={yearMin}
-                  onChange={(e) => {
-                    const v = +e.target.value;
-                    setYearMin(Math.min(v, yearMax ?? YEAR_MAX));
-                  }} />
-                <input type="range" className="pl-range pl-range-max"
-                  min={YEAR_MIN} max={YEAR_MAX} step={1}
-                  value={yearMax}
-                  onChange={(e) => {
-                    const v = +e.target.value;
-                    setYearMax(Math.max(v, yearMin ?? YEAR_MIN));
-                  }} />
-              </div>
-              <div className="pl-year-labels">
-                <span>{YEAR_MIN}</span>
-                <span>{YEAR_MAX}</span>
-              </div>
+            <div className="pl-horizon-pills">
+              {HORIZONS.map((h) => (
+                <button key={h} className={`pl-pill ${horizonFilter === h ? "active" : ""}`} onClick={() => setHorizonFilter(h)}>
+                  {h === "All" ? "All" : h}
+                </button>
+              ))}
             </div>
 
             {/* ── Pipeline Tiles ── */}
             {pipelineYearFiltered.length === 0 ? (
-              <div className="oc-empty">
-                {yearMin === null || yearMax === null
-                  ? "Select a year range to see projected drugs."
-                  : "No drugs projected for this timeframe with current filters."}
-              </div>
+              <div className="oc-empty">No drugs projected for this horizon with current filters.</div>
             ) : (
               <div className="oc-grid pl-tile-grid">
                 {pipelineYearFiltered.map((p) => {
@@ -667,7 +645,13 @@ export default function Dashboard({ data, error }: Props) {
                   const wsKey = `${w.biomarker}|${w.lot}`;
                   const score = gapScore(w);
                   const isExpanded = expandedWS === wsKey;
-                  const incoming = pipeline.filter((p) => p.biomarker === w.biomarker && p.lot === w.lot);
+                  const incomingAll = pipeline.filter((p) => p.biomarker === w.biomarker && p.lot === w.lot);
+                  const incoming = incomingAll.filter((p) => {
+                    const dp = drugProfiles[p.nct_id] || inferProfile(p.phases || []);
+                    const dw = drugWeights[p.nct_id] || profileToWeights(dp);
+                    const proj = projectTimeline(p.primary_completion_date, dw);
+                    return proj && new Date(proj.projectedSOC) >= new Date();
+                  });
                   return (
                     <div key={wsKey} className={`ws-min-card ${isExpanded ? "ws-min-expanded" : ""}`}>
                       <div className="ws-min-card-click" onClick={() => setExpandedWS(isExpanded ? null : wsKey)} style={{ cursor: "pointer" }}>
