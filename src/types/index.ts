@@ -98,6 +98,15 @@ export function computeKpis(data: Regimen[]): KpiData {
   };
 }
 
+export function biomarkerMatches(regimenBm: string, filterBm: string): boolean {
+  if (filterBm === "All Biomarkers") return true;
+  if (regimenBm === filterBm) return true;
+  // Grouped biomarkers: e.g. "EGFR Exon 20" matches filter "EGFR"
+  const group = BIOMARKER_GROUP[filterBm];
+  if (group && group.includes(regimenBm)) return true;
+  return false;
+}
+
 export function filterRegimens(data: Regimen[], filters: {
   biomarker: string;
   combo: string;
@@ -107,7 +116,7 @@ export function filterRegimens(data: Regimen[], filters: {
   subtype: string;
 }): Regimen[] {
   return data.filter((r) => {
-    if (filters.biomarker !== "All Biomarkers" && r.biomarker !== filters.biomarker) return false;
+    if (!biomarkerMatches(r.biomarker, filters.biomarker)) return false;
     if (filters.combo !== "All" && r.type !== filters.combo) return false;
     if (filters.hist !== "All" && !r.histology.toLowerCase().includes(filters.hist.toLowerCase())) return false;
     if (filters.lot !== "All" && r.lot !== filters.lot) return false;
@@ -369,6 +378,10 @@ export function inferProfile(phases: string[], pathway?: TrialPathway): TrialPro
 }
 
 export const BIOMARKERS = [
-  "All Biomarkers", "EGFR", "EGFR Exon 20", "ALK", "ROS1", "PD-L1",
+  "All Biomarkers", "EGFR", "ALK", "ROS1", "PD-L1",
   "KRAS G12C", "BRAF V600E", "RET", "NTRK", "MET", "HER2", "No Driver",
 ];
+
+export const BIOMARKER_GROUP: Record<string, string[]> = {
+  "EGFR": ["EGFR", "EGFR Exon 20"],
+};

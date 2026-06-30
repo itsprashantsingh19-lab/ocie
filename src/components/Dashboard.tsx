@@ -7,6 +7,7 @@ import {
   computeKpis,
   filterRegimens,
   biomarkerBadgeClass,
+  biomarkerMatches,
   tierTagClass,
   cardBorderClass,
   gapScore,
@@ -117,7 +118,7 @@ export default function Dashboard({ data, error }: Props) {
   );
   const filteredWhiteSpace = useMemo(() => {
     return whiteSpace.filter((w) => {
-      if (appliedFilters.biomarker !== "All Biomarkers" && w.biomarker !== appliedFilters.biomarker) return false;
+      if (appliedFilters.biomarker !== "All Biomarkers" && !biomarkerMatches(w.biomarker, appliedFilters.biomarker)) return false;
       if (appliedFilters.lot !== "All" && w.lot !== appliedFilters.lot) return false;
       return true;
     });
@@ -125,7 +126,7 @@ export default function Dashboard({ data, error }: Props) {
 
   const filteredPipeline = useMemo(() => {
     return pipeline.filter((p) => {
-      if (appliedFilters.biomarker !== "All Biomarkers" && p.biomarker !== appliedFilters.biomarker) return false;
+      if (appliedFilters.biomarker !== "All Biomarkers" && !biomarkerMatches(p.biomarker, appliedFilters.biomarker)) return false;
       if (appliedFilters.lot !== "All" && p.lot !== appliedFilters.lot) return false;
       if (appliedFilters.hist !== "All") {
         const pp = data?.pipelineProfiles?.find((x) => x.nctId === p.nct_id);
@@ -334,8 +335,9 @@ export default function Dashboard({ data, error }: Props) {
 
           {pendingFilters.biomarker === "EGFR" && (
             (() => {
-              const egrfrDetails = [...new Set(regimens.filter((r) => r.biomarker === "EGFR").map((r) => r.biomarker_detail))].filter(Boolean);
-              if (egrfrDetails.length < 2) return null;
+              const egfrBms = ["EGFR", "EGFR Exon 20"];
+              const egfrDetails = [...new Set(regimens.filter((r) => egfrBms.includes(r.biomarker)).map((r) => r.biomarker_detail))].filter(Boolean);
+              if (egfrDetails.length < 2) return null;
               return (
                 <div className="oc-filter-group">
                   <span className="oc-filter-label">EGFR Subtype</span>
@@ -345,7 +347,7 @@ export default function Dashboard({ data, error }: Props) {
                     onChange={(e) => setPendingFilter("subtype", e.target.value)}
                   >
                     <option>All</option>
-                    {egrfrDetails.sort().map((v) => (
+                    {egfrDetails.sort().map((v) => (
                       <option key={v}>{v}</option>
                     ))}
                   </select>
