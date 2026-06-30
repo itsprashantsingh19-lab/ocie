@@ -24,6 +24,7 @@ import {
   DEFAULT_RISK,
   DEFAULT_WEIGHTS,
   BIOMARKERS,
+  BIOMARKER_GROUP,
 } from "@/types";
 
 const TABS = [
@@ -143,15 +144,14 @@ export default function Dashboard({ data, error }: Props) {
       const dw = drugWeights[p.nct_id] || profileToWeights(dp);
       const proj = projectTimeline(p.primary_completion_date, dw);
       if (!proj) return false;
+      if (horizonFilter === "All") return true; // show everything
       const projected = new Date(proj.projectedSOC);
-      // Only show drugs with a future projected SOC date
-      if (projected <= new Date()) return false;
       const horizonMo = Math.round((projected.getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44));
-      if (horizonFilter === "<1yr") return horizonMo < 12;
+      if (horizonFilter === "<1yr") return horizonMo >= 0 && horizonMo < 12;
       if (horizonFilter === "1-2yr") return horizonMo >= 12 && horizonMo < 24;
       if (horizonFilter === "2-4yr") return horizonMo >= 24 && horizonMo < 48;
       if (horizonFilter === ">4yr") return horizonMo >= 48;
-      return true; // "All" — any future drug
+      return false;
     });
   }, [filteredPipeline, horizonFilter, drugProfiles, drugWeights]);
 
@@ -160,7 +160,7 @@ export default function Dashboard({ data, error }: Props) {
       const next = { ...prev, [key]: val };
       if (key === "biomarker") {
         if (val !== "PD-L1") next.pdl1 = "All";
-        if (val !== "EGFR") next.subtype = "All";
+        next.subtype = "All";
       }
       return next;
     });
@@ -317,37 +317,49 @@ export default function Dashboard({ data, error }: Props) {
             </select>
           </div>
 
-          {pendingFilters.biomarker === "PD-L1" && (
-            <div className="oc-filter-group">
-              <span className="oc-filter-label">PD-L1 Expression</span>
-              <select
-                className="oc-select"
-                value={pendingFilters.pdl1}
-                onChange={(e) => setPendingFilter("pdl1", e.target.value)}
-              >
-                <option>All</option>
-                {[...new Set(regimens.filter((r) => r.biomarker === "PD-L1").map((r) => r.pd_l1_expression))].sort().map((v) => (
-                  <option key={v}>{v}</option>
-                ))}
-              </select>
-            </div>
-          )}
-
-          {pendingFilters.biomarker === "EGFR" && (
+          {pendingFilters.biomarker !== "All Biomarkers" && (
             (() => {
-              const egfrBms = ["EGFR", "EGFR Exon 20"];
-              const egfrDetails = [...new Set(regimens.filter((r) => egfrBms.includes(r.biomarker)).map((r) => r.biomarker_detail))].filter(Boolean);
-              if (egfrDetails.length < 2) return null;
+              // Collect distinct biomarker_detail values for the selected biomarker group
+              const bmGroup = BIOMARKER_GROUP[pendingFilters.biomarker] || [pendingFilters.biomarker];
+              const details = [...new Set(
+                regimens.filter((r) => bmGroup.includes(r.biomarker)).map((r) => r.biomarker_detail)
+              )].filter(Boolean);
+
+              // PD-L1: show expression dropdown instead of biomarker detail
+              if (pendingFilters.biomarker === "PD-L1") {
+                const pdl1Vals = [...new Set(
+                  regimens.filter((r) => r.biomarker === "PD-L1").map((r) => r.pd_l1_expression)
+                )].filter(Boolean).sort();
+                if (pdl1Vals.length < 2) return null;
+                return (
+                  <div className="oc-filter-group">
+                    <span className="oc-filter-label">PD-L1 Expression</span>
+                    <select
+                      className="oc-select"
+                      value={pendingFilters.pdl1}
+                      onChange={(e) => setPendingFilter("pdl1", e.target.value)}
+                    >
+                      <option>All</option>
+                      {pdl1Vals.map((v) => (
+                        <option key={v}>{v}</option>
+                      ))}
+                    </select>
+                  </div>
+                );
+              }
+
+              // All other biomarkers: show Subtype dropdown if ≥2 distinct details
+              if (details.length < 2) return null;
               return (
                 <div className="oc-filter-group">
-                  <span className="oc-filter-label">EGFR Subtype</span>
+                  <span className="oc-filter-label">{pendingFilters.biomarker} Subtype</span>
                   <select
                     className="oc-select"
                     value={pendingFilters.subtype}
                     onChange={(e) => setPendingFilter("subtype", e.target.value)}
                   >
                     <option>All</option>
-                    {egfrDetails.sort().map((v) => (
+                    {details.sort().map((v) => (
                       <option key={v}>{v}</option>
                     ))}
                   </select>
