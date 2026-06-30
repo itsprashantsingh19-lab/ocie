@@ -138,12 +138,15 @@ export default function Dashboard({ data, error }: Props) {
       const dw = drugWeights[p.nct_id] || profileToWeights(dp);
       const proj = projectTimeline(p.primary_completion_date, dw);
       if (!proj) return false;
-      const horizonMo = Math.round((new Date(proj.projectedSOC).getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44));
+      const projected = new Date(proj.projectedSOC);
+      // Only show drugs with a future projected SOC date
+      if (projected <= new Date()) return false;
+      const horizonMo = Math.round((projected.getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44));
       if (horizonFilter === "<1yr") return horizonMo < 12;
       if (horizonFilter === "1-2yr") return horizonMo >= 12 && horizonMo < 24;
       if (horizonFilter === "2-4yr") return horizonMo >= 24 && horizonMo < 48;
       if (horizonFilter === ">4yr") return horizonMo >= 48;
-      return true;
+      return true; // "All" — any future drug
     });
   }, [filteredPipeline, horizonFilter, drugProfiles, drugWeights]);
 
