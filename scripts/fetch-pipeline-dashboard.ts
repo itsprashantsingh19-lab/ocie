@@ -138,6 +138,24 @@ function extractFDA(phases: string[], design: "RCT" | "SingleArm" | "Adaptive", 
   return { btd, aa, priorityReview };
 }
 
+/** Extract histology from eligibility criteria, conditions text, and trial title */
+function extractHistology(conditions: string[] | null, eligibilityText: string | null, title: string | null): "Squamous" | "Non-squamous" | "Mixed" | "Unknown" {
+  const text = [
+    ...(conditions || []),
+    eligibilityText || "",
+    title || "",
+  ].join(" ").toLowerCase();
+
+  const hasSquamous = /\bsquamous\b/.test(text) && !/\bnon.?squamous\b/.test(text);
+  const hasNonSquamous = /\bnon.?squamous\b|\bnonsquamous\b/.test(text) || /\badenocarcinoma\b/.test(text) || /\bnon.?small\b.*\badenocarcinoma\b/.test(text);
+  const hasMixed = hasSquamous && hasNonSquamous;
+
+  if (hasMixed) return "Mixed";
+  if (hasSquamous) return "Squamous";
+  if (hasNonSquamous) return "Non-squamous";
+  return "Unknown";
+}
+
 /** Check if trial has at least one US site */
 function hasUSLocation(locations: any[] | null): boolean {
   if (!locations?.length) return false;
@@ -151,16 +169,17 @@ function hasUSLocation(locations: any[] | null): boolean {
 // 4. API fetch
 // ─────────────────────────────────────────
 
-async function searchBiomarker(biomarker: string, term: string, pageSize = 40): Promise<any[]> {
+async function searchBiomarker(biomarker: string, term: string, pageSize = 100): Promise<any[]> {
   const url = `${CTGOV_BASE}?query.cond=NSCLC&query.term=${encodeURIComponent(term)}` +
     `&filter.overallStatus=RECRUITING,ACTIVE_NOT_RECRUITING,NOT_YET_RECRUITING,ENROLLING_BY_INVITATION` +
-    `&filter.leadSponsorClass=INDUSTRY` +
     `&pageSize=${pageSize}`;
 
   const res = await fetch(url);
   if (!res.ok) return [];
   const data = await res.json();
-  return (data.studies || []).map((s: any) => {
+  return (data.studies || [])
+    .filter((s: any) => (s.protocolSection?.sponsorCollaboratorsModule?.leadSponsor?.class || "") === "INDUSTRY")
+    .map((s: any) => {
     const p = s.protocolSection;
     const idMod = p.identificationModule;
     const dm = p.designModule || {};
@@ -168,7 +187,9 @@ async function searchBiomarker(biomarker: string, term: string, pageSize = 40): 
     const om = p.outcomeModule || {};
     const am = p.armsInterventionsModule || {};
     const scMod = p.sponsorCollaboratorsModule || {};
-    const locMod = p.locationModule || {};
+    const locMod = p.contactsLocationsModule || p.locationModule || {};
+    const condMod = p.conditionsModule || {};
+    const eligMod = p.eligibilityModule || {};
 
     return {
       nctId: idMod.nctId,
@@ -192,6 +213,8 @@ async function searchBiomarker(biomarker: string, term: string, pageSize = 40): 
       designType: extractDesign(dm.designInfo?.allocation || null),
       endpoint: extractEndpoint(om.primaryOutcomes || null),
       enrollmentCount: dm.enrollmentInfo?.count || null,
+      conditions: condMod.conditions || null,
+      eligibilityText: eligMod.eligibilityCriteria || eligMod.studyPopulation || null,
       fda: null,
       enrollmentRate: null,
     };
@@ -254,6 +277,7 @@ interface DrugEntry {
   status: string;
   startDate: string | null;
   pcd: string | null;
+  histology: "Squamous" | "Non-squamous" | "Mixed" | "Unknown";
   designType: "RCT" | "SingleArm" | "Adaptive";
   endpoint: "PFS" | "ORR" | "OS";
   enrollmentRate: "Fast" | "Average" | "Slow";
@@ -313,6 +337,7 @@ async function main() {
       ...t,
       fda: extractFDA(t.phases, t.designType, t.endpoint),
       enrollmentRate: extractEnrollmentRate(t.enrollmentCount, t.startDate, t.pcd),
+      histology: extractHistology(t.conditions, t.eligibilityText, t.title),
     }));
     allTrials.push(...enriched);
     console.log(`   ${bm}: ${raw.length} total, ${usTrials.length} US-based`);
@@ -370,6 +395,7 @@ async function main() {
       status: trial.status,
       startDate: trial.startDate,
       pcd: trial.pcd,
+      histology: trial.histology || "Unknown",
       designType: trial.designType,
       endpoint: trial.endpoint,
       enrollmentRate: trial.enrollmentRate,

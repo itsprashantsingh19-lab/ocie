@@ -45,6 +45,7 @@ export interface PipelineProfile {
   sponsor: string;
   usBased: boolean;
   phases: string[];
+  histology?: "Squamous" | "Non-squamous" | "Mixed" | "Unknown";
   designType: "RCT" | "SingleArm" | "Adaptive";
   endpoint: "PFS" | "ORR" | "OS";
   enrollmentRate: "Fast" | "Average" | "Slow";

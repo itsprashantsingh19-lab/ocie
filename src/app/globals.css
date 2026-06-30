@@ -79,6 +79,8 @@ body {
   padding: 14px 12px;
   overflow-y: auto;
   flex-shrink: 0;
+  position: relative;
+  z-index: 60;
 }
 .oc-filter-group { margin-bottom: 14px; }
 .oc-filter-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #6a6a62; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; display: block; }
@@ -369,3 +371,93 @@ body {
 .pl-val-fail { color: #d00000; font-weight: 700; font-size: 13px; }
 .pl-val-summary { font-size: 11px; color: #888; margin-top: 8px; text-align: center; }
 .pl-val-summary strong { color: #141412; font-weight: 600; }
+
+/* ── Welcome Overlay ── */
+.oc-welcome-overlay {
+  position: fixed; top: 42px; left: 0; right: 0; bottom: 0; z-index: 50;
+  background: #141412;
+  display: flex; align-items: center; justify-content: center;
+}
+.oc-welcome-btn { width: auto; padding: 10px 40px; margin-top: 20px; font-size: 14px; }
+.oc-welcome-content { text-align: center; }
+.oc-welcome-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 600;
+  color: #F7F6F2; letter-spacing: 0.06em;
+}
+.oc-welcome-title::before { content: "OC"; color: #F7F6F2; }
+.oc-welcome-title::after { content: "IE"; color: #B85C38; }
+.oc-welcome-sub {
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400;
+  color: #C8BFA8; margin-top: 10px; font-style: italic;
+}
+
+/* ── Apply Button ── */
+.oc-apply-btn {
+  width: 100%; margin-top: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
+  padding: 8px 16px; border: none; border-radius: 20px;
+  background: #B85C38; color: #fff; cursor: pointer;
+  transition: background 0.15s;
+}
+.oc-apply-btn:hover { background: #9a4a2e; }
+
+/* ── Pipeline Year Slider ── */
+.pl-instruct { font-size: 11px; color: #888; margin-bottom: 14px; line-height: 1.5; }
+.pl-year-slider-wrap { background: #fff; border: 1px solid #E8E3D8; border-radius: 6px; padding: 14px 16px; margin-bottom: 16px; }
+.pl-year-label { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: #141412; text-align: center; margin-bottom: 10px; }
+.pl-year-sliders { position: relative; height: 30px; }
+.pl-range { position: absolute; width: 100%; height: 6px; top: 10px; pointer-events: none; -webkit-appearance: none; appearance: none; background: transparent; z-index: 2; }
+.pl-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #B85C38; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); cursor: pointer; pointer-events: all; }
+.pl-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #B85C38; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); cursor: pointer; pointer-events: all; }
+.pl-range-min { z-index: 3; }
+.pl-year-sliders::before { content: ''; position: absolute; left: 0; right: 0; top: 13px; height: 6px; background: #E8E3D8; border-radius: 3px; }
+.pl-year-labels { display: flex; justify-content: space-between; margin-top: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #888; }
+
+/* ── Pipeline Tiles ── */
+.pl-tile { margin-bottom: 10px; }
+.pl-tile .oc-card { padding-bottom: 8px; }
+.pl-tile-horizon {
+  position: absolute; top: 8px; right: 8px;
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600;
+  color: #fff; padding: 2px 8px; border-radius: 4px;
+}
+.pl-tile-date { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #888; margin-left: auto; }
+.pl-tile-detail {
+  background: #FBF9F5; border: 1px solid #E8E3D8; border-top: none;
+  border-radius: 0 0 6px 6px; padding: 14px 16px;
+}
+.pl-tile-dates { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.pl-tile-date-field { display: flex; flex-direction: column; gap: 3px; }
+.pl-tile-date-field span:last-child { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #141412; }
+
+/* ── Minimal White Space ── */
+.ws-minimal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.ws-min-card {
+  background: #fff; border: 1px solid #E0DBD0; border-radius: 6px; padding: 12px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.ws-min-bm { }
+.ws-min-lot { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #141412; }
+.ws-min-gap { }
+.ws-min-incoming, .ws-min-regimens { display: flex; align-items: center; justify-content: space-between; font-size: 11px; }
+.ws-min-label { color: #888; }
+.ws-min-count { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: #141412; }
+
+/* ── Combined Insights (SOC+Pipeline) ── */
+.in-group { background: #F7F6F2; border: 1px solid #E8E3D8; border-radius: 6px; padding: 14px 16px; margin-bottom: 12px; }
+.in-group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.in-group-count { font-size: 11px; color: #888; }
+.in-group-body { display: flex; flex-direction: column; gap: 8px; }
+.in-soc-card { background: #fff; border: 1px solid #E8E3D8; border-radius: 6px; padding: 10px 12px; }
+.in-soc-header { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; flex-wrap: wrap; }
+.in-soc-drug { font-size: 13px; font-weight: 500; color: #141412; }
+.in-soc-detail { font-size: 11px; color: #888; margin-bottom: 8px; }
+.in-pipe-list { border-top: 1px solid #F0EDE4; padding-top: 8px; margin-top: 8px; }
+.in-pipe-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #B85C38; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.in-pipe-tag { display: flex; align-items: center; gap: 8px; font-size: 11px; padding: 3px 0; }
+.in-pipe-drug { font-weight: 500; color: #141412; }
+.in-pipe-horizon { font-family: 'JetBrains Mono', monospace; font-size: 10px; margin-left: auto; }
+.in-group-pipe-summary { display: flex; align-items: center; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #E8E3D8; flex-wrap: wrap; }
+.in-group-pipe-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 0.06em; }
+.in-pipe-chip { font-size: 10px; background: #E8EEF4; color: #3a5a6a; padding: 2px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 6px; }
+.in-pipe-chip-date { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #888; }
