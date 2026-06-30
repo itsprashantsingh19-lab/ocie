@@ -463,6 +463,47 @@ body {
 .ws-min-incoming-drug { font-weight: 500; color: #141412; }
 .ws-min-incoming-date { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #888; margin-left: auto; }
 
+/* ── PD-L1 expression badge on SOC card ── */
+.oc-card-pdl1 {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  background: #E8EEF4;
+  color: #3a5a6a;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+/* ── Insights LOT split columns ── */
+.in-group-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.in-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.in-col-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #141412;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #E8E3D8;
+  margin-bottom: 2px;
+}
+.in-empty-col {
+  font-size: 11px;
+  color: #aaa;
+  font-style: italic;
+  padding: 8px 0;
+}
+
 /* ── Combined Insights (SOC+Pipeline) ── */
 .in-group { background: #F7F6F2; border: 1px solid #E8E3D8; border-radius: 6px; padding: 14px 16px; margin-bottom: 12px; }
 .in-group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }

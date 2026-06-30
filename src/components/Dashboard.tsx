@@ -59,12 +59,16 @@ export default function Dashboard({ data, error }: Props) {
     combo: "All",
     hist: "All",
     lot: "All",
+    pdl1: "All",
+    subtype: "All",
   });
   const [appliedFilters, setAppliedFilters] = useState({
     biomarker: "All Biomarkers",
     combo: "All",
     hist: "All",
     lot: "All",
+    pdl1: "All",
+    subtype: "All",
   });
 
   const HORIZONS = ["All", "<1yr", "1-2yr", "2-4yr", ">4yr"] as const;
@@ -106,7 +110,7 @@ export default function Dashboard({ data, error }: Props) {
   }, [pipeline, inferredDone, data?.pipelineProfiles]);
 
   const kpis = useMemo(() => computeKpis(regimens), [regimens]);
-  const filtered = useMemo(() => filterRegimens(regimens, appliedFilters), [regimens, appliedFilters]);
+  const filtered = useMemo(() => filterRegimens(regimens, { ...appliedFilters, pdl1: appliedFilters.pdl1 || "All", subtype: appliedFilters.subtype || "All" }), [regimens, appliedFilters]);
   const selectedRegimen = useMemo(
     () => regimens.find((r) => r.drug === selected),
     [regimens, selected]
@@ -151,7 +155,14 @@ export default function Dashboard({ data, error }: Props) {
   }, [filteredPipeline, horizonFilter, drugProfiles, drugWeights]);
 
   const setPendingFilter = (key: string, val: string) => {
-    setPendingFilters((prev) => ({ ...prev, [key]: val }));
+    setPendingFilters((prev) => {
+      const next = { ...prev, [key]: val };
+      if (key === "biomarker") {
+        if (val !== "PD-L1") next.pdl1 = "All";
+        if (val !== "EGFR") next.subtype = "All";
+      }
+      return next;
+    });
   };
 
   if (error || !data) {
@@ -305,6 +316,44 @@ export default function Dashboard({ data, error }: Props) {
             </select>
           </div>
 
+          {pendingFilters.biomarker === "PD-L1" && (
+            <div className="oc-filter-group">
+              <span className="oc-filter-label">PD-L1 Expression</span>
+              <select
+                className="oc-select"
+                value={pendingFilters.pdl1}
+                onChange={(e) => setPendingFilter("pdl1", e.target.value)}
+              >
+                <option>All</option>
+                {[...new Set(regimens.filter((r) => r.biomarker === "PD-L1").map((r) => r.pd_l1_expression))].sort().map((v) => (
+                  <option key={v}>{v}</option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          {pendingFilters.biomarker === "EGFR" && (
+            (() => {
+              const egrfrDetails = [...new Set(regimens.filter((r) => r.biomarker === "EGFR").map((r) => r.biomarker_detail))].filter(Boolean);
+              if (egrfrDetails.length < 2) return null;
+              return (
+                <div className="oc-filter-group">
+                  <span className="oc-filter-label">EGFR Subtype</span>
+                  <select
+                    className="oc-select"
+                    value={pendingFilters.subtype}
+                    onChange={(e) => setPendingFilter("subtype", e.target.value)}
+                  >
+                    <option>All</option>
+                    {egrfrDetails.sort().map((v) => (
+                      <option key={v}>{v}</option>
+                    ))}
+                  </select>
+                </div>
+              );
+            })()
+          )}
+
           <button className="oc-apply-btn" onClick={() => {
             setAppliedFilters(pendingFilters);
             setHasApplied(true);
@@ -351,6 +400,9 @@ export default function Dashboard({ data, error }: Props) {
                     </span>
                     <div className="oc-card-drug">{r.drug}</div>
                     <div className="oc-card-class">{r.drug_class}</div>
+                    {r.pd_l1_expression && r.pd_l1_expression !== "N/A" && (
+                      <span className="oc-card-pdl1">{r.pd_l1_expression}</span>
+                    )}
                     <div className="oc-card-footer">
                       <span className="tag tag-lot">{r.lot}</span>
                       <span className={tierTagClass(r.tier)}>{r.tier}</span>
@@ -412,17 +464,21 @@ export default function Dashboard({ data, error }: Props) {
                   )}
 
                   <div className="oc-modal-soon">
-                    <div className="oc-soon-label">Patient Subtype</div>
-                    <div className="oc-soon-val">Updating soon — subtype-level patient segmentation in progress</div>
+                    <div className="oc-soon-label">Biomarker Detail</div>
+                    <div className="oc-soon-val">{selectedRegimen.biomarker_detail || "—"}</div>
                   </div>
-                  <div className="oc-modal-soon">
-                    <div className="oc-soon-label">Inclusion Criteria</div>
-                    <div className="oc-soon-val">Updating soon — eligibility mapping from trial protocols in progress</div>
-                  </div>
-                  <div className="oc-modal-soon">
-                    <div className="oc-soon-label">Exclusion Criteria</div>
-                    <div className="oc-soon-val">Updating soon — exclusion mapping from trial protocols in progress</div>
-                  </div>
+                  {selectedRegimen.pd_l1_expression && selectedRegimen.pd_l1_expression !== "N/A" && (
+                    <div className="oc-modal-soon">
+                      <div className="oc-soon-label">PD-L1 Expression</div>
+                      <div className="oc-soon-val">{selectedRegimen.pd_l1_expression}</div>
+                    </div>
+                  )}
+                  {selectedRegimen.patient_population && (
+                    <div className="oc-modal-soon">
+                      <div className="oc-soon-label">Patient Population</div>
+                      <div className="oc-soon-val">{selectedRegimen.patient_population}</div>
+                    </div>
+                  )}
                 </div>
               </div>
             )}

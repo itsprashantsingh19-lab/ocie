@@ -103,12 +103,16 @@ export function filterRegimens(data: Regimen[], filters: {
   combo: string;
   hist: string;
   lot: string;
+  pdl1: string;
+  subtype: string;
 }): Regimen[] {
   return data.filter((r) => {
     if (filters.biomarker !== "All Biomarkers" && r.biomarker !== filters.biomarker) return false;
     if (filters.combo !== "All" && r.type !== filters.combo) return false;
     if (filters.hist !== "All" && !r.histology.toLowerCase().includes(filters.hist.toLowerCase())) return false;
     if (filters.lot !== "All" && r.lot !== filters.lot) return false;
+    if (filters.pdl1 !== "All" && r.pd_l1_expression !== filters.pdl1) return false;
+    if (filters.subtype !== "All" && r.biomarker_detail !== filters.subtype) return false;
     return true;
   });
 }
