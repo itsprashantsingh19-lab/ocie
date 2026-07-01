@@ -593,8 +593,7 @@ export default function Dashboard({ data, error }: Props) {
 
                           <div className="pl-tile-dates">
                             <div className="pl-tile-date-field"><span className="oc-filter-label">PCD</span><span>{p.primary_completion_date || "—"}</span></div>
-                            <div className="pl-tile-date-field"><span className="oc-filter-label">Proj. FDA</span><span>{proj?.projectedFDA || "—"}</span></div>
-                            <div className="pl-tile-date-field"><span className="oc-filter-label">Proj. SOC</span><span>{proj?.projectedSOC || "—"}</span></div>
+                            <div className="pl-tile-date-field"><span className="oc-filter-label">Est. Arrival</span><span>{proj?.projectedSOC || "—"}</span></div>
                           </div>
 
                           <div className="pl-ie-grid">
