@@ -155,13 +155,12 @@ export default function Dashboard({ data, error }: Props) {
     [regimens, selected]
   );
   const filteredPipeline = useMemo(() => {
-    const src = pipeline.length > 0 ? pipeline : pipelineFromProfiles;
-    return src.filter((p) => {
+    return pipelineSrc.filter((p) => {
       if (appliedFilters.biomarker && !biomarkerMatches(p.biomarker, appliedFilters.biomarker)) return false;
       if (appliedFilters.lot !== "All" && p.lot !== appliedFilters.lot) return false;
       return true;
     });
-  }, [pipeline, pipelineFromProfiles, appliedFilters]);
+  }, [pipelineSrc, appliedFilters]);
 
   const pipelineYearFiltered = useMemo(() => {
     return filteredPipeline.filter((p) => {
@@ -188,8 +187,7 @@ export default function Dashboard({ data, error }: Props) {
       socByBm.set(key, (socByBm.get(key) || 0) + 1);
     }
     const pipeByBm = new Map<string, number>();
-    const pipeSource = pipeline.length > 0 ? pipeline : pipelineFromProfiles;
-    for (const p of pipeSource) {
+    for (const p of pipelineSrc) {
       if (appliedFilters.lot !== "All" && p.lot !== appliedFilters.lot) continue;
       if (appliedFilters.biomarker && !biomarkerMatches(p.biomarker, appliedFilters.biomarker)) continue;
       const key = RAW_TO_DISPLAY[p.biomarker] || p.biomarker;
@@ -208,7 +206,7 @@ export default function Dashboard({ data, error }: Props) {
       else { label = "Saturated"; color = "#8a817c"; }
       return { biomarker: bm, socCount: soc, pipelineCount: pipe, opportunity: { label, color } };
     });
-  }, [regimens, pipeline, pipelineFromProfiles, appliedFilters]);
+  }, [regimens, pipelineSrc, appliedFilters]);
 
   const setPendingFilter = (key: string, val: string) => {
     setPendingFilters((prev) => {
