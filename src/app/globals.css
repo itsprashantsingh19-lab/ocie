@@ -537,3 +537,8 @@ body {
 .in-group-pipe-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 0.06em; }
 .in-pipe-chip { font-size: 10px; background: #E8EEF4; color: #3a5a6a; padding: 2px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 6px; }
 .in-pipe-chip-date { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #888; }
+.in-expand-btn, .in-scroll-btn { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #B85C38; background: none; border: 1px solid #E8E3D8; border-radius: 4px; padding: 6px 12px; cursor: pointer; text-align: center; display: block; width: 100%; margin-top: 4px; }
+.in-expand-btn:hover, .in-scroll-btn:hover { background: #F0EDE4; }
+.in-soc-list { display: flex; flex-direction: column; gap: 6px; }
+.in-pipe-section { border-top: 1px solid #E8E3D8; padding-top: 10px; margin-top: 8px; }
+.in-pipe-section .in-pipe-label { margin-bottom: 8px; }

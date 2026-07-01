@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
 import type { PipelineRow, Regimen, TimelineWeights, TrialProfile } from "@/types";
 import { biomarkerBadgeClass, projectTimeline, profileToWeights, inferProfile, RAW_TO_DISPLAY } from "@/types";
 
@@ -12,26 +12,33 @@ interface Props {
 }
 
 const LOTS_2L_PLUS = ["2L", "2L+", "3L", "3L+", "Subsequent"];
+const DEFAULT_SHOWN = 4;
+const SCROLL_STEP = 6;
 
 function is2LPlus(lot: string): boolean {
   return LOTS_2L_PLUS.some((l) => lot.includes(l) || l.includes(lot));
 }
 
+function horizonColor(mo: number | null): string {
+  if (mo === null) return "#aa80a0";
+  if (mo < 12) return "#2d6a4f";
+  if (mo < 24) return "#e09f3e";
+  if (mo < 48) return "#d00000";
+  return "#aa80a0";
+}
+
 export default function InsightsTab({ pipeline, regimens, drugProfiles, drugWeights }: Props) {
+  const [expandedBm, setExpandedBm] = useState<Record<string, "1L" | "2L+" | null>>({});
+  const [scrollOffsets, setScrollOffsets] = useState<Record<string, number>>({});
+
   const data = useMemo(() => {
-    const pipeByKey = new Map<string, (PipelineRow & { projSOC: string | null; horizonMo: number | null })[]>();
+    const pipeWithProj: (PipelineRow & { projSOC: string | null; horizonMo: number | null })[] = [];
     for (const p of pipeline) {
       const dp = drugProfiles[p.nct_id] || inferProfile(p.phases || []);
       const dw = drugWeights[p.nct_id] || profileToWeights(dp);
       const proj = projectTimeline(p.primary_completion_date, dw);
       if (!proj) continue;
-      const key = `${p.biomarker}||${p.lot}`;
-      if (!pipeByKey.has(key)) pipeByKey.set(key, []);
-      pipeByKey.get(key)!.push({
-        ...p,
-        projSOC: proj.projectedSOC,
-        horizonMo: Math.round((new Date(proj.projectedSOC).getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44)),
-      });
+      pipeWithProj.push({ ...p, projSOC: proj.projectedSOC, horizonMo: (new Date(proj.projectedSOC).getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 30.44) });
     }
 
     const regByBm = new Map<string, Regimen[]>();
@@ -39,6 +46,13 @@ export default function InsightsTab({ pipeline, regimens, drugProfiles, drugWeig
       const key = RAW_TO_DISPLAY[r.biomarker] || r.biomarker;
       if (!regByBm.has(key)) regByBm.set(key, []);
       regByBm.get(key)!.push(r);
+    }
+
+    const pipelineByBm = new Map<string, typeof pipeWithProj>();
+    for (const p of pipeWithProj) {
+      const key = RAW_TO_DISPLAY[p.biomarker] || p.biomarker;
+      if (!pipelineByBm.has(key)) pipelineByBm.set(key, []);
+      pipelineByBm.get(key)!.push(p);
     }
 
     const result: {
@@ -52,47 +66,87 @@ export default function InsightsTab({ pipeline, regimens, drugProfiles, drugWeig
     for (const [bm, regs] of regByBm) {
       const regs1L = regs.filter((r) => r.lot === "1L");
       const regs2LPlus = regs.filter((r) => is2LPlus(r.lot));
+      if (regs1L.length === 0 && regs2LPlus.length === 0) continue;
 
-      const incoming1L: (PipelineRow & { projSOC: string | null; horizonMo: number | null })[] = [];
-      const incoming2LPlus: (PipelineRow & { projSOC: string | null; horizonMo: number | null })[] = [];
+      const allPipe = pipelineByBm.get(bm) || [];
+      const pipe1L = allPipe.filter((p) => p.lot === "1L");
+      const pipe2LPlus = allPipe.filter((p) => is2LPlus(p.lot));
 
-      for (const r of regs1L) {
-        const rawBm = r.biomarker;
-        const key = `${bm}||${r.lot}`;
-        const rawKey = `${rawBm}||${r.lot}`;
-        const pipeDrugs = pipeByKey.get(key) || pipeByKey.get(rawKey);
-        if (pipeDrugs) {
-          for (const pd of pipeDrugs) {
-            if (!incoming1L.find((x) => x.nct_id === pd.nct_id)) incoming1L.push(pd);
-          }
-        }
-      }
-      for (const r of regs2LPlus) {
-        const rawBm = r.biomarker;
-        const key = `${bm}||${r.lot}`;
-        const rawKey = `${rawBm}||${r.lot}`;
-        const pipeDrugs = pipeByKey.get(key) || pipeByKey.get(rawKey);
-        if (pipeDrugs) {
-          for (const pd of pipeDrugs) {
-            if (!incoming2LPlus.find((x) => x.nct_id === pd.nct_id)) incoming2LPlus.push(pd);
-          }
-        }
-      }
-
-      if (regs1L.length > 0 || regs2LPlus.length > 0) {
-        result.push({
-          biomarker: bm,
-          regimens1L: regs1L,
-          regimens2LPlus: regs2LPlus,
-          pipeline1L: incoming1L,
-          pipeline2LPlus: incoming2LPlus,
-        });
-      }
+      result.push({ biomarker: bm, regimens1L: regs1L, regimens2LPlus: regs2LPlus, pipeline1L: pipe1L, pipeline2LPlus: pipe2LPlus });
     }
 
     result.sort((a, b) => a.biomarker.localeCompare(b.biomarker));
     return result;
   }, [pipeline, regimens, drugProfiles, drugWeights]);
+
+  const toggleExpand = (bm: string, lot: "1L" | "2L+") => {
+    setExpandedBm((prev) => ({ ...prev, [bm]: prev[bm] === lot ? null : lot }));
+    setScrollOffsets((prev) => ({ ...prev, [bm]: 0 }));
+  };
+
+  const scrollMore = (bm: string) => {
+    setScrollOffsets((prev) => ({ ...prev, [bm]: (prev[bm] || 0) + SCROLL_STEP }));
+  };
+
+  const renderColumn = (
+    bm: string,
+    label: string,
+    regimens: Regimen[],
+    pipeline: (PipelineRow & { projSOC: string | null; horizonMo: number | null })[]
+  ) => {
+    const isExpanded = expandedBm[bm] === (label === "1L" ? "1L" : "2L+");
+    const showing = isExpanded ? regimens.length : Math.min(regimens.length, DEFAULT_SHOWN);
+    const offset = scrollOffsets[bm] || 0;
+    const visibleRegimens = isExpanded ? regimens.slice(offset, offset + SCROLL_STEP) : regimens.slice(0, DEFAULT_SHOWN);
+    const hasMore = isExpanded ? offset + SCROLL_STEP < regimens.length : regimens.length > DEFAULT_SHOWN;
+
+    return (
+      <div className="in-col">
+        <div className="in-col-header">{label}</div>
+
+        {/* SOC section */}
+        {regimens.length === 0 ? (
+          <div className="in-empty-col">No SOC regimens</div>
+        ) : (
+          <div className="in-soc-list">
+            {visibleRegimens.map((r) => (
+              <div key={r.id} className="in-soc-card">
+                <div className="in-soc-header">
+                  <span className="in-soc-drug">{r.drug}</span>
+                  <span className={`tag ${r.tier === "Preferred" ? "tag-preferred" : r.tier === "UICC" ? "tag-uicc" : "tag-subsequent"}`}>{r.tier}</span>
+                  <span className={`tag ${r.type === "Combination" ? "tag-type-combo" : "tag-type-single"}`}>{r.type === "Combination" ? "Combo" : "Single"}</span>
+                </div>
+                <div className="in-soc-detail">{r.drug_class}{r.histology ? ` · ${r.histology}` : ""}</div>
+              </div>
+            ))}
+            {isExpanded && hasMore && (
+              <button className="in-scroll-btn" onClick={() => scrollMore(bm)}>Show {SCROLL_STEP} more</button>
+            )}
+          </div>
+        )}
+
+        {/* Show more / less toggle */}
+        {regimens.length > DEFAULT_SHOWN && (
+          <button className="in-expand-btn" onClick={() => toggleExpand(bm, label === "1L" ? "1L" : "2L+")}>
+            {isExpanded ? "Show less" : `Show all (${regimens.length})`}
+          </button>
+        )}
+
+        {/* Incoming section */}
+        {pipeline.length > 0 && (
+          <div className="in-pipe-section">
+            <div className="in-pipe-label">Incoming ({pipeline.length})</div>
+            {pipeline.map((p) => (
+              <div key={p.nct_id} className="in-pipe-tag">
+                <span className="in-pipe-drug">{p.drug}</span>
+                <span className="in-pipe-horizon" style={{ color: horizonColor(p.horizonMo) }}>{p.projSOC || "—"}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="oc-main">
@@ -109,101 +163,15 @@ export default function InsightsTab({ pipeline, regimens, drugProfiles, drugWeig
             <div className="in-group-header">
               <span className={`oc-card-bm ${biomarkerBadgeClass(group.biomarker)}`}>{group.biomarker}</span>
               <span className="in-group-count">
-                {group.regimens1L.length + group.regimens2LPlus.length} regimens ·
+                {group.regimens1L.length + group.regimens2LPlus.length} SOC ·
                 {group.pipeline1L.length + group.pipeline2LPlus.length} incoming
               </span>
             </div>
 
             <div className="in-group-cols">
-              {/* ── 1L Column ── */}
-              <div className="in-col">
-                <div className="in-col-header">1L</div>
-                {group.regimens1L.length === 0 ? (
-                  <div className="in-empty-col">No SOC regimens</div>
-                ) : (
-                  group.regimens1L.map((r) => {
-                    const incoming = group.pipeline1L.filter((p) => p.lot === r.lot || p.lot === "1L");
-                    return (
-                      <div key={r.id} className="in-soc-card">
-                        <div className="in-soc-header">
-                          <span className="in-soc-drug">{r.drug}</span>
-                          <span className={`tag ${r.tier === "Preferred" ? "tag-preferred" : r.tier === "UICC" ? "tag-uicc" : "tag-subsequent"}`}>{r.tier}</span>
-                          <span className={`tag ${r.type === "Combination" ? "tag-type-combo" : "tag-type-single"}`}>{r.type === "Combination" ? "Combo" : "Single"}</span>
-                        </div>
-                        <div className="in-soc-detail">{r.drug_class}{r.histology ? ` · ${r.histology}` : ""}</div>
-
-                        {incoming.length > 0 && (
-                          <div className="in-pipe-list">
-                            <div className="in-pipe-label">Incoming</div>
-                            {incoming.map((p) => (
-                              <div key={p.nct_id} className="in-pipe-tag">
-                                <span className="in-pipe-drug">{p.drug}</span>
-                                <span className="in-pipe-horizon" style={{
-                                  color: p.horizonMo !== null && p.horizonMo < 12 ? "#2d6a4f" : p.horizonMo !== null && p.horizonMo < 24 ? "#e09f3e" : p.horizonMo !== null && p.horizonMo < 48 ? "#d00000" : "#aa80a0",
-                                }}>
-                                  {p.projSOC || "—"}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })
-                )}
-              </div>
-
-              {/* ── 2L+ Column ── */}
-              <div className="in-col">
-                <div className="in-col-header">2L &amp; Subsequent</div>
-                {group.regimens2LPlus.length === 0 ? (
-                  <div className="in-empty-col">No SOC regimens</div>
-                ) : (
-                  group.regimens2LPlus.map((r) => {
-                    const incoming = group.pipeline2LPlus.filter((p) => p.lot === r.lot || is2LPlus(p.lot));
-                    return (
-                      <div key={r.id} className="in-soc-card">
-                        <div className="in-soc-header">
-                          <span className="in-soc-drug">{r.drug}</span>
-                          <span className={`tag ${r.tier === "Preferred" ? "tag-preferred" : r.tier === "UICC" ? "tag-uicc" : "tag-subsequent"}`}>{r.tier}</span>
-                          <span className={`tag ${r.type === "Combination" ? "tag-type-combo" : "tag-type-single"}`}>{r.type === "Combination" ? "Combo" : "Single"}</span>
-                        </div>
-                        <div className="in-soc-detail">{r.drug_class}{r.histology ? ` · ${r.histology}` : ""}</div>
-
-                        {incoming.length > 0 && (
-                          <div className="in-pipe-list">
-                            <div className="in-pipe-label">Incoming</div>
-                            {incoming.map((p) => (
-                              <div key={p.nct_id} className="in-pipe-tag">
-                                <span className="in-pipe-drug">{p.drug}</span>
-                                <span className="in-pipe-horizon" style={{
-                                  color: p.horizonMo !== null && p.horizonMo < 12 ? "#2d6a4f" : p.horizonMo !== null && p.horizonMo < 24 ? "#e09f3e" : p.horizonMo !== null && p.horizonMo < 48 ? "#d00000" : "#aa80a0",
-                                }}>
-                                  {p.projSOC || "—"}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })
-                )}
-              </div>
+              {renderColumn(group.biomarker, "1L", group.regimens1L, group.pipeline1L)}
+              {renderColumn(group.biomarker, "2L+", group.regimens2LPlus, group.pipeline2LPlus)}
             </div>
-
-            {/* Summary chips */}
-            {(group.pipeline1L.length > 0 || group.pipeline2LPlus.length > 0) && (
-              <div className="in-group-pipe-summary">
-                <span className="in-group-pipe-label">All incoming:</span>
-                {[...group.pipeline1L, ...group.pipeline2LPlus].map((p) => (
-                  <span key={p.nct_id} className="in-pipe-chip">
-                    {p.drug}
-                    <span className="in-pipe-chip-date">{p.projSOC || "—"}</span>
-                  </span>
-                ))}
-              </div>
-            )}
           </div>
         ))
       )}
