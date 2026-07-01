@@ -501,8 +501,8 @@ export default function Dashboard({ data, error }: Props) {
                       <div className="oc-field-val">{selectedRegimen.histology}</div>
                     </div>
                     <div className="oc-modal-field" style={{ gridColumn: "1 / -1" }}>
-                      <div className="oc-field-label">Patient Setting</div>
-                      <div className="oc-field-val">{selectedRegimen.setting}</div>
+                      <div className="oc-field-label">Patient Population</div>
+                      <div className="oc-field-val">{selectedRegimen.patient_population || selectedRegimen.setting || "—"}</div>
                     </div>
                   </div>
 
@@ -521,12 +521,6 @@ export default function Dashboard({ data, error }: Props) {
                     <div className="oc-modal-soon">
                       <div className="oc-soon-label">PD-L1 Expression</div>
                       <div className="oc-soon-val">{selectedRegimen.pd_l1_expression}</div>
-                    </div>
-                  )}
-                  {selectedRegimen.patient_population && (
-                    <div className="oc-modal-soon">
-                      <div className="oc-soon-label">Patient Population</div>
-                      <div className="oc-soon-val">{selectedRegimen.patient_population}</div>
                     </div>
                   )}
                 </div>

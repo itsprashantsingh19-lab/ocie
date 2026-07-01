@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import type { PipelineRow, Regimen, TimelineWeights, TrialProfile } from "@/types";
-import { biomarkerBadgeClass, projectTimeline, profileToWeights, RAW_TO_DISPLAY } from "@/types";
+import { biomarkerBadgeClass, projectTimeline, profileToWeights, inferProfile, RAW_TO_DISPLAY } from "@/types";
 
 interface Props {
   pipeline: PipelineRow[];
@@ -21,7 +21,7 @@ export default function InsightsTab({ pipeline, regimens, drugProfiles, drugWeig
   const data = useMemo(() => {
     const pipeByKey = new Map<string, (PipelineRow & { projSOC: string | null; horizonMo: number | null })[]>();
     for (const p of pipeline) {
-      const dp = drugProfiles[p.nct_id];
+      const dp = drugProfiles[p.nct_id] || inferProfile(p.phases || []);
       const dw = drugWeights[p.nct_id] || profileToWeights(dp);
       const proj = projectTimeline(p.primary_completion_date, dw);
       if (!proj) continue;
