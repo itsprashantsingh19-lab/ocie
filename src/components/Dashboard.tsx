@@ -105,7 +105,10 @@ export default function Dashboard({ data, error }: Props) {
     const today = new Date();
     return src.filter((p) => {
       if (socDrugs.has(p.drug.toLowerCase())) return false;
-      if (p.primary_completion_date && new Date(p.primary_completion_date) < today) return false;
+      if (p.primary_completion_date) {
+        const d = new Date(p.primary_completion_date);
+        if (!isNaN(d.getTime()) && d.getFullYear() > 1970 && d < today) return false;
+      }
       return true;
     });
   }, [pipeline, pipelineFromProfiles, regimens]);
