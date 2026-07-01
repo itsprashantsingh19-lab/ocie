@@ -72,17 +72,12 @@ export default function Dashboard({ data, error }: Props) {
 
   const regimens = data?.regimens ?? [];
 
-  const pipelineFromProfiles = useMemo(() => {
+  const pipelineSrc = useMemo(() => {
     const pp = data?.pipelineProfiles;
     if (!pp || pp.length === 0) return [];
     const socDrugs = new Set(regimens.map((r) => r.drug.toLowerCase()));
-    const today = new Date();
     return pp
-      .filter((p) => {
-        if (socDrugs.has(p.drug.toLowerCase())) return false;
-        if (p.pcd && new Date(p.pcd) < today) return false;
-        return true;
-      })
+      .filter((p) => !socDrugs.has(p.drug.toLowerCase()))
       .map((p) => ({
         regimen_id: 0,
         drug: p.drug,
@@ -97,19 +92,6 @@ export default function Dashboard({ data, error }: Props) {
         enrollment: null,
       } as PipelineRow));
   }, [data?.pipelineProfiles, regimens]);
-
-  const pipelineSrc = useMemo(() => {
-    const socDrugs = new Set(regimens.map((r) => r.drug.toLowerCase()));
-    const today = new Date();
-    return pipelineFromProfiles.filter((p) => {
-      if (socDrugs.has(p.drug.toLowerCase())) return false;
-      if (p.primary_completion_date) {
-        const d = new Date(p.primary_completion_date);
-        if (!isNaN(d.getTime()) && d.getFullYear() > 1970 && d < today) return false;
-      }
-      return true;
-    });
-  }, [pipelineFromProfiles, regimens]);
 
   useEffect(() => {
     if (pipelineSrc.length > 0 && !inferredDone) {
